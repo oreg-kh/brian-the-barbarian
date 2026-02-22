@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-02-22T17:55:26.525530Z",
+  "botName": "Brian the Barbarian",
+  "guide": [
+    {
+      "command": "set-bot-role",
+      "text": "Állítsd be, melyik rang használhatja a bot admin parancsokat."
+    },
+    {
+      "command": "register-world-server",
+      "text": "Regisztráld az alap világ/szerver beállítást."
+    },
+    {
+      "command": "register-world-channel",
+      "text": "Kösd csatornához a világot, ahol a bot működik."
+    },
+    {
+      "command": "settings",
+      "text": "Ellenőrizd a beállításokat (list / delete)."
+    },
+    {
+      "command": "logging",
+      "text": "Kapcsold be a naplózást (audit/log események)."
+    },
+    {
+      "command": "create-welcome-channel",
+      "text": "Állíts be üdvözlő csatornát (opcionális)."
+    },
+    {
+      "command": "create-ticket-panel",
+      "text": "Hozz létre ticket panelt (opcionális)."
+    },
+    {
+      "command": "create-new-world-notification",
+      "text": "Új világ értesítés csatorna (opcionális)."
+    },
+    {
+      "command": "create-conquer-notification",
+      "text": "Conquer értesítések (opcionális)."
+    }
+  ],
+  "commands": [],
+  "listeners": [],
+  "auditModules": []
+}
