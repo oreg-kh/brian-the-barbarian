@@ -1,0 +1,1084 @@
+{
+  "meta": {
+    "commandsCount": 26,
+    "listenersCount": 11,
+    "auditModulesCount": 18,
+    "componentsCount": 6
+  },
+  "commands": [
+    {
+      "name": "set-bot-role",
+      "description": "Beállítja, melyik rang használhatja a bot admin parancsait.",
+      "options": [
+        {
+          "name": "rang",
+          "type": "role",
+          "description": "Válaszd ki a jogosult rangot",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/set-bot-role.js",
+      "category": "set",
+      "categoryLabel": "Beállítás"
+    },
+    {
+      "name": "settings",
+      "description": "DB beállítások listázása és törlése",
+      "options": [
+        {
+          "name": "type",
+          "type": "string",
+          "description": "Mit szeretnél listázni?",
+          "required": true
+        },
+        {
+          "name": "confirm",
+          "type": "boolean",
+          "description": "Ha true, akkor ténylegesen töröl.",
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "Mit szeretnél törölni?",
+          "required": true
+        },
+        {
+          "name": "channel",
+          "type": "channel",
+          "description": "Melyik csatornában? (ha nincs: az aktuális csatorna)",
+          "required": false
+        },
+        {
+          "name": "confirm",
+          "type": "boolean",
+          "description": "Ha true, akkor ténylegesen töröl.",
+          "required": false
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/settings.js",
+      "category": "settings",
+      "categoryLabel": "Beállítások"
+    },
+    {
+      "name": "check-tribe-orientation",
+      "description": "Grafikont készít egy kiválasztott klán támadó - védekező - támogató beállítottságáról.",
+      "options": [
+        {
+          "name": "tribe",
+          "type": "string",
+          "description": "Válaszd ki a klánt!",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/check-tribe-orientation.js",
+      "category": "check",
+      "categoryLabel": "Ellenőrzés"
+    },
+    {
+      "name": "toggle-coords-info",
+      "description": "Aktiválja vagy deaktiválja a koordináta információk automatikus mutatását.",
+      "options": [
+        {
+          "name": "aktiválás",
+          "type": "boolean",
+          "description": "Igaz (true) értékkel aktiválod, hamis (false) értékkel deaktiválod.",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/toggle-coords-info.js",
+      "category": "toggle",
+      "categoryLabel": "Kapcsoló"
+    },
+    {
+      "name": "create-conquer-notification",
+      "description": "Létrehoz egy foglalás értesítést.",
+      "options": [
+        {
+          "name": "tribe",
+          "type": "string",
+          "description": "Válaszd ki a klánt!",
+          "required": true
+        },
+        {
+          "name": "gains",
+          "type": "boolean",
+          "description": "Szeretnéd figyelni ennek a klánnak a foglalásait?",
+          "required": false
+        },
+        {
+          "name": "losses",
+          "type": "boolean",
+          "description": "Szeretnéd figyelni ennek a klánnak a falu vesztéseit?",
+          "required": false
+        },
+        {
+          "name": "internals",
+          "type": "boolean",
+          "description": "Szeretnéd figyelni ennek a klánnak a belső foglalásait?",
+          "required": false
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-conquer-notification.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-defender-pack",
+      "description": "Nyersanyag csomag létrehozása",
+      "options": [
+        {
+          "name": "koordinata",
+          "type": "string",
+          "description": "Maximum 5 koordináta. Pl: 423|567 vagy több: 423|567, 424|568 (vessző/space/pontosvessző/új sor)",
+          "required": true
+        },
+        {
+          "name": "szukseges_csomag",
+          "type": "integer",
+          "description": "Szükséges csomag (pozitív egész szám)",
+          "required": true
+        },
+        {
+          "name": "lovag",
+          "type": "boolean",
+          "description": "Kerüljön a csomagba Lovag?",
+          "required": true
+        },
+        {
+          "name": "spear",
+          "type": "integer",
+          "description": "Lándzsás mennyiség (pozitív egész)",
+          "required": false
+        },
+        {
+          "name": "sword",
+          "type": "integer",
+          "description": "Kardos mennyiség (pozitív egész)",
+          "required": false
+        },
+        {
+          "name": "archer",
+          "type": "integer",
+          "description": "Íjász mennyiség (pozitív egész) – csak ha elérhető a szerveren",
+          "required": false
+        },
+        {
+          "name": "heavy",
+          "type": "integer",
+          "description": "Nehézlovas mennyiség (pozitív egész)",
+          "required": false
+        },
+        {
+          "name": "spy",
+          "type": "integer",
+          "description": "Kém mennyiség (pozitív egész)",
+          "required": false
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-defender-pack.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-mail-list",
+      "description": "Egy klán játékosaiból levelezési listát készít.",
+      "options": [
+        {
+          "name": "tribe",
+          "type": "string",
+          "description": "Válaszd ki a klánt.",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-mail-list.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-new-world-notification",
+      "description": "Új világokról küld értesítést ezen a csatornán.",
+      "options": [
+        {
+          "name": "domain",
+          "type": "string",
+          "description": "Melyik domain új világairól jöjjön értesítés",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-new-world-notification.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-player-map",
+      "description": "Térképet készít a megadott paraméterek alapján.",
+      "options": [
+        {
+          "name": "conquers",
+          "type": "boolean",
+          "description": "Az utóbbi 24 óra foglalásait mutatja.",
+          "required": false
+        },
+        {
+          "name": "barbarians",
+          "type": "boolean",
+          "description": "Barbár falvakat mutat a térképen.",
+          "required": false
+        },
+        {
+          "name": "maptype",
+          "type": "string",
+          "description": "Térkép típusa.",
+          "required": false
+        },
+        {
+          "name": "player-1",
+          "type": "string",
+          "description": "1. játékos",
+          "required": false
+        },
+        {
+          "name": "player-2",
+          "type": "string",
+          "description": "2. játékos",
+          "required": false
+        },
+        {
+          "name": "player-3",
+          "type": "string",
+          "description": "3. játékos",
+          "required": false
+        },
+        {
+          "name": "player-4",
+          "type": "string",
+          "description": "4. játékos",
+          "required": false
+        },
+        {
+          "name": "player-5",
+          "type": "string",
+          "description": "5. játékos",
+          "required": false
+        },
+        {
+          "name": "player-6",
+          "type": "string",
+          "description": "6. játékos",
+          "required": false
+        },
+        {
+          "name": "player-7",
+          "type": "string",
+          "description": "7. játékos",
+          "required": false
+        },
+        {
+          "name": "player-8",
+          "type": "string",
+          "description": "8. játékos",
+          "required": false
+        },
+        {
+          "name": "player-9",
+          "type": "string",
+          "description": "9. játékos",
+          "required": false
+        },
+        {
+          "name": "player-10",
+          "type": "string",
+          "description": "10. játékos",
+          "required": false
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-player-map.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-poll",
+      "description": "Szavazás 3 fix válasszal: Igen, Nem, Tartózkodok",
+      "options": [
+        {
+          "name": "question",
+          "type": "string",
+          "description": "A szavazás kérdése",
+          "required": true
+        },
+        {
+          "name": "time",
+          "type": "integer",
+          "description": "Szavazás időtartama órában (min. 1, alapértelmezett: 1)",
+          "required": false
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-poll.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-resource-pack",
+      "description": "Nyersanyag csomag létrehozása",
+      "options": [
+        {
+          "name": "koordinata",
+          "type": "string",
+          "description": "Maximum 5 koordináta. Pl: 423|567 vagy több: 423|567,424|568 (vessző/space/pontosvessző/új sor)",
+          "required": true
+        },
+        {
+          "name": "szukseges_csomag",
+          "type": "integer",
+          "description": "Szükséges csomag (pozitív egész szám)",
+          "required": true
+        },
+        {
+          "name": "zaszlo",
+          "type": "string",
+          "description": "Zászló bónusz",
+          "required": false
+        },
+        {
+          "name": "nemesi_rendelet",
+          "type": "string",
+          "description": "Nemesi rendelet",
+          "required": false
+        },
+        {
+          "name": "egyeb",
+          "type": "string",
+          "description": "Egyéb bónusz (% formátumban)",
+          "required": false
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-resource-pack.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-ticket-panel",
+      "description": "Létrehoz egy ticket panelt a csatornában.",
+      "options": [],
+      "sourceFile": "events/INTERACTIONS/commands/create-ticket-panel.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-tribe-daily-stat",
+      "description": "Grafikont készít egy klán napi statisztikáiból.",
+      "options": [
+        {
+          "name": "stat",
+          "type": "string",
+          "description": "Válaszd ki a statisztikát.",
+          "required": true
+        },
+        {
+          "name": "tribe",
+          "type": "string",
+          "description": "Válaszd ki a klánt!",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-tribe-daily-stat.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-tribe-map",
+      "description": "Térképet készít a megadott paraméterek alapján.",
+      "options": [
+        {
+          "name": "conquers",
+          "type": "boolean",
+          "description": "Az utóbbi 24 óra foglalásait mutatja.",
+          "required": false
+        },
+        {
+          "name": "barbarians",
+          "type": "boolean",
+          "description": "Barbár falvakat mutat a térképen.",
+          "required": false
+        },
+        {
+          "name": "maptype",
+          "type": "string",
+          "description": "Térkép típusa.",
+          "required": false
+        },
+        {
+          "name": "tribefamily-1",
+          "type": "string",
+          "description": "1. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-2",
+          "type": "string",
+          "description": "2. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-3",
+          "type": "string",
+          "description": "3. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-4",
+          "type": "string",
+          "description": "4. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-5",
+          "type": "string",
+          "description": "5. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-6",
+          "type": "string",
+          "description": "6. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-7",
+          "type": "string",
+          "description": "7. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-8",
+          "type": "string",
+          "description": "8. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-9",
+          "type": "string",
+          "description": "9. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "tribefamily-10",
+          "type": "string",
+          "description": "10. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-tribe-map.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-war-stat",
+      "description": "Foglalási statisztikát készít.",
+      "options": [
+        {
+          "name": "from",
+          "type": "string",
+          "description": "Válassz időpontot (YYYY.MM.DD HH:MM:SS)",
+          "required": true
+        },
+        {
+          "name": "to",
+          "type": "string",
+          "description": "Válassz időpontot (YYYY.MM.DD HH:MM:SS)",
+          "required": true
+        },
+        {
+          "name": "side1",
+          "type": "string",
+          "description": "1. oldal kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "player1",
+          "type": "string",
+          "description": "1. oldal játékos. Több játékos felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "side2",
+          "type": "string",
+          "description": "2. oldal kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        },
+        {
+          "name": "player2",
+          "type": "string",
+          "description": "2. oldal játékos. Több játékos felsorolásánál használj elválasztó jelet: &",
+          "required": false
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/create-war-stat.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "create-welcome-channel",
+      "description": "Beállítja azt a csatornát, ahol az új tagokat üdvözlünk.",
+      "options": [],
+      "sourceFile": "events/INTERACTIONS/commands/create-welcome-channel.js",
+      "category": "create",
+      "categoryLabel": "Létrehozás"
+    },
+    {
+      "name": "logging",
+      "description": "Log események beállítása (több esemény is megadható)",
+      "options": [
+        {
+          "name": "esemeny-kategoria",
+          "type": "string",
+          "description": "Válassz egy esemény kategóriát",
+          "required": true
+        },
+        {
+          "name": "esemeny",
+          "type": "string",
+          "description": "Legyen engedélyezve az esemény?",
+          "required": true
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "description": "Legyen engedélyezve az esemény?",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/logging.js",
+      "category": "logging",
+      "categoryLabel": "Naplózás"
+    },
+    {
+      "name": "register-world-channel",
+      "description": "Állíts be egy világot a csatornához",
+      "options": [
+        {
+          "name": "domain",
+          "type": "string",
+          "description": "Válassz egy szervert",
+          "required": true
+        },
+        {
+          "name": "world",
+          "type": "string",
+          "description": "Válassz egy világot",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/register-world-channel.js",
+      "category": "register",
+      "categoryLabel": "Regisztráció"
+    },
+    {
+      "name": "register-world-server",
+      "description": "Globális alapértelmezett világ beállítása",
+      "options": [
+        {
+          "name": "domain",
+          "type": "string",
+          "description": "Válassz egy szervert",
+          "required": true
+        },
+        {
+          "name": "world",
+          "type": "string",
+          "description": "Válassz egy világot",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/register-world-server.js",
+      "category": "register",
+      "categoryLabel": "Regisztráció"
+    },
+    {
+      "name": "calculate-backtime",
+      "description": "Add meg a koordinátákat, pontos dátumot és a támadó sereg sebességét.",
+      "options": [
+        {
+          "name": "coordinate1",
+          "type": "string",
+          "description": "Saját falu koordinátája (pl. 457|533)",
+          "required": true
+        },
+        {
+          "name": "coordinate2",
+          "type": "string",
+          "description": "Ellenség falu koordinátája (pl. 566|478)",
+          "required": true
+        },
+        {
+          "name": "time",
+          "type": "string",
+          "description": "Támadás beérkezési időpontja (YYYY.MM.DD HH:MM:SS)",
+          "required": true
+        },
+        {
+          "name": "unit",
+          "type": "string",
+          "description": "Támadó sereg sebessége",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/calculate-backtime.js",
+      "category": "calculate",
+      "categoryLabel": "Számolás"
+    },
+    {
+      "name": "calculate-coin-limit",
+      "description": "Calculates the noblemen limit for the given number of coins.",
+      "options": [
+        {
+          "name": "coins",
+          "type": "integer",
+          "description": "Number of coins (must be a positive integer)",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/calculate-coin-limit.js",
+      "category": "calculate",
+      "categoryLabel": "Számolás"
+    },
+    {
+      "name": "calculate-noblemen-limit",
+      "description": "Calculates how many coins you need for the given noblemen limit.",
+      "options": [
+        {
+          "name": "limit",
+          "type": "integer",
+          "description": "The noblemen limit (must be a positive integer)",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/calculate-noblemen-limit.js",
+      "category": "calculate",
+      "categoryLabel": "Számolás"
+    },
+    {
+      "name": "fake-coordinate-filter",
+      "description": "Kiszűri a klánodhoz tartozó koordinátákat.",
+      "options": [
+        {
+          "name": "tribefamily1",
+          "type": "string",
+          "description": "1. kláncsoport. Több klán felsorolásánál használj elválasztó jelet: &",
+          "required": true
+        },
+        {
+          "name": "tribes_file",
+          "type": "attachment",
+          "description": "TXT fájl koordinátákkal",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/fake-coordinate-filter.js",
+      "category": "fake",
+      "categoryLabel": "Szűrés"
+    },
+    {
+      "name": "add-emojis",
+      "description": "Emoji mappából feltölti a PNG fájlokat a szerverre",
+      "options": [
+        {
+          "name": "kategoriak",
+          "type": "string",
+          "description": "Válaszd ki, melyik típusú emojikat töltsük fel",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/import-emojis.js",
+      "category": "add",
+      "categoryLabel": "add"
+    },
+    {
+      "name": "compare-tribes-daily-stat",
+      "description": "Grafikont készít az első 20 klán napi statisztikáiból.",
+      "options": [
+        {
+          "name": "stat",
+          "type": "string",
+          "description": "Válaszd ki a statisztikát.",
+          "required": true
+        }
+      ],
+      "sourceFile": "events/INTERACTIONS/commands/compare-tribes-daily-stat.js",
+      "category": "compare",
+      "categoryLabel": "Összehasonlítás"
+    },
+    {
+      "name": "compare-tribes-orientation",
+      "description": "Grafikont készít az első 20 klán támadó - védekező beállítottságáról.",
+      "options": [],
+      "sourceFile": "events/INTERACTIONS/commands/compare-tribes-orientation.js",
+      "category": "compare",
+      "categoryLabel": "Összehasonlítás"
+    }
+  ],
+  "events": {
+    "listeners": [
+      {
+        "discordEvent": "guildAuditLogEntryCreate",
+        "internalName": "guildAuditLogEntryCreate",
+        "key": "guildAuditLogEntryCreate",
+        "category": "GUILD AUDIT LOG ENTRY CREATE EVENT",
+        "file": "events/GUILD AUDIT LOG ENTRY CREATE EVENT/guildAuditLogEntryCreate.js",
+        "categoryLabel": "Audit log",
+        "title": "Audit log bejegyzés"
+      },
+      {
+        "discordEvent": "voiceStateUpdate",
+        "internalName": "voice_state_update",
+        "key": "voice_state_update",
+        "category": "CHANNEL-VOICE EVENTS",
+        "file": "events/CHANNEL-VOICE EVENTS/voiceStateUpdate.js",
+        "categoryLabel": "Csatornák & Voice",
+        "title": "Voice állapot változás"
+      },
+      {
+        "discordEvent": "userUpdate",
+        "internalName": "userUpdate",
+        "key": "userUpdate",
+        "category": "USER EVENTS",
+        "file": "events/USER EVENTS/userUpdate.js",
+        "categoryLabel": "Felhasználó",
+        "title": "Felhasználó frissítés"
+      },
+      {
+        "discordEvent": "ready",
+        "internalName": "ready",
+        "key": null,
+        "category": "READY",
+        "file": "events/READY/ready.js",
+        "categoryLabel": "Indulás",
+        "title": "Indulás (ready)"
+      },
+      {
+        "discordEvent": "interaction-create",
+        "internalName": "interactionCreate",
+        "key": null,
+        "category": "INTERACTION",
+        "file": "events/INTERACTION/interaction-create.js",
+        "categoryLabel": "Interakciók",
+        "title": "Interakció router"
+      },
+      {
+        "discordEvent": "guildCreate",
+        "internalName": "guildCreate",
+        "key": null,
+        "category": "GUILD EVENTS",
+        "file": "events/GUILD EVENTS/guildCreate.js",
+        "categoryLabel": "Szerver",
+        "title": "Bot csatlakozott szerverhez"
+      },
+      {
+        "discordEvent": "guildDelete",
+        "internalName": "guildDelete",
+        "key": null,
+        "category": "GUILD EVENTS",
+        "file": "events/GUILD EVENTS/guildDelete.js",
+        "categoryLabel": "Szerver",
+        "title": "Bot eltávolítva szerverről"
+      },
+      {
+        "discordEvent": "guildMemberAdd",
+        "internalName": "guildMemberAdd",
+        "key": null,
+        "category": "GUILD MEMBER EVENTS",
+        "file": "events/GUILD MEMBER EVENTS/guildMemberAdd.js",
+        "categoryLabel": "Tagok",
+        "title": "Tag belépett"
+      },
+      {
+        "discordEvent": "guildMemberRemove",
+        "internalName": "guildMemberRemove",
+        "key": null,
+        "category": "GUILD MEMBER EVENTS",
+        "file": "events/GUILD MEMBER EVENTS/guildMemberRemove.js",
+        "categoryLabel": "Tagok",
+        "title": "Tag kilépett"
+      },
+      {
+        "discordEvent": "messageCreate",
+        "internalName": "messageCreate",
+        "key": "messageCreate",
+        "category": "MESSAGE EVENTS",
+        "file": "events/MESSAGE EVENTS/messageCreate.js",
+        "categoryLabel": "Üzenetek",
+        "title": "Új üzenet"
+      },
+      {
+        "discordEvent": "messageUpdate",
+        "internalName": "messageUpdate",
+        "key": "messageUpdate",
+        "category": "MESSAGE EVENTS",
+        "file": "events/MESSAGE EVENTS/messageUpdate.js",
+        "categoryLabel": "Üzenetek",
+        "title": "Üzenet módosítás"
+      }
+    ],
+    "auditModules": [
+      {
+        "key": "channel_created",
+        "auditLogEvents": [
+          "ChannelCreate"
+        ],
+        "file": "events/audit-modules/CHANNEL-VOICE EVENTS/channelCreate.js",
+        "group": "CHANNEL-VOICE EVENTS",
+        "title": "Csatorna létrehozás naplózása",
+        "groupLabel": "Csatornák & Voice",
+        "subtitle": "AuditLogEvent: ChannelCreate"
+      },
+      {
+        "key": "channel_updated",
+        "auditLogEvents": [
+          "ChannelUpdate"
+        ],
+        "file": "events/audit-modules/CHANNEL-VOICE EVENTS/channelUpdate.js",
+        "group": "CHANNEL-VOICE EVENTS",
+        "title": "Csatorna módosítás naplózása",
+        "groupLabel": "Csatornák & Voice",
+        "subtitle": "AuditLogEvent: ChannelUpdate"
+      },
+      {
+        "key": "channel_deleted",
+        "auditLogEvents": [
+          "ChannelDelete"
+        ],
+        "file": "events/audit-modules/CHANNEL-VOICE EVENTS/channelDelete.js",
+        "group": "CHANNEL-VOICE EVENTS",
+        "title": "Csatorna törlés naplózása",
+        "groupLabel": "Csatornák & Voice",
+        "subtitle": "AuditLogEvent: ChannelDelete"
+      },
+      {
+        "key": "role_created",
+        "auditLogEvents": [
+          "RoleCreate"
+        ],
+        "file": "events/audit-modules/ROLE EVENTS/roleCreate.js",
+        "group": "ROLE EVENTS",
+        "title": "Role létrehozás",
+        "groupLabel": "Szerepkörök",
+        "subtitle": "AuditLogEvent: RoleCreate"
+      },
+      {
+        "key": "role_updated",
+        "auditLogEvents": [
+          "RoleUpdate"
+        ],
+        "file": "events/audit-modules/ROLE EVENTS/roleUpdate.js",
+        "group": "ROLE EVENTS",
+        "title": "Role módosítás",
+        "groupLabel": "Szerepkörök",
+        "subtitle": "AuditLogEvent: RoleUpdate"
+      },
+      {
+        "key": "role_deleted",
+        "auditLogEvents": [
+          "RoleDelete"
+        ],
+        "file": "events/audit-modules/ROLE EVENTS/roleDelete.js",
+        "group": "ROLE EVENTS",
+        "title": "Role törlés",
+        "groupLabel": "Szerepkörök",
+        "subtitle": "AuditLogEvent: RoleDelete"
+      },
+      {
+        "key": "guild_updated",
+        "auditLogEvents": [
+          "GuildUpdate"
+        ],
+        "file": "events/audit-modules/GUILD EVENTS/guildUpdate.js",
+        "group": "GUILD EVENTS",
+        "title": "Szerver beállítás módosítás",
+        "groupLabel": "Szerver",
+        "subtitle": "AuditLogEvent: GuildUpdate"
+      },
+      {
+        "key": "emojis_created",
+        "auditLogEvents": [
+          "EmojiCreate"
+        ],
+        "file": "events/audit-modules/GUILD EVENTS/emojiCreate.js",
+        "group": "GUILD EVENTS",
+        "title": "emoji Create",
+        "groupLabel": "Szerver",
+        "subtitle": "AuditLogEvent: EmojiCreate"
+      },
+      {
+        "key": "emojis_deleted",
+        "auditLogEvents": [
+          "EmojiDelete"
+        ],
+        "file": "events/audit-modules/GUILD EVENTS/emojiDelete.js",
+        "group": "GUILD EVENTS",
+        "title": "emoji Delete",
+        "groupLabel": "Szerver",
+        "subtitle": "AuditLogEvent: EmojiDelete"
+      },
+      {
+        "key": "emojis_updated",
+        "auditLogEvents": [
+          "EmojiUpdate"
+        ],
+        "file": "events/audit-modules/GUILD EVENTS/emojiUpdate.js",
+        "group": "GUILD EVENTS",
+        "title": "emoji Update",
+        "groupLabel": "Szerver",
+        "subtitle": "AuditLogEvent: EmojiUpdate"
+      },
+      {
+        "key": "memberKick",
+        "auditLogEvents": [],
+        "file": "events/audit-modules/GUILD MEMBER EVENTS/memberKick.js",
+        "group": "GUILD MEMBER EVENTS",
+        "title": "Kick naplózása",
+        "groupLabel": "Tagok",
+        "subtitle": "Egyedi validáció / kiegészítő logika"
+      },
+      {
+        "key": "member_unbanned",
+        "auditLogEvents": [
+          "MemberBanRemove"
+        ],
+        "file": "events/audit-modules/GUILD MEMBER EVENTS/guildBanRemove.js",
+        "group": "GUILD MEMBER EVENTS",
+        "title": "Kitiltás feloldás naplózása",
+        "groupLabel": "Tagok",
+        "subtitle": "AuditLogEvent: MemberBanRemove"
+      },
+      {
+        "key": "member_banned",
+        "auditLogEvents": [
+          "MemberBanAdd"
+        ],
+        "file": "events/audit-modules/GUILD MEMBER EVENTS/guildBanAdd.js",
+        "group": "GUILD MEMBER EVENTS",
+        "title": "Kitiltás naplózása",
+        "groupLabel": "Tagok",
+        "subtitle": "AuditLogEvent: MemberBanAdd"
+      },
+      {
+        "key": "invite_created",
+        "auditLogEvents": [],
+        "file": "events/audit-modules/GUILD MEMBER EVENTS/inviteCreate.js",
+        "group": "GUILD MEMBER EVENTS",
+        "title": "Meghívó link létrehozás",
+        "groupLabel": "Tagok",
+        "subtitle": "Egyedi validáció / kiegészítő logika"
+      },
+      {
+        "key": "member_roles_changed",
+        "auditLogEvents": [],
+        "file": "events/audit-modules/GUILD MEMBER EVENTS/memberRoleUpdate.js",
+        "group": "GUILD MEMBER EVENTS",
+        "title": "Szerepkör változás",
+        "groupLabel": "Tagok",
+        "subtitle": "Egyedi validáció / kiegészítő logika"
+      },
+      {
+        "key": "member_update",
+        "auditLogEvents": [],
+        "file": "events/audit-modules/GUILD MEMBER EVENTS/guildMemberUpdate.js",
+        "group": "GUILD MEMBER EVENTS",
+        "title": "Tag frissítés naplózása",
+        "groupLabel": "Tagok",
+        "subtitle": "Egyedi validáció / kiegészítő logika"
+      },
+      {
+        "key": "message_bulk_deleted",
+        "auditLogEvents": [],
+        "file": "events/audit-modules/MESSAGE EVENTS/messageBulkDelete.js",
+        "group": "MESSAGE EVENTS",
+        "title": "Tömeges üzenettörlés",
+        "groupLabel": "Üzenetek",
+        "subtitle": "Egyedi validáció / kiegészítő logika"
+      },
+      {
+        "key": "message_deleted",
+        "auditLogEvents": [],
+        "file": "events/audit-modules/MESSAGE EVENTS/messageDelete.js",
+        "group": "MESSAGE EVENTS",
+        "title": "Üzenet törlés",
+        "groupLabel": "Üzenetek",
+        "subtitle": "Egyedi validáció / kiegészítő logika"
+      }
+    ],
+    "components": [
+      {
+        "kind": "button",
+        "customIds": [
+          "defender_amount",
+          "defender_delete",
+          "defender_lock",
+          "defender_modal",
+          "defender_player",
+          "defender_send",
+          "defender_unlock"
+        ],
+        "file": "events/INTERACTIONS/buttons/create-defender-pack-button.js",
+        "title": "Create Defender Pack Button",
+        "countCustomIds": 7
+      },
+      {
+        "kind": "button",
+        "customIds": [
+          "resource_amount",
+          "resource_delete",
+          "resource_lock",
+          "resource_modal",
+          "resource_player",
+          "resource_send",
+          "resource_unlock"
+        ],
+        "file": "events/INTERACTIONS/buttons/create-resource-pack-button.js",
+        "title": "Create Resource Pack Button",
+        "countCustomIds": 7
+      },
+      {
+        "kind": "button",
+        "customIds": [
+          "close_ticket",
+          "create_ticket",
+          "delete_ticket"
+        ],
+        "file": "events/INTERACTIONS/buttons/create-ticket-panel-button.js",
+        "title": "Create Ticket Panel Button",
+        "countCustomIds": 3
+      },
+      {
+        "kind": "button",
+        "customIds": [
+          "delete_poll",
+          "lock_poll",
+          "unlock_poll"
+        ],
+        "file": "events/INTERACTIONS/buttons/poll-button.js",
+        "title": "Poll Button",
+        "countCustomIds": 3
+      },
+      {
+        "kind": "modal",
+        "customIds": [
+          "defender_unlock"
+        ],
+        "file": "events/INTERACTIONS/modals/create-defender-pack-modal.js",
+        "title": "Create Defender Pack Modal",
+        "countCustomIds": 1
+      },
+      {
+        "kind": "modal",
+        "customIds": [
+          "resource_unlock"
+        ],
+        "file": "events/INTERACTIONS/modals/create-resource-pack-modal.js",
+        "title": "Create Resource Pack Modal",
+        "countCustomIds": 1
+      }
+    ]
+  }
+}
