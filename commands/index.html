@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parancsok – Brian the Barbarian</title>
+  <meta name="description" content="Brian the Barbarian – Discord bot ismertető és parancslista." />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <script src="../assets/config.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <span id="brandName">Brian the Barbarian</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">Kezdőlap</a>
+        <a href="../commands/index.html">Parancsok</a>
+        <a href="../setup/index.html">Beállítás</a>
+        <a href="../legal/index.html">Jogi</a>
+      </nav>
+    </div>
+  </header>
+
+  
+<main class="section">
+  <div class="container">
+    <div class="card panel">
+      <h1 style="margin:0 0 8px; font-size: 32px;">Parancsok</h1>
+      <p class="muted" style="margin:0 0 14px;">Keresés parancsnévre, kategóriára vagy leírásra.</p>
+      <input id="commandsSearch" class="search" placeholder="pl. map, logging, notification, calculate..." />
+    </div>
+
+    <div style="height: 12px;"></div>
+
+    <div id="commandsList" class="cmd-list"></div>
+  </div>
+</main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="small">© <span id="year"></span> <span id="brandNameFooter">Brian the Barbarian</span></div>
+      <div class="small muted">GitHub Pages kompatibilis statikus oldal.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ================================================================
+    // footer márkanév szinkron
+    // ================================================================
+    document.addEventListener("DOMContentLoaded", () => {
+      const n = (window.SITE_CONFIG && window.SITE_CONFIG.BOT_NAME) ? window.SITE_CONFIG.BOT_NAME : "Discord Bot";
+      const el = document.getElementById("brandNameFooter");
+      if (el) el.textContent = n;
+    });
+  </script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>
