@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 – Brian the Barbarian</title>
+  <meta name="description" content="Brian the Barbarian – Discord bot ismertető és parancslista." />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./assets/config.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <span id="brandName">Brian the Barbarian</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./index.html">Kezdőlap</a>
+        <a href="./commands/index.html">Parancsok</a>
+        <a href="./setup/index.html">Beállítás</a>
+        <a href="./legal/index.html">Jogi</a>
+      </nav>
+    </div>
+  </header>
+
+  
+<main class="section">
+  <div class="container">
+    <div class="card panel">
+      <h1 style="margin:0 0 8px; font-size: 32px;">404</h1>
+      <p class="muted">Ez az oldal nem található.</p>
+      <a class="btn" href="./index.html">Vissza a kezdőlapra</a>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="small">© <span id="year"></span> <span id="brandNameFooter">Brian the Barbarian</span></div>
+      <div class="small muted">GitHub Pages kompatibilis statikus oldal.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ================================================================
+    // footer márkanév szinkron
+    // ================================================================
+    document.addEventListener("DOMContentLoaded", () => {
+      const n = (window.SITE_CONFIG && window.SITE_CONFIG.BOT_NAME) ? window.SITE_CONFIG.BOT_NAME : "Discord Bot";
+      const el = document.getElementById("brandNameFooter");
+      if (el) el.textContent = n;
+    });
+  </script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

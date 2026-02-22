@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brian the Barbarian – Discord bot</title>
+  <meta name="description" content="Brian the Barbarian – Discord bot ismertető és parancslista." />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./assets/config.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <span id="brandName">Brian the Barbarian</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./index.html">Kezdőlap</a>
+        <a href="./commands/index.html">Parancsok</a>
+        <a href="./setup/index.html">Beállítás</a>
+        <a href="./legal/index.html">Jogi</a>
+      </nav>
+    </div>
+  </header>
+
+  
+<main class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <section class="card hero-main">
+        <h1 id="heroTitle">Brian the Barbarian</h1>
+        <p id="heroTagline">Audit log, klán/világ statisztikák, térképek és community eszközök egy botban.</p>
+
+        <div class="btn-row">
+          <a class="btn primary" id="inviteBtn" href="#">Meghívás</a>
+          <a class="btn" id="supportBtn" href="#">Support</a>
+          <a class="btn" id="githubBtn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="num" id="kpiCommands">26</div>
+            <div class="lbl">Slash parancs</div>
+          </div>
+          <div class="kpi">
+            <div class="num" id="kpiAuditEvents"></div>
+            <div class="lbl">Audit log esemény</div>
+          </div>
+          <div class="kpi">
+            <div class="num">Buttons & Modals</div>
+            <div class="lbl">Interaktív UI</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card hero-side">
+        <div class="badge">Fő fókusz: naplózás + TW eszközök</div>
+        <div class="muted small">
+          Ez az oldal automatikusan készült a projektből: a parancsok listáját a kódból olvassa ki.
+          A meghívó és support linket a <code>assets/config.js</code>-ben tudod átírni.
+        </div>
+        <div class="card panel" style="box-shadow:none; background: rgba(255,255,255,.03);">
+          <div class="title" style="font-weight:800; margin-bottom:6px;">Gyors kezdés</div>
+          <ol class="muted small" style="margin:0 0 0 18px;">
+            <li>Meghívod a botot a szerverre</li>
+            <li>Beállítod az admin rangot: <code>/set-bot-role</code></li>
+            <li>Világ / csatorna: <code>/register-world-server</code>, <code>/register-world-channel</code></li>
+            <li>Naplózás: <code>/logging</code></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<section class="section">
+  <div class="container">
+    <h2>Funkciók</h2>
+    <p class="muted">Rövid áttekintés a bot moduljairól (a kódból következtetve).</p>
+
+    <div class="grid">
+      <div class="feature">
+        <div class="title">🧾 Audit log naplózás</div>
+        <div class="desc">Csatorna, rang, üzenet, emoji, tag és szerver események naplózása (pl. create/update/delete).</div>
+      </div>
+      <div class="feature">
+        <div class="title">🗺️ Térképek és statisztikák</div>
+        <div class="desc">Klán/játékos térkép generálás, napi statok, orientációs grafikonok.</div>
+      </div>
+      <div class="feature">
+        <div class="title">🔔 Világ & foglalás értesítések</div>
+        <div class="desc">Foglalás értesítés és új világ megjelenéséről értesítő csatorna.</div>
+      </div>
+      <div class="feature">
+        <div class="title">🎫 Ticket panel</div>
+        <div class="desc">Ticket panel létrehozása gombokkal/modallal a gyors support folyamathoz.</div>
+      </div>
+      <div class="feature">
+        <div class="title">📊 Számolók</div>
+        <div class="desc">Backtime, coin-limit, noblemen-limit – gyors számítások parancsból.</div>
+      </div>
+      <div class="feature">
+        <div class="title">🧰 Admin & beállítások</div>
+        <div class="desc">Jogosultságos admin parancsok, logging beállítás, DB beállítások listázása/törlése.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="card panel">
+        <h2 style="margin-top:0;">Kiemelt parancsok</h2>
+        <p class="muted">A <code>assets/config.js</code>-ben állíthatod, mi jelenjen meg itt.</p>
+        <div id="featuredCommands" class="cmd-list"></div>
+        <div style="margin-top: 12px;">
+          <a class="btn" href="./commands/index.html">Teljes parancslista</a>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <h2 style="margin-top:0;">Mit érdemes kitölteni?</h2>
+        <ul class="muted" style="margin: 0 0 0 18px;">
+          <li><b>Invite link:</b> <code>DISCORD_INVITE_URL</code></li>
+          <li><b>Support szerver:</b> <code>SUPPORT_SERVER_URL</code></li>
+          <li><b>Repo link (opcionális):</b> <code>GITHUB_REPO_URL</code></li>
+          <li><b>Tagline:</b> 1 mondat, hogy kinek és mire jó</li>
+        </ul>
+
+        <div class="card panel" style="margin-top:12px; box-shadow:none; background: rgba(255,255,255,.03);">
+          <div class="title" style="font-weight:800; margin-bottom:6px;">Tipp</div>
+          <div class="muted small">
+            Ha szeretnél logót/borítóképet, bedobhatsz egy <code>assets/logo.png</code>-t,
+            és én ráhúzom a designra.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="small">© <span id="year"></span> <span id="brandNameFooter">Brian the Barbarian</span></div>
+      <div class="small muted">GitHub Pages kompatibilis statikus oldal.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ================================================================
+    // footer márkanév szinkron
+    // ================================================================
+    document.addEventListener("DOMContentLoaded", () => {
+      const n = (window.SITE_CONFIG && window.SITE_CONFIG.BOT_NAME) ? window.SITE_CONFIG.BOT_NAME : "Discord Bot";
+      const el = document.getElementById("brandNameFooter");
+      if (el) el.textContent = n;
+    });
+  </script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>
