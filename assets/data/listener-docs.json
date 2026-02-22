@@ -1,0 +1,46 @@
+{
+  "voice_state_update": {
+    "hu": "Akkor érkezik, amikor valaki belép, kilép vagy átlép egy hangcsatornába.",
+    "en": "Sent when someone joins, leaves, or moves a voice channel."
+  },
+  "guildAuditLogEntryCreate": {
+    "hu": "Akkor érkezik, amikor a szerveren létrejön egy audit log bejegyzés (csak VIEW_AUDIT_LOG jogosultsággal).",
+    "en": "Sent when a guild audit log entry is created (requires VIEW_AUDIT_LOG)."
+  },
+  "guildCreate": {
+    "hu": "A szerver elérhetővé válásakor / kezdeti betöltéskor, vagy amikor a bot új szerverhez csatlakozik.",
+    "en": "Sent on initial load/backfill, when a guild becomes available, or when the bot joins a new guild."
+  },
+  "guildDelete": {
+    "hu": "A szerver elérhetetlenné válásakor (kimaradás), vagy amikor a bot elhagyja / eltávolítják a szerverről.",
+    "en": "Sent when a guild becomes unavailable due to outage, or when the bot leaves/is removed."
+  },
+  "guildMemberAdd": {
+    "hu": "Akkor érkezik, amikor új felhasználó csatlakozik a szerverhez (GUILD_MEMBERS intent szükséges lehet).",
+    "en": "Sent when a new user joins a guild (may require GUILD_MEMBERS intent)."
+  },
+  "guildMemberRemove": {
+    "hu": "Akkor érkezik, amikor egy felhasználó eltávolításra kerül a szerverről (kilépés/kirúgás/kitiltás).",
+    "en": "Sent when a user is removed from a guild (leave/kick/ban)."
+  },
+  "interactionCreate": {
+    "hu": "Akkor érkezik, amikor a felhasználó alkalmazás-parancsot vagy üzenetkomponenst használ.",
+    "en": "Sent when a user uses an application command or message component."
+  },
+  "messageCreate": {
+    "hu": "Akkor érkezik, amikor üzenet létrejön (ephemeral üzeneteknél eltérhetnek mezők).",
+    "en": "Sent when a message is created."
+  },
+  "messageUpdate": {
+    "hu": "Akkor érkezik, amikor egy üzenet szerkesztésre kerül.",
+    "en": "Sent when a message is updated/edited."
+  },
+  "ready": {
+    "hu": "A gateway kézfogás befejezése után érkezik; tartalmazza a kezdeti állapotot, amivel a bot működni tud.",
+    "en": "Dispatched after the initial handshake; contains the initial state needed to operate."
+  },
+  "userUpdate": {
+    "hu": "Akkor érkezik, amikor a bot saját felhasználójának tulajdonságai megváltoznak.",
+    "en": "Sent when properties about the current bot’s user change."
+  }
+}

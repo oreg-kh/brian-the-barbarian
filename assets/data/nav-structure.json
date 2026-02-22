@@ -1,0 +1,68 @@
+{
+  "commands": [
+    { "id": "settings", "match": ["Beállítás"], "title": { "hu": "Beállítás", "en": "Settings" } },
+    { "id": "registration", "match": ["Regisztráció"], "title": { "hu": "Regisztráció", "en": "Registration" } },
+    { "id": "create", "match": ["Létrehozás"], "title": { "hu": "Létrehozás", "en": "Create" } },
+    { "id": "stats", "match": ["Statisztika & elemzés"], "title": { "hu": "Statisztika & elemzés", "en": "Stats & analysis" } },
+    { "id": "calc", "match": ["Számolás"], "title": { "hu": "Számolás", "en": "Calculators" } },
+    { "id": "tools", "match": ["Eszközök"], "title": { "hu": "Eszközök", "en": "Tools" } },
+    { "id": "admin", "match": ["Kezelés"], "title": { "hu": "Kezelés", "en": "Administration" } }
+  ],
+  "listeners": [
+    {
+      "id": "ready",
+      "match": ["READY"],
+      "title": { "hu": "Indulás", "en": "Startup" },
+      "description": { "hu": "A bot csatlakozása és kezdeti állapot betöltése.", "en": "Bot connection and initial state load." }
+    },
+    {
+      "id": "interactions",
+      "match": ["INTERACTION"],
+      "title": { "hu": "Interakciók", "en": "Interactions" },
+      "description": { "hu": "Slash parancsok, komponensek és egyéb interakciók kezelése.", "en": "Slash commands, components and other interactions." }
+    },
+    {
+      "id": "messages",
+      "match": ["MESSAGE EVENTS"],
+      "title": { "hu": "Üzenetek", "en": "Messages" },
+      "description": { "hu": "Üzenetek létrejötte és módosítása.", "en": "Message creation and updates." }
+    },
+    {
+      "id": "guilds",
+      "match": ["GUILD EVENTS"],
+      "title": { "hu": "Szerver", "en": "Guild" },
+      "description": { "hu": "Szerver elérhetőség, csatlakozás/elhagyás jellegű események.", "en": "Guild availability/join/leave type events." }
+    },
+    {
+      "id": "members",
+      "match": ["GUILD MEMBER EVENTS"],
+      "title": { "hu": "Tagok", "en": "Members" },
+      "description": { "hu": "Tag belépés/kilépés jellegű események.", "en": "Member join/leave type events." }
+    },
+    {
+      "id": "audit_gateway",
+      "match": ["GUILD AUDIT LOG ENTRY CREATE EVENT"],
+      "title": { "hu": "Audit (Gateway)", "en": "Audit (Gateway)" },
+      "description": { "hu": "Audit log bejegyzések létrejöttéről értesít.", "en": "Notifies about created audit log entries." }
+    },
+    {
+      "id": "voice",
+      "match": ["CHANNEL-VOICE EVENTS"],
+      "title": { "hu": "Hang", "en": "Voice" },
+      "description": { "hu": "Hangcsatorna állapotváltozások (belépés/kilépés/váltás).", "en": "Voice channel state changes (join/leave/move)." }
+    },
+    {
+      "id": "user",
+      "match": ["USER EVENTS"],
+      "title": { "hu": "Felhasználó", "en": "User" },
+      "description": { "hu": "A bot felhasználói adatainak változása.", "en": "Changes to the bot user properties." }
+    }
+  ],
+  "audits": [
+    { "id": "voice_channels", "match": ["CHANNEL-VOICE EVENTS"], "title": { "hu": "Csatornák (audit)", "en": "Channels (audit)" } },
+    { "id": "guild", "match": ["GUILD EVENTS"], "title": { "hu": "Szerver (audit)", "en": "Guild (audit)" } },
+    { "id": "members", "match": ["GUILD MEMBER EVENTS"], "title": { "hu": "Tagok (audit)", "en": "Members (audit)" } },
+    { "id": "messages", "match": ["MESSAGE EVENTS"], "title": { "hu": "Üzenetek (audit)", "en": "Messages (audit)" } },
+    { "id": "roles", "match": ["ROLE EVENTS"], "title": { "hu": "Rangok (audit)", "en": "Roles (audit)" } }
+  ]
+}
