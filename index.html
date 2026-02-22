@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brian the Barbarian – Dokumentáció</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <div class="app" id="app">
+      <!-- ========================================================= -->
+      <!-- Sidebar -->
+      <!-- ========================================================= -->
+      <aside class="sidebar" id="sidebar" aria-label="Oldalmenü">
+        <div class="sidebar__top">
+          <div class="brand">
+            <div class="brand__dot" aria-hidden="true"></div>
+            <div class="brand__text">
+              <div class="brand__name" id="brandName">Brian the Barbarian</div>
+              <div class="brand__sub">Dokumentáció</div>
+            </div>
+          </div>
+
+          <button class="iconBtn" id="collapseSidebarBtn" title="Menü elrejtése/kibontása" aria-label="Menü elrejtése/kibontása">
+            <span aria-hidden="true">⟷</span>
+          </button>
+        </div>
+
+        <div class="sidebar__body">
+          <div class="sidebar__search">
+            <input id="navSearch" class="input" type="search" placeholder="Keresés a menüben…" />
+          </div>
+
+          <section class="navBlock">
+            <div class="navBlock__title">Kezelési útmutató</div>
+            <ol class="guideList" id="guideList"></ol>
+          </section>
+
+          <section class="navBlock">
+            <details open class="navGroup">
+              <summary class="navGroup__summary">Parancsok</summary>
+              <div class="navGroup__body" id="navCommands"></div>
+            </details>
+          </section>
+
+          <section class="navBlock">
+            <details class="navGroup">
+              <summary class="navGroup__summary">Listenerek</summary>
+              <div class="navGroup__body" id="navListeners"></div>
+            </details>
+          </section>
+
+          <section class="navBlock">
+            <details class="navGroup">
+              <summary class="navGroup__summary">Audit modulok</summary>
+              <div class="navGroup__body" id="navAudits"></div>
+            </details>
+          </section>
+
+          <div class="sidebar__spacer"></div>
+
+          <div class="sidebar__bottomLinks">
+            <button class="linkBtn" data-view="terms">Terms</button>
+            <button class="linkBtn" data-view="privacy">Privacy</button>
+          </div>
+
+          <div class="sidebar__theme">
+            <div class="sidebar__themeLabel">Világos / sötét mód</div>
+            <button class="toggleBtn" id="themeToggle" aria-label="Világos / sötét mód váltása">
+              <span class="toggleBtn__knob" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="sidebar__footer">
+            <small id="buildInfo">—</small>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ========================================================= -->
+      <!-- Main -->
+      <!-- ========================================================= -->
+      <div class="main">
+        <header class="topbar" id="topbar">
+          <button class="iconBtn topbar__menuBtn" id="openSidebarBtn" aria-label="Menü megnyitása">
+            <span aria-hidden="true">☰</span>
+          </button>
+
+          <div class="topbar__current" id="currentSelection">Kezdőlap</div>
+
+          <div class="topbar__actions">
+            <a class="btn btn--discord" id="inviteBtn" href="#" target="_blank" rel="noopener">
+              <span class="btn__icon" aria-hidden="true">💬</span>
+              Add to Discord
+            </a>
+
+            <a class="btn btn--ghost" id="supportBtn" href="#" target="_blank" rel="noopener">Support</a>
+
+            <div class="lang">
+              <button class="btn btn--ghost lang__btn" id="langBtn" aria-haspopup="menu" aria-expanded="false">
+                <span id="langBtnLabel">🌍 Nyelv</span>
+                <span aria-hidden="true">▾</span>
+              </button>
+              <div class="lang__menu" id="langMenu" role="menu" aria-label="Nyelv választó"></div>
+            </div>
+          </div>
+        </header>
+
+        <main class="content" id="content" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <script src="assets/config.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
