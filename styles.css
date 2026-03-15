@@ -890,8 +890,8 @@ td {
 }
 
 /* ================================================================
-   downbar felső enyhén íves elválasztóvonala
-   két szélen magasabb, középen alacsonyabb
+   downbar felső íves elválasztó
+   középen vastagabb, szélek felé elhalványuló, enyhébb ív
    ================================================================ */
 .downbar::before {
   content: "";
@@ -899,13 +899,44 @@ td {
   left: 50%;
   bottom: 100%;
   transform: translateX(-50%);
-  width: 120%;
+  width: 145%;
   height: 18px;
-  background: var(--main);
-  border-bottom: 1px solid var(--line);
-  border-bottom-left-radius: 50% 100%;
-  border-bottom-right-radius: 50% 100%;
   pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% 100%;
+}
+
+:root[data-theme="light"] .downbar::before {
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 80' preserveAspectRatio='none'>\
+  <defs>\
+    <linearGradient id='curveFadeLight' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='rgba(229,231,235,0)'/>\
+      <stop offset='22%' stop-color='rgba(229,231,235,0.20)'/>\
+      <stop offset='50%' stop-color='rgba(229,231,235,1)'/>\
+      <stop offset='78%' stop-color='rgba(229,231,235,0.20)'/>\
+      <stop offset='100%' stop-color='rgba(229,231,235,0)'/>\
+    </linearGradient>\
+  </defs>\
+  <path d='M30,16 Q500,56 970,16' fill='none' stroke='url(%23curveFadeLight)' stroke-width='8' stroke-linecap='round'/>\
+</svg>");
+}
+
+:root[data-theme="dark"] .downbar::before {
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 80' preserveAspectRatio='none'>\
+  <defs>\
+    <linearGradient id='curveFadeDark' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='rgba(47,54,66,0)'/>\
+      <stop offset='22%' stop-color='rgba(47,54,66,0.22)'/>\
+      <stop offset='50%' stop-color='rgba(47,54,66,1)'/>\
+      <stop offset='78%' stop-color='rgba(47,54,66,0.22)'/>\
+      <stop offset='100%' stop-color='rgba(47,54,66,0)'/>\
+    </linearGradient>\
+  </defs>\
+  <path d='M30,16 Q500,56 970,16' fill='none' stroke='url(%23curveFadeDark)' stroke-width='8' stroke-linecap='round'/>\
+</svg>");
 }
 
 .downbar-inner {
@@ -1231,8 +1262,40 @@ td {
   }
 
   .downbar::before {
-    height: 12px;
-    width: 130%;
+    width: 155%;
+    height: 14px;
+  }
+
+  :root[data-theme="light"] .downbar::before {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 70' preserveAspectRatio='none'>\
+  <defs>\
+    <linearGradient id='curveFadeLightMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='rgba(229,231,235,0)'/>\
+      <stop offset='24%' stop-color='rgba(229,231,235,0.18)'/>\
+      <stop offset='50%' stop-color='rgba(229,231,235,1)'/>\
+      <stop offset='76%' stop-color='rgba(229,231,235,0.18)'/>\
+      <stop offset='100%' stop-color='rgba(229,231,235,0)'/>\
+    </linearGradient>\
+  </defs>\
+  <path d='M40,16 Q500,46 960,16' fill='none' stroke='url(%23curveFadeLightMobile)' stroke-width='7' stroke-linecap='round'/>\
+</svg>");
+  }
+
+  :root[data-theme="dark"] .downbar::before {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 70' preserveAspectRatio='none'>\
+  <defs>\
+    <linearGradient id='curveFadeDarkMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='rgba(47,54,66,0)'/>\
+      <stop offset='24%' stop-color='rgba(47,54,66,0.20)'/>\
+      <stop offset='50%' stop-color='rgba(47,54,66,1)'/>\
+      <stop offset='76%' stop-color='rgba(47,54,66,0.20)'/>\
+      <stop offset='100%' stop-color='rgba(47,54,66,0)'/>\
+    </linearGradient>\
+  </defs>\
+  <path d='M40,16 Q500,46 960,16' fill='none' stroke='url(%23curveFadeDarkMobile)' stroke-width='7' stroke-linecap='round'/>\
+</svg>");
   }
 
   .downbar-title {
