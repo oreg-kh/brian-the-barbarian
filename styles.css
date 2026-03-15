@@ -890,16 +890,16 @@ td {
 }
 
 /* ================================================================
-   downbar felső íves elválasztó
-   középen vastagabb, szélek felé elhalványuló, enyhébb ív
+   downbar felső kitöltött íve
    ================================================================ */
-.downbar::before {
+.downbar::before,
+.downbar::after {
   content: "";
   position: absolute;
   left: 50%;
   bottom: 100%;
   transform: translateX(-50%);
-  width: 145%;
+  width: 148%;
   height: 18px;
   pointer-events: none;
   background-repeat: no-repeat;
@@ -907,35 +907,69 @@ td {
   background-size: 100% 100%;
 }
 
+.downbar::before {
+  z-index: 0;
+}
+
+.downbar::after {
+  z-index: 1;
+}
+
+/* ================================================================
+   világos téma - kitöltés
+   ================================================================ */
 :root[data-theme="light"] .downbar::before {
   background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 80' preserveAspectRatio='none'>\
-  <defs>\
-    <linearGradient id='curveFadeLight' x1='0%' y1='0%' x2='100%' y2='0%'>\
-      <stop offset='0%' stop-color='rgba(229,231,235,0)'/>\
-      <stop offset='22%' stop-color='rgba(229,231,235,0.20)'/>\
-      <stop offset='50%' stop-color='rgba(229,231,235,1)'/>\
-      <stop offset='78%' stop-color='rgba(229,231,235,0.20)'/>\
-      <stop offset='100%' stop-color='rgba(229,231,235,0)'/>\
-    </linearGradient>\
-  </defs>\
-  <path d='M30,16 Q500,56 970,16' fill='none' stroke='url(%23curveFadeLight)' stroke-width='8' stroke-linecap='round'/>\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
+  <path fill='%23ffffff' d='M0,64 L0,16 Q500,42 1000,16 L1000,64 Z'/>\
 </svg>");
 }
 
+/* ================================================================
+   sötét téma - kitöltés
+   ================================================================ */
 :root[data-theme="dark"] .downbar::before {
   background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 80' preserveAspectRatio='none'>\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
+  <path fill='%231d232c' d='M0,64 L0,16 Q500,42 1000,16 L1000,64 Z'/>\
+</svg>");
+}
+
+/* ================================================================
+   világos téma - vonal
+   ================================================================ */
+:root[data-theme="light"] .downbar::after {
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
   <defs>\
-    <linearGradient id='curveFadeDark' x1='0%' y1='0%' x2='100%' y2='0%'>\
-      <stop offset='0%' stop-color='rgba(47,54,66,0)'/>\
-      <stop offset='22%' stop-color='rgba(47,54,66,0.22)'/>\
-      <stop offset='50%' stop-color='rgba(47,54,66,1)'/>\
-      <stop offset='78%' stop-color='rgba(47,54,66,0.22)'/>\
-      <stop offset='100%' stop-color='rgba(47,54,66,0)'/>\
+    <linearGradient id='curveFadeLight' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='%23e5e7eb' stop-opacity='0'/>\
+      <stop offset='20%' stop-color='%23e5e7eb' stop-opacity='0.22'/>\
+      <stop offset='50%' stop-color='%23e5e7eb' stop-opacity='1'/>\
+      <stop offset='80%' stop-color='%23e5e7eb' stop-opacity='0.22'/>\
+      <stop offset='100%' stop-color='%23e5e7eb' stop-opacity='0'/>\
     </linearGradient>\
   </defs>\
-  <path d='M30,16 Q500,56 970,16' fill='none' stroke='url(%23curveFadeDark)' stroke-width='8' stroke-linecap='round'/>\
+  <path d='M24,16 Q500,42 976,16' fill='none' stroke='url(%23curveFadeLight)' stroke-width='6' stroke-linecap='round'/>\
+</svg>");
+}
+
+/* ================================================================
+   sötét téma - vonal
+   ================================================================ */
+:root[data-theme="dark"] .downbar::after {
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
+  <defs>\
+    <linearGradient id='curveFadeDark' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='%232f3642' stop-opacity='0'/>\
+      <stop offset='20%' stop-color='%232f3642' stop-opacity='0.22'/>\
+      <stop offset='50%' stop-color='%232f3642' stop-opacity='1'/>\
+      <stop offset='80%' stop-color='%232f3642' stop-opacity='0.22'/>\
+      <stop offset='100%' stop-color='%232f3642' stop-opacity='0'/>\
+    </linearGradient>\
+  </defs>\
+  <path d='M24,16 Q500,42 976,16' fill='none' stroke='url(%23curveFadeDark)' stroke-width='6' stroke-linecap='round'/>\
 </svg>");
 }
 
@@ -951,6 +985,7 @@ td {
   line-height: 1.25;
   width: max-content;
   max-width: calc(100% - var(--downbar-bmc-space) - 36px);
+  z-index: 2;
 }
 
 .downbar-title {
@@ -1261,40 +1296,55 @@ td {
     padding: 8px 10px;
   }
 
-  .downbar::before {
-    width: 155%;
+  .downbar::before,
+  .downbar::after {
+    width: 158%;
     height: 14px;
   }
 
   :root[data-theme="light"] .downbar::before {
     background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 70' preserveAspectRatio='none'>\
-  <defs>\
-    <linearGradient id='curveFadeLightMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
-      <stop offset='0%' stop-color='rgba(229,231,235,0)'/>\
-      <stop offset='24%' stop-color='rgba(229,231,235,0.18)'/>\
-      <stop offset='50%' stop-color='rgba(229,231,235,1)'/>\
-      <stop offset='76%' stop-color='rgba(229,231,235,0.18)'/>\
-      <stop offset='100%' stop-color='rgba(229,231,235,0)'/>\
-    </linearGradient>\
-  </defs>\
-  <path d='M40,16 Q500,46 960,16' fill='none' stroke='url(%23curveFadeLightMobile)' stroke-width='7' stroke-linecap='round'/>\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 56' preserveAspectRatio='none'>\
+  <path fill='%23ffffff' d='M0,56 L0,14 Q500,34 1000,14 L1000,56 Z'/>\
 </svg>");
   }
 
   :root[data-theme="dark"] .downbar::before {
     background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 70' preserveAspectRatio='none'>\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 56' preserveAspectRatio='none'>\
+  <path fill='%231d232c' d='M0,56 L0,14 Q500,34 1000,14 L1000,56 Z'/>\
+</svg>");
+  }
+
+  :root[data-theme="light"] .downbar::after {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 56' preserveAspectRatio='none'>\
   <defs>\
-    <linearGradient id='curveFadeDarkMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
-      <stop offset='0%' stop-color='rgba(47,54,66,0)'/>\
-      <stop offset='24%' stop-color='rgba(47,54,66,0.20)'/>\
-      <stop offset='50%' stop-color='rgba(47,54,66,1)'/>\
-      <stop offset='76%' stop-color='rgba(47,54,66,0.20)'/>\
-      <stop offset='100%' stop-color='rgba(47,54,66,0)'/>\
+    <linearGradient id='curveFadeLightMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='%23e5e7eb' stop-opacity='0'/>\
+      <stop offset='22%' stop-color='%23e5e7eb' stop-opacity='0.18'/>\
+      <stop offset='50%' stop-color='%23e5e7eb' stop-opacity='1'/>\
+      <stop offset='78%' stop-color='%23e5e7eb' stop-opacity='0.18'/>\
+      <stop offset='100%' stop-color='%23e5e7eb' stop-opacity='0'/>\
     </linearGradient>\
   </defs>\
-  <path d='M40,16 Q500,46 960,16' fill='none' stroke='url(%23curveFadeDarkMobile)' stroke-width='7' stroke-linecap='round'/>\
+  <path d='M28,14 Q500,34 972,14' fill='none' stroke='url(%23curveFadeLightMobile)' stroke-width='5' stroke-linecap='round'/>\
+</svg>");
+  }
+
+  :root[data-theme="dark"] .downbar::after {
+    background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 56' preserveAspectRatio='none'>\
+  <defs>\
+    <linearGradient id='curveFadeDarkMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='%232f3642' stop-opacity='0'/>\
+      <stop offset='22%' stop-color='%232f3642' stop-opacity='0.18'/>\
+      <stop offset='50%' stop-color='%232f3642' stop-opacity='1'/>\
+      <stop offset='78%' stop-color='%232f3642' stop-opacity='0.18'/>\
+      <stop offset='100%' stop-color='%232f3642' stop-opacity='0'/>\
+    </linearGradient>\
+  </defs>\
+  <path d='M28,14 Q500,34 972,14' fill='none' stroke='url(%23curveFadeDarkMobile)' stroke-width='5' stroke-linecap='round'/>\
 </svg>");
   }
 
