@@ -1195,6 +1195,12 @@ td {
   right: 18px !important;
   bottom: calc((var(--downbar-height) - 48px) / 2) !important;
   z-index: 1250 !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
 }
 
 #bmc-wbtn + div {
@@ -1207,6 +1213,12 @@ td {
   #bmc-wbtn {
     right: 10px !important;
     bottom: calc((var(--downbar-height) - 48px) / 2) !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
   }
 
   #bmc-wbtn + div {
