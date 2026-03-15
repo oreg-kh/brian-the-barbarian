@@ -3,6 +3,7 @@
    ================================================================ */
 :root {
   color-scheme: light dark;
+
   --bg: #f3f4f6;
   --main: #ffffff;
   --text: #111827;
@@ -12,8 +13,8 @@
   --topbar-strong: #111827;
   --topbar-soft: #111827;
 
-  --sidebar-bg: #111317;
-  --sidebar-line: rgba(255, 255, 255, 0.08);
+  --sidebar-bg: #ffffff;
+  --sidebar-line: rgba(17, 24, 39, 0.08);
   --sidebar-main-text: #111827;
   --sidebar-sub-text: #111827;
   --sidebar-sub-icon: #6b7280;
@@ -24,11 +25,11 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #0b0f16;
-  --main: #0f141c;
+  --bg: #111317;
+  --main: #111317;
   --text: #e7eaf0;
   --muted: #a3adbc;
-  --line: #273143;
+  --line: #2a2f38;
 
   --topbar-strong: #ffffff;
   --topbar-soft: #ffffff;
@@ -125,6 +126,11 @@ body.modal-open {
   transform: translateX(0);
 }
 
+.sidebar-drawer,
+.sidebar-drawer-header {
+  background: var(--sidebar-bg);
+}
+
 .sidebar-drawer-header {
   min-height: 73px;
   display: flex;
@@ -201,6 +207,12 @@ body.modal-open {
 .nav-main:hover,
 .nav-main.open {
   background: var(--sidebar-hover);
+}
+
+.nav-main,
+.nav-main .nav-icon,
+.nav-main .nav-icon svg {
+  color: var(--sidebar-main-text);
 }
 
 .nav-main-left {
@@ -327,6 +339,26 @@ body.modal-open {
 .sub-toggle.open .toggle-icon svg,
 .language-picker.open .lang-arrow svg {
   transform: rotate(180deg);
+}
+
+/* ================================================================
+   aktív menüpont kiemelés
+   ================================================================ */
+.sub-item.active,
+.cmd-option.active {
+  background: var(--sidebar-hover);
+  color: var(--sidebar-sub-text);
+  font-weight: 700;
+}
+
+.sub-item.active .submenu-icon,
+.cmd-option.active .submenu-icon {
+  color: var(--sidebar-main-text);
+}
+
+.sub-item.active .submenu-flag,
+.cmd-option.active .submenu-flag {
+  opacity: 1;
 }
 
 /* ================================================================
