@@ -257,7 +257,6 @@ function initSidebarDrawer() {
 function buildTopbar() {
   const menuButton = document.getElementById('sidebarToggle');
   const discordIcon = document.getElementById('discordIcon');
-  const supportIcon = document.getElementById('supportIcon');
   const picker = document.getElementById('languagePicker');
   const current = document.getElementById('languageCurrent');
   const menu = document.getElementById('languageMenu');
@@ -280,15 +279,8 @@ function buildTopbar() {
     discordIcon.innerHTML = icons.discord;
   }
 
-  // ================================================================
-  // support ikon
-  // ================================================================
-  if (supportIcon) {
-    supportIcon.innerHTML = `<img class="support-avatar-icon" src="images/brian-the-barbarian.png" alt="Brian the Barbarian"/>`;
-  }
-
   if (actionButton) {
-    actionButton.setAttribute('aria-label', `${t('topbar.discordAdd')} / ${t('support.serverName')}`);
+    actionButton.setAttribute('aria-label', `${t('topbar.installBrian')} / ${t('topbar.discordServer')}`);
   }
 
   // ================================================================
@@ -368,14 +360,12 @@ function buildTopbar() {
 // discord támogatói widget inicializálása
 // ================================================================
 async function initDiscordSupportWidget() {
-  const guildId = '891626562871525398';
+  const guildId = '1386681452510445618';
 
   const actionButton = document.getElementById('topbarActionBtn');
   const actionMenu = document.getElementById('topbarActionMenu');
   const addBotItem = document.getElementById('topbarAddBotItem');
   const supportItem = document.getElementById('topbarSupportItem');
-
-  const supportName = document.getElementById('supportBtnName');
   const supportStatus = document.getElementById('supportBtnStatus');
 
   const panel = document.getElementById('discordWidgetPanel');
@@ -389,7 +379,6 @@ async function initDiscordSupportWidget() {
     !actionMenu ||
     !addBotItem ||
     !supportItem ||
-    !supportName ||
     !supportStatus ||
     !panel ||
     !name ||
@@ -481,13 +470,11 @@ async function initDiscordSupportWidget() {
     const serverName = data.name || t('support.serverName');
     const online = data.presence_count ?? 0;
 
-    supportName.textContent = serverName;
     supportStatus.textContent = tp('support.onlineCount', { count: online });
 
     name.textContent = serverName;
     status.textContent = tp('support.membersOnlineCount', { count: online });
   } catch {
-    supportName.textContent = t('support.serverName');
     supportStatus.textContent = t('support.unavailable');
 
     name.textContent = t('support.serverName');
@@ -1337,7 +1324,7 @@ async function loadLastUpdatedFromGitHub() {
   }
 
   const owner = 'oreg-kh';
-  const repo = 'website';
+  const repo = 'brian-the-barbarian';
   const branch = 'main';
 
   try {
