@@ -23,7 +23,7 @@
 
   --overlay: rgba(0, 0, 0, 0.45);
 
-  --topbar-height: 73px;
+  --topbar-height: 60px;
   --downbar-height: 70px;
   --downbar-bmc-space: 220px;
 }
@@ -142,7 +142,7 @@ body.modal-open {
 }
 
 .sidebar-drawer-header {
-  min-height: 73px;
+  min-height: var(--topbar-height);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -386,8 +386,8 @@ body.modal-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 10px 18px;
+  gap: 12px;
+  padding: 6px 14px;
   border-bottom: 1px solid var(--line);
   background: var(--main);
 }
@@ -395,13 +395,13 @@ body.modal-open {
 .topbar-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
 }
 
 .topbar-menu-toggle {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border: none;
   background: transparent;
   color: var(--topbar-soft);
@@ -411,7 +411,7 @@ body.modal-open {
   cursor: pointer;
   border-radius: 10px;
   padding: 0;
-  flex: 0 0 42px;
+  flex: 0 0 40px;
 }
 
 .topbar-menu-toggle:hover {
@@ -419,21 +419,21 @@ body.modal-open {
 }
 
 .topbar-menu-toggle svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   display: block;
 }
 
 .topbar-brand-avatar {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   object-fit: cover;
-  flex: 0 0 38px;
+  flex: 0 0 34px;
 }
 
 .topbar-brand-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--topbar-strong);
   white-space: nowrap;
@@ -447,7 +447,7 @@ body.modal-open {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   width: auto;
   margin-left: auto;
@@ -456,54 +456,6 @@ body.modal-open {
 /* ================================================================
    topbar gombok
    ================================================================ */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 8px 11px;
-  height: 42px;
-  text-decoration: none;
-  color: #fff;
-}
-
-#supportBtn {
-  height: 42px;
-  min-width: 190px;
-  justify-content: flex-start;
-}
-
-.btn-discord {
-  background: #3f4755;
-  border-color: #596273;
-  color: #ffffff;
-}
-
-.btn-discord:hover {
-  background: #4b5563;
-  color: #ffffff;
-}
-
-.btn-discord .btn-icon {
-  color: #ffffff;
-}
-
-.btn-support {
-  background: #3f4755;
-  border-color: #596273;
-}
-
-.btn-support:hover {
-  background: #4b5563;
-}
-
-.btn-icon svg {
-  width: 18px;
-  height: 18px;
-  display: block;
-}
-
 .flag-img {
   width: 22px;
   height: 16px;
@@ -521,12 +473,10 @@ body.modal-open {
   display: flex;
   align-items: center;
   gap: 8px;
-  height: 42px;
-  background: #3f4755;
-  border: 1px solid #596273;
-  color: var(--text);
-  border-radius: 8px;
-  padding: 7px 8px;
+  height: 40px;
+  color: var(--topbar-soft);
+  border-radius: 10px;
+  padding: 0 8px;
   cursor: pointer;
 }
 
@@ -538,9 +488,10 @@ body.modal-open {
   z-index: 1600;
   width: max-content;
   max-width: min(92vw, 360px);
-  background: #3f4755;
-  border: 1px solid #596273;
-  border-radius: 10px;
+  background: var(--main);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
 }
 
 .language-picker.open .language-menu {
@@ -552,12 +503,13 @@ body.modal-open {
   display: flex;
   gap: 8px;
   align-items: center;
-  padding: 7px 10px;
+  padding: 8px 10px;
   background: transparent;
   border: none;
   color: var(--text);
   cursor: pointer;
   white-space: nowrap;
+  border-radius: 8px;
 }
 
 .language-item:hover {
@@ -570,9 +522,9 @@ body.modal-open {
 .discord-widget-panel {
   display: none;
   position: absolute;
-  right: 18px;
-  top: 74px;
-  width: min(360px, calc(100vw - 36px));
+  right: 14px;
+  top: calc(var(--topbar-height) + 6px);
+  width: min(360px, calc(100vw - 28px));
   background: var(--main);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -623,14 +575,6 @@ body.modal-open {
   border: 0;
 }
 
-.support-avatar-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
-
 .support-meta {
   display: flex;
   flex-direction: column;
@@ -653,68 +597,6 @@ body.modal-open {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-#discordAddBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  text-align: center;
-}
-
-#discordAddBtn .btn-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-}
-
-#discordAddBtn > span:not(.btn-icon) {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  font-weight: 700;
-}
-
-/* ================================================================
-   világos téma topbar elemek
-   ================================================================ */
-:root[data-theme="light"] .btn-discord {
-  background: #e5e7eb;
-  border-color: #d1d5db;
-  color: #000000;
-}
-
-:root[data-theme="light"] .btn-support {
-  background: #e5e7eb;
-  border-color: #d1d5db;
-  color: #111827;
-}
-
-:root[data-theme="light"] .btn-support:hover {
-  background: #dbe0e7;
-}
-
-:root[data-theme="light"] .language-current {
-  background: #e5e7eb;
-  border-color: #d1d5db;
-}
-
-:root[data-theme="light"] .language-menu {
-  background: #e5e7eb;
-  border-color: #d1d5db;
-}
-
-:root[data-theme="light"] .btn-discord:hover {
-  background: #dbe0e7;
-  border-color: #cbd5e1;
-  color: #000000;
-}
-
-:root[data-theme="light"] .btn-discord .btn-icon {
-  color: #000000;
 }
 
 /* ================================================================
@@ -1095,73 +977,223 @@ td {
 }
 
 /* ================================================================
+   rövid szeparátor a discord ikon előtt
+   ================================================================ */
+.topbar-separator {
+  width: 1px;
+  height: 24px;
+  background: var(--line);
+  opacity: 0.9;
+  align-self: center;
+}
+
+/* ================================================================
+   topbar gyorsműveletek
+   ================================================================ */
+.topbar-action-menu {
+  position: relative;
+}
+
+.topbar-icon-button,
+.language-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  border: none;
+  background: transparent;
+  color: var(--topbar-soft);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.topbar-icon-button:hover,
+.language-current:hover {
+  background: rgba(127, 127, 127, 0.1);
+}
+
+.topbar-icon-button .btn-icon,
+.language-current .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar-action-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 1600;
+  min-width: 260px;
+  padding: 6px;
+  background: var(--main);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.topbar-action-dropdown.open {
+  display: grid;
+  gap: 4px;
+}
+
+.topbar-action-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  text-align: left;
+  font: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.topbar-action-item:hover {
+  background: var(--bg);
+}
+
+.topbar-action-item-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  flex: 0 0 18px;
+}
+
+.topbar-action-item-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.topbar-action-item-icon svg path,
+.topbar-action-item-icon svg polygon {
+  fill: currentColor;
+}
+
+.topbar-action-item-support {
+  align-items: center;
+}
+
+.topbar-action-item-support .support-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.topbar-action-item-support .support-meta strong {
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-action-item-support .support-meta small {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.language-menu {
+  background: var(--main);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.language-current {
+  color: var(--topbar-soft);
+}
+
+:root[data-theme="light"] .language-current,
+:root[data-theme="dark"] .language-current {
+  background: transparent;
+  border: none;
+}
+
+:root[data-theme="light"] .language-menu,
+:root[data-theme="dark"] .language-menu {
+  background: var(--main);
+  border-color: var(--line);
+}
+
+/* ================================================================
    reszponzív topbar
    ================================================================ */
 @media (max-width: 1024px) {
   .topbar-actions {
     gap: 6px;
     flex-wrap: nowrap;
-    padding-bottom: 2px;
+    padding-bottom: 0;
     justify-content: flex-end;
     width: auto;
     margin-left: auto;
   }
 
-  .btn {
-    width: 42px;
-    min-width: 42px;
-    padding: 0;
-    justify-content: center;
-  }
-
-  .btn > span:not(.btn-icon) {
-    display: none;
-  }
-
+  .topbar-icon-button,
   .language-current {
-    width: 42px;
-    min-width: 42px;
+    width: 40px;
+    min-width: 40px;
     padding: 0;
-    justify-content: center;
   }
 
   .language-current .lang-arrow,
   .language-current span:nth-child(2) {
     display: none;
   }
-
-  #discordAddBtn > span:not(.btn-icon) {
-    display: none !important;
-  }
-
-  #supportBtn {
-    width: 42px;
-    min-width: 42px;
-    padding: 0;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 768px) {
   :root {
-    --topbar-height: 62px;
+    --topbar-height: 54px;
     --downbar-height: 60px;
     --downbar-bmc-space: 170px;
   }
 
   .topbar {
-    padding: 8px 10px;
+    padding: 5px 10px;
     gap: 8px;
   }
 
+  .topbar-brand-avatar {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
+
   .topbar-brand-title {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .topbar-separator {
+    height: 20px;
   }
 
   .discord-widget-panel {
     right: 10px;
-    top: 62px;
+    top: calc(var(--topbar-height) + 6px);
     width: calc(100vw - 20px);
+  }
+
+  .topbar-action-dropdown {
+    right: 0;
+    min-width: 240px;
   }
 
   .content {
@@ -1224,169 +1256,5 @@ td {
   #bmc-wbtn + div {
     right: 10px !important;
     bottom: calc(var(--downbar-height) + 8px) !important;
-  }
-}
-
-/* ================================================================
-   rövid szeparátor a discord ikon előtt
-   ================================================================ */
-.topbar-separator {
-  width: 1px;
-  height: 28px;
-  background: var(--line);
-  opacity: 0.9;
-  align-self: center;
-}
-
-/* ================================================================
-   topbar gyorsműveletek
-   ================================================================ */
-.topbar-action-menu {
-  position: relative;
-}
-
-.topbar-icon-button,
-.language-current {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-width: 42px;
-  height: 42px;
-  padding: 0 8px;
-  border: none;
-  background: transparent;
-  color: var(--topbar-soft);
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: none;
-}
-
-.topbar-icon-button:hover,
-.language-current:hover {
-  background: rgba(127, 127, 127, 0.1);
-}
-
-.topbar-icon-button .btn-icon,
-.language-current .btn-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.topbar-action-dropdown {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: calc(100% + 6px);
-  z-index: 1600;
-  min-width: 260px;
-  padding: 6px;
-  background: var(--main);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
-}
-
-.topbar-action-dropdown.open {
-  display: grid;
-  gap: 4px;
-}
-
-.topbar-action-item {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border: none;
-  background: transparent;
-  color: var(--text);
-  text-decoration: none;
-  text-align: left;
-  font: inherit;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.topbar-action-item:hover {
-  background: var(--bg);
-}
-
-.topbar-action-item-support {
-  align-items: center;
-}
-
-.topbar-action-item-support .support-meta {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  line-height: 1.15;
-}
-
-.topbar-action-item-support .support-meta strong {
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.topbar-action-item-support .support-meta small {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.language-menu {
-  background: var(--main);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-}
-
-.language-current {
-  color: var(--topbar-soft);
-}
-
-:root[data-theme="light"] .language-current,
-:root[data-theme="dark"] .language-current {
-  background: transparent;
-  border: none;
-}
-
-:root[data-theme="light"] .language-menu,
-:root[data-theme="dark"] .language-menu {
-  background: var(--main);
-  border-color: var(--line);
-}
-
-/* ================================================================
-   mobil igazítás
-   ================================================================ */
-@media (max-width: 1024px) {
-  .topbar-icon-button,
-  .language-current {
-    width: 42px;
-    min-width: 42px;
-    padding: 0;
-  }
-
-  .language-current .lang-arrow,
-  .language-current span:nth-child(2) {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .topbar-separator {
-    height: 24px;
-  }
-
-  .topbar-action-dropdown {
-    right: 0;
-    min-width: 240px;
   }
 }
