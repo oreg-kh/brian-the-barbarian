@@ -1,0 +1,211 @@
+{
+  "hu": {
+    "topbar.discordAdd": "Bot hozzáadása",
+    "topbar.support": "Support",
+    "topbar.language": "Nyelv",
+    "footer.lastUpdated": "Utolsó frissítés:",
+    "sidebar.introduction": "Bevezetés",
+    "sidebar.commands": "Parancsok",
+    "sidebar.settings": "Beállítások",
+    "sidebar.policies": "Irányelvek",
+    "sidebar.visitors": "Látogatók:",
+    "sidebar.visitorsToday": "Ma",
+    "sidebar.visitorsTotal": "Összesen",
+    "intro.firstSteps": "Első lépések",
+    "commands.registration": "Regisztráció",
+    "commands.maps": "Térképek",
+    "commands.logging": "Tevékenység naplózás",
+    "commands.stats": "Statisztikák",
+    "commands.clan": "Klán menedzsment",
+    "commands.notifications": "Értesítések",
+    "commands.calculators": "Kalkulátorok",
+    "commands.settings": "Beállítások",
+    "commands.emojis": "Emojik",
+    "commands.filter": "Szűrő",
+    "settings.appearance": "Megjelenés",
+    "settings.language": "Nyelv",
+    "settings.system": "Rendszer",
+    "settings.dark": "Sötét mód",
+    "settings.light": "Világos mód",
+    "policies.privacy": "Adatvédelmi szabályzat",
+    "policies.terms": "Szolgáltatási feltételek",
+    "pages.firstSteps.title": "Első lépések",
+    "pages.firstSteps.text": "Az alábbi lépéseket elvégezve a bot alapfunkciói használhatók lesznek a szervereden.",
+    "pages.firstSteps.steps.1.title": "Bot hozzáadása a szerverhez",
+    "pages.firstSteps.steps.1.text": "Használd az Add to Discord gombot, válaszd ki a szervert, majd engedélyezd a szükséges jogosultságokat. Ezután ellenőrizd, hogy a bot megjelent a szerveren.",
+    "pages.firstSteps.steps.2.title": "Szerepkör beállítása",
+    "pages.firstSteps.steps.2.text": "Állíts be egy szerepkört a /set-bot-role parancs használatával, amely használhatja a bot adminisztratív parancsait. Érdemes külön szerepet létrehozni azoknak, akik kezelhetik a bot beállításait.",
+    "pages.firstSteps.steps.3.title": "Világ regisztrálása",
+    "pages.firstSteps.steps.3.text": "Ha az egész szerver ugyanazt a világot használja, futtasd a /register-world-server parancsot. Ha csatornánként külön világot szeretnétek használni, akkor az adott csatornában a /register-world-channel parancsot használd.",
+    "pages.firstSteps.steps.4.title": "Beállítás ellenőrzése és a funkciók használata",
+    "pages.firstSteps.steps.4.text": "A /settings list paranccsal ellenőrizheted a mentett beállításokat. Ezután már használhatod a térképes, statisztikai, kalkulátoros és értesítési parancsokat.",
+    "pages.privacy.title": "Adatvédelmi szabályzat",
+    "pages.privacy.text": "A Brian the Barbarian bot és a hozzá kapcsolódó weboldal működése során kizárólag olyan adatokat kezel, amelyek a szolgáltatás biztosításához, a bot beállításainak megőrzéséhez, valamint az egyes funkciók megbízható használatához szükségesek. Ezek közé tartozhatnak például a Discord szerverhez és csatornákhoz kapcsolódó azonosítók, a szerveren beállított konfigurációk, valamint a parancsok használata során megadott, a funkciók végrehajtásához szükséges adatok.\n\nA bot működése során megadott információkat a rendszer elsődlegesen a kért funkció végrehajtására használja fel. Egyes adatok rövidebb vagy hosszabb ideig tárolásra kerülhetnek, amennyiben ez szükséges a szerver-specifikus beállítások fenntartásához, a funkciók ismételt használatához, a hibák kivizsgálásához, vagy a szolgáltatás stabilitásának és biztonságának biztosításához. A Brian the Barbarian nem törekszik szükségtelen személyes adatok gyűjtésére, és az adatokat nem használja kereskedelmi célú értékesítésre vagy harmadik felek számára történő továbbadásra.\n\nA szolgáltatás működtetése során bizonyos technikai adatok külső rendszereken keresztül is feldolgozásra kerülhetnek, amennyiben ez elengedhetetlen a bot működéséhez. Ide tartozhatnak például a Discord platform szolgáltatásai, tárhely- és infrastruktúraszolgáltatók, valamint olyan technikai naplózási vagy diagnosztikai megoldások, amelyek a hibák felismerését és a szolgáltatás fenntartását támogatják. Az ilyen adatkezelés minden esetben a működéshez szükséges mértékre korlátozódik.\n\nAz adatokat a rendszer csak addig őrzi meg, ameddig az a szolgáltatás rendeltetésszerű működéséhez, az üzemeltetéshez vagy a biztonsági célokhoz indokolt. Egyes információk korlátozott ideig biztonsági mentésekben is szerepelhetnek. A szolgáltatás üzemeltetője törekszik megfelelő technikai és szervezési intézkedések alkalmazására az adatok védelme érdekében, ugyanakkor teljes körű biztonság az internetes szolgáltatások világában nem garantálható.\n\nA szerveradminisztrátorok felelősek azért, hogy a botot saját közösségükben megfelelő módon állítsák be és használják. Amennyiben adatkezeléssel, adattörléssel vagy a szolgáltatás működésével kapcsolatban kérdés merül fel, kapcsolatfelvétel a hivatalos támogatási csatornákon keresztül lehetséges.",
+    "pages.terms.title": "Szolgáltatási feltételek",
+    "pages.terms.text": "A Brian the Barbarian bot és a hozzá kapcsolódó weboldal használatával a felhasználó elfogadja, hogy a szolgáltatást a Discord szabályaival, az adott szerver belső szabályzatával, valamint az alkalmazandó jogszabályokkal összhangban használja. A bot szerverhez történő hozzáadása, beállítása és üzemeltetése csak megfelelő jogosultság birtokában történhet, és a szerver üzemeltetői vagy adminisztrátorai felelősek azért, hogy a bot használata a közösségükön belül megfelelő keretek között történjen.\n\nA Brian the Barbarian különféle, elsősorban Tribal Wars-hoz kapcsolódó funkciókat biztosít, beleértve többek között a szerverbeállításokat, statisztikai és térképes funkciókat, értesítéseket, szűréseket, valamint más automatizált eszközöket. A szolgáltatás tartalma és működése időről időre változhat, és az üzemeltető fenntartja a jogot arra, hogy egyes funkciókat módosítson, korlátozzon vagy megszüntessen.\n\nA szolgáltatás nem használható visszaélésszerűen, különösen nem olyan módon, amely a rendszer túlterhelését, megkerülését, megzavarását vagy más felhasználók, szerverek vagy külső szolgáltatások sérelmét okozhatja. Nem megengedett a bot olyan használata sem, amely csalárd, jogellenes, rosszhiszemű vagy a szolgáltatás rendeltetésével ellentétes. Az üzemeltető jogosult a hozzáférés korlátozására vagy megszüntetésére, amennyiben a használat a szolgáltatás biztonságát, stabilitását vagy szabályszerű működését veszélyezteti.\n\nA Brian the Barbarian működése harmadik felek szolgáltatásaitól is függhet, ideértve különösen a Discord platformot és bizonyos külső adatforrásokat. Ezek a rendszerek saját szabályzataik és feltételeik szerint működnek, amelyekért a Brian the Barbarian üzemeltetője nem vállal felelősséget. A szolgáltatás használata során a felhasználó tudomásul veszi, hogy egyes funkciók elérhetősége külső rendszerek állapotától is függhet.\n\nAz üzemeltető nem vállal garanciát arra, hogy a bot minden időpontban megszakítás nélkül, hibamentesen vagy minden körülmények között elérhető lesz. A lehető legnagyobb mértékben kizárt minden felelősség az olyan károkért, veszteségekért vagy működési problémákért, amelyek a szolgáltatás használatából, ideiglenes kieséséből, pontatlanságából vagy megszűnéséből erednek.\n\nAz üzemeltető fenntartja a jogot arra, hogy a jelen feltételeket szükség esetén módosítsa. A szolgáltatás további használata a módosított feltételek elfogadását jelenti.",
+    "content.access": "Hozzáférés",
+    "content.optionName": "Mező",
+    "content.optionType": "Típus",
+    "content.optionValue": "Lehetséges értékek",
+    "content.optionRequired": "Kötelező",
+    "content.optionSource": "Forrás",
+    "content.optionFormat": "Formátum",
+    "content.viewImage": "Kép megtekintése",
+    "content.imageNotFound": "Ehhez a parancshoz nem található kép.",
+    "content.close": "Bezárás",
+
+    "common.yes": "igen",
+    "common.no": "nem",
+    "common.loading": "Betöltés...",
+    "common.notAvailable": "nem elérhető",
+
+    "support.loadingName": "Betöltés...",
+    "support.loadingStatus": "Szerveradatok...",
+    "support.serverName": "Discord szerver",
+    "support.loadingData": "Adatok betöltése...",
+    "support.widgetLoading": "Widget betöltése...",
+    "support.onlineCount": "{count} online",
+    "support.membersOnlineCount": "{count} tag online",
+    "support.unavailable": "A widget adatai most nem érhetők el",
+
+    "errors.load.title": "Betöltési hiba",
+    "errors.load.description": "Nem sikerült betölteni a szükséges JSON fájlokat.",
+    "errors.load.consoleHint": "Nézd meg a böngésző konzolt is a pontos hibáért.",
+
+    "docs.defaultAccess": "Bárki",
+    "docs.defaultDescription": "A bot automatizált folyamatot indít, ellenőrzéseket végez, majd naplózza az eredményt.",
+
+    "docs.types.string": "szöveg",
+    "docs.types.number": "szám",
+    "docs.types.boolean": "logikai",
+    "docs.types.attachment": "csatolmány",
+    "docs.types.role": "szerepkör",
+    "docs.types.channel": "csatorna",
+
+    "docs.values.coordinate": "koordináta",
+    "docs.values.date": "dátum",
+    "docs.values.unitName": "egység neve",
+    "docs.values.tribeName": "klán neve",
+    "docs.values.statType": "statisztika típusa",
+    "docs.values.coordinateMax5": "koordináta (max. 5)",
+    "docs.values.playerName": "játékos neve",
+    "docs.values.pollDurationDefault": "minimum 1 óra; alapértelmezett érték: 1 óra",
+    "docs.values.file": "fájl",
+    "docs.values.worldId": "világ azonosítója",
+    "docs.values.role": "szerepkör",
+    "docs.values.channelName": "csatorna neve",
+
+    "docs.formats.coordinatesList": "koordináták elválasztása: vessző, szóköz, pontosvessző vagy új sor",
+    "docs.formats.tribesAmp": "klánok elválasztása: &",
+    "docs.formats.playersAmp": "játékosok elválasztása: &",
+    "docs.formats.eventsAmp": "események elválasztása: &",
+    "docs.formats.fileTxt": ".txt",
+    "docs.formats.percent": "x%",
+
+    "docs.commands.add-emojis.description": "Használj emojikat a szervereden.",
+    "docs.commands.add-emojis.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.calculate-backtime.description": "Add meg a koordinátákat, a pontos dátumot és a támadó sereg sebességét.",
+    "docs.commands.calculate-backtime.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.calculate-coin-limit.description": "Kiszámítja a nemesek számának korlátját a megadott számú érme alapján.",
+    "docs.commands.calculate-coin-limit.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.calculate-noblemen-limit.description": "Kiszámítja, hogy hány érmére van szükséged a megadott nemeslimit eléréséhez.",
+    "docs.commands.calculate-noblemen-limit.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.check-tribe-orientation.description": "Grafikont készít egy kiválasztott klán beállítottságáról.",
+    "docs.commands.check-tribe-orientation.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.compare-tribes-daily-stat.description": "Grafikont készít az első 20 klán napi statisztikáiból.",
+    "docs.commands.compare-tribes-daily-stat.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.compare-tribes-orientation.description": "Grafikont készít az első 20 klán beállítottságáról.",
+    "docs.commands.compare-tribes-orientation.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.create-conquer-notification.description": "Létrehoz egy foglalás értesítést.",
+    "docs.commands.create-conquer-notification.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.create-defender-pack.description": "Védelmi csomag létrehozása",
+    "docs.commands.create-defender-pack.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.create-mail-list.description": "Levelezőlistát készít a klán játékosaiból.",
+    "docs.commands.create-mail-list.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.create-new-world-notification.description": "Értesítést küld az új világokról ezen a csatornán.",
+    "docs.commands.create-new-world-notification.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.create-player-map.description": "Térképet készít a megadott paraméterek alapján.",
+    "docs.commands.create-player-map.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.create-poll.description": "Anonim szavazást készít (Igen / Nem / Tartózkodom).",
+    "docs.commands.create-poll.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.create-resource-pack.description": "Nyersanyag csomag létrehozása",
+    "docs.commands.create-resource-pack.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.create-ticket-panel.description": "Létrehoz egy ticket panelt ebben a csatornában.",
+    "docs.commands.create-ticket-panel.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.create-tribe-daily-stat.description": "Grafikont készít egy klán napi statisztikáiból.",
+    "docs.commands.create-tribe-daily-stat.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.create-tribe-map.description": "Térképet készít a megadott paraméterek alapján.",
+    "docs.commands.create-tribe-map.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.create-war-stat.description": "Foglalási statisztikát készít a megadott paraméterek alapján.",
+    "docs.commands.create-war-stat.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.create-welcome-channel.description": "Üdvözlő csatornát állít be az új tagok számára.",
+    "docs.commands.create-welcome-channel.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.fake-coordinate-filter.description": "Kiszűri a klánodhoz tartozó koordinátákat.",
+    "docs.commands.fake-coordinate-filter.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör, Minden felhasználó",
+
+    "docs.commands.logging.description": "Naplóesemények beállítása.",
+    "docs.commands.logging.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.register-world-channel.description": "Világ kiválasztása egy Discord-csatornához.",
+    "docs.commands.register-world-channel.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.register-world-server.description": "Alapértelmezett világ kiválasztása az egész Discord-szerverhez.",
+    "docs.commands.register-world-server.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.set-bot-role.description": "Beállítja, melyik szerepkör használhatja a bot adminparancsait.",
+    "docs.commands.set-bot-role.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.settings.description": "Beállítások listázása vagy törlése.",
+    "docs.commands.settings.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.settings.subcommands.list.description": "Beállítások listázása.",
+    "docs.commands.settings.subcommands.list.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.settings.subcommands.delete-default.description": "A szerverhez beállított domain és világ törlése.",
+    "docs.commands.settings.subcommands.delete-default.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.settings.subcommands.delete-channel.description": "Csatornaszintű beállítások törlése.",
+    "docs.commands.settings.subcommands.delete-channel.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.toggle-coords-info.description": "Koordinához kapcsolódó információk mutatása.",
+    "docs.commands.toggle-coords-info.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör",
+
+    "docs.commands.toggle-public-report.description": "Képernyőkép készítése a jelentésről az url használatával.",
+    "docs.commands.toggle-public-report.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerepkör"
+  },
+  "en": {},
+  "ar": {},
+  "cs": {},
+  "nl": {},
+  "fr": {},
+  "de": {},
+  "el": {},
+  "it": {},
+  "pl": {},
+  "pt-BR": {},
+  "pt": {},
+  "ro": {},
+  "sk": {},
+  "es": {},
+  "de-CH": {},
+  "tr": {}
+}

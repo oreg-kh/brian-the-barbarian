@@ -1,0 +1,1028 @@
+{
+  "defaultAccess": "Bárki",
+  "defaultDescription": "A bot automatizált folyamatot indít, validációkat végez, majd naplózza az eredményt.",
+  "defaultOptions": [
+    {
+      "name": "target",
+      "type": "string",
+      "required": false,
+      "source": "choice",
+      "values": [
+        "player",
+        "tribe",
+        "ally"
+      ],
+      "format": ""
+    },
+    {
+      "name": "world",
+      "type": "number",
+      "required": false,
+      "source": "choice",
+      "values": [
+        "101"
+      ],
+      "format": ""
+    }
+  ],
+  "commands": {
+    "/add-emojis": {
+      "description": "Használj emojikat a szervereden.",
+      "options": [
+        {
+          "name": "categories",
+          "type": "string",
+          "required": true,
+          "source": "choice",
+          "values": [
+            "troops",
+            "buildings",
+            "flags",
+            "other"
+          ],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/calculate-backtime": {
+      "description": "Add meg a koordinátákat, pontos dátumot és a támadó sereg sebességét.",
+      "options": [
+        {
+          "name": "coordinate1",
+          "type": "string",
+          "required": true,
+          "source": "input",
+          "values": ["koordináta"],
+          "format": "x|y"
+        },
+        {
+          "name": "coordinate2",
+          "type": "string",
+          "required": true,
+          "source": "input",
+          "values": ["koordináta"],
+          "format": "x|y"
+        },
+        {
+          "name": "time",
+          "type": "string",
+          "required": true,
+          "source": "input",
+          "values": ["dátum"],
+          "format": "YYYY.MM.DD HH:MM:SS"
+        },
+        {
+          "name": "unit",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": ["egység neve"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/calculate-coin-limit": {
+      "description": "Kiszámítja a nemesek számának korlátját a megadott számú érme alapján.",
+      "options": [
+        {
+          "name": "coins",
+          "type": "number",
+          "required": true,
+          "source": "input",
+          "values": ["1-1125899906842623"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/calculate-noblemen-limit": {
+      "description": "Kiszámítja, hogy hány érmére van szükséged a megadott nemeslimit eléréséhez.",
+      "options": [
+        {
+          "name": "limit",
+          "type": "number",
+          "required": true,
+          "source": "input",
+          "values": ["1-94906265"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/check-tribe-orientation": {
+      "description": "Grafikont készít egy kiválasztott klán beállítottságáról.",
+      "options": [
+        {
+          "name": "tribe",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/compare-tribes-daily-stat": {
+      "description": "Grafikont készít az első 20 klán napi statisztikáiból.",
+      "options": [
+        {
+          "name": "stat",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": ["statisztika típusa"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/compare-tribes-orientation": {
+      "description": "Grafikont készít az első 20 klán beállítottságáról.",
+      "options": [],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/create-conquer-notification": {
+      "description": "Létrehoz egy foglalás értesítést.",
+      "options": [
+        {
+          "name": "tribe",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": ""
+        },
+        {
+          "name": "gains",
+          "type": "boolean",
+          "required": false,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        },
+        {
+          "name": "losses",
+          "type": "boolean",
+          "required": false,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        },
+        {
+          "name": "internals",
+          "type": "boolean",
+          "required": false,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/create-defender-pack": {
+      "description": "Védelmi csomag létrehozása",
+      "options": [
+        {
+          "name": "coordinates",
+          "type": "string",
+          "required": true,
+          "source": "input",
+          "values": ["koordináta(max. 5)"],
+          "format": "koordináták elválasztása: vessző, szóköz, pontosvessző vagy új sor"
+        },
+        {
+          "name": "required_pack",
+          "type": "number",
+          "required": true,
+          "source": "input",
+          "values": ["1-10000"],
+          "format": ""
+        },
+        {
+          "name": "knight",
+          "type": "boolean",
+          "required": true,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        },
+        {
+          "name": "spear",
+          "type": "number",
+          "required": false,
+          "source": "input",
+          "values": ["1-35000"],
+          "format": ""
+        },
+        {
+          "name": "sword",
+          "type": "number",
+          "required": false,
+          "source": "input",
+          "values": ["1-35000"],
+          "format": ""
+        },
+        {
+          "name": "archer",
+          "type": "number",
+          "required": false,
+          "source": "input",
+          "values": ["1-35000"],
+          "format": ""
+        },
+        {
+          "name": "heavy",
+          "type": "number",
+          "required": false,
+          "source": "input",
+          "values": ["1-35000"],
+          "format": ""
+        },
+        {
+          "name": "spy",
+          "type": "number",
+          "required": false,
+          "source": "input",
+          "values": ["1-35000"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/create-mail-list": {
+      "description": "Levelezőlistát készít a klán játékosaiból.",
+      "options": [
+        {
+          "name": "tribe",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/create-new-world-notification": {
+      "description": "Ezen a csatornán értesítést küld az új világokról.",
+      "options": [
+        {
+          "name": "domain",
+          "type": "string",
+          "required": true,
+          "source": "choice",
+          "values": [
+            "tribalwars.ae",
+            "divokekmeny.cz",
+            "tribalwars.nl",
+            "tribalwars.net",
+            "tribalwars.co.uk",
+            "tribalwars.us",
+            "guerretribale.fr",
+            "die-staemme.de",
+            "fyletikesmaxes.gr",
+            "klanhaboru.hu",
+            "tribals.it",
+            "plemiona.pl",
+            "tribalwars.com.br",
+            "tribalwars.com.pt",
+            "tribalwars.works",
+            "triburile.ro",
+            "divoke-kmene.sk",
+            "guerrastribales.es",
+            "staemme.ch",
+            "klanlar.org"
+          ],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/create-player-map": {
+      "description": "Térképet készít a megadott paraméterek alapján.",
+      "options": [
+        {
+          "name": "conquers",
+          "type": "boolean",
+          "required": false,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        },
+        {
+          "name": "barbarians",
+          "type": "boolean",
+          "required": false,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        },
+        {
+          "name": "maptype",
+          "type": "string",
+          "required": false,
+          "source": "choice",
+          "values": [
+            "normal",
+            "political"
+          ],
+          "format": ""
+        },
+        {
+          "name": "player-1",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-2",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-3",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-4",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-5",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-6",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-7",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-8",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-9",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        },
+        {
+          "name": "player-10",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/create-poll": {
+      "description": "Anonim szavazás (Igen / Nem / Tartózkodom)",
+      "options": [
+        {
+          "name": "question",
+          "type": "string",
+          "required": true,
+          "source": "input",
+          "values": [],
+          "format": ""
+        },
+        {
+          "name": "time",
+          "type": "number",
+          "required": false,
+          "source": "input",
+          "values": ["minimum 1 óra; alapértelmezett: 1 óra"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/create-resource-pack": {
+      "description": "Nyersanyag csomag létrehozása",
+      "options": [
+        {
+          "name": "coordinates",
+          "type": "string",
+          "required": true,
+          "source": "input",
+          "values": ["koordináta(max. 5)"],
+          "format": "koordináták elválasztása: vessző, szóköz, pontosvessző vagy új sor"
+        },
+        {
+          "name": "required_pack",
+          "type": "number",
+          "required": true,
+          "source": "input",
+          "values": ["1-10000"],
+          "format": ""
+        },
+        {
+          "name": "flag",
+          "type": "string",
+          "required": false,
+          "source": "choice",
+          "values": [
+            "-24%",
+            "-23%",
+            "-22%",
+            "-20%",
+            "-18%",
+            "-16%",
+            "-14%",
+            "-12%",
+            "-10%"
+          ],
+          "format": ""
+        },
+        {
+          "name": "noble_decree",
+          "type": "string",
+          "required": false,
+          "source": "choice",
+          "values": [
+            "-10%"
+          ],
+          "format": ""
+        },
+        {
+          "name": "custom_bonus",
+          "type": "string",
+          "required": false,
+          "source": "input",
+          "values": ["1%-200%"],
+          "format": "x%"
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/create-ticket-panel": {
+      "description": "Létrehoz egy ticket panelt ebben a csatornában.",
+      "options": [],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/create-tribe-daily-stat": {
+      "description": "Grafikont készít egy klán napi statisztikáiból.",
+      "options": [
+        {
+          "name": "stat",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": ["statisztika típusa"],
+          "format": ""
+        },
+        {
+          "name": "tribe",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/create-tribe-map": {
+      "description": "Térképet készít a megadott paraméterek alapján.",
+      "options": [
+        {
+          "name": "conquers",
+          "type": "boolean",
+          "required": false,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        },
+        {
+          "name": "barbarians",
+          "type": "boolean",
+          "required": false,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        },
+        {
+          "name": "maptype",
+          "type": "string",
+          "required": false,
+          "source": "choice",
+          "values": [
+            "normal",
+            "political"
+          ],
+          "format": ""
+        },
+        {
+          "name": "tribefamily-1",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-2",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-3",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-4",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-5",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-6",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-7",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-8",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-9",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "tribefamily-10",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/create-war-stat": {
+      "description": "Foglalási statisztikát készít a megadott paraméterek alapján.",
+      "options": [
+        {
+          "name": "from",
+          "type": "string",
+          "required": true,
+          "source": "input",
+          "values": ["dátum"],
+          "format": "YYYY.MM.DD HH:MM:SS"
+        },
+        {
+          "name": "to",
+          "type": "string",
+          "required": true,
+          "source": "input",
+          "values": ["dátum"],
+          "format": "YYYY.MM.DD HH:MM:SS"
+        },
+        {
+          "name": "side1",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "player1",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": "játékosok elválasztása: &"
+        },
+        {
+          "name": "side2",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "player2",
+          "type": "string",
+          "required": false,
+          "source": "autocomplete",
+          "values": ["játékos név"],
+          "format": "játékosok elválasztása: &"
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/create-welcome-channel": {
+      "description": "Üdvözlő csatorna beállítása az új tagok számára.",
+      "options": [],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/fake-coordinate-filter": {
+      "description": "Kiszűri a klánodhoz tartozó koordinátákat.",
+      "options": [
+        {
+          "name": "tribefamily",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": ["klán név"],
+          "format": "klánok elválasztása: &"
+        },
+        {
+          "name": "file",
+          "type": "attachment",
+          "required": true,
+          "source": "input",
+          "values": ["fájl"],
+          "format": ".txt"
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep, Minden felhasználó"
+    },
+    "/logging": {
+      "description": "Naplóesemények beállítása",
+      "options": [
+        {
+          "name": "event-category",
+          "type": "string",
+          "required": true,
+          "source": "choice",
+          "values": [
+            "guild", "members", "moderation", "users", "messages", "voice", "invites", "roles", "channels", "emojis"
+          ],
+          "format": ""
+        },
+        {
+          "name": "event",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": [],
+          "format": "események elválasztása: &"
+        },
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "required": true,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/register-world-channel": {
+      "description": "Válassz egy világot a Discord csatornához.",
+      "options": [
+        {
+          "name": "domain",
+          "type": "string",
+          "required": true,
+          "source": "choice",
+          "values": [
+            "tribalwars.ae",
+            "divokekmeny.cz",
+            "tribalwars.nl",
+            "tribalwars.net",
+            "tribalwars.co.uk",
+            "tribalwars.us",
+            "guerretribale.fr",
+            "die-staemme.de",
+            "fyletikesmaxes.gr",
+            "klanhaboru.hu",
+            "tribals.it",
+            "plemiona.pl",
+            "tribalwars.com.br",
+            "tribalwars.com.pt",
+            "tribalwars.works",
+            "triburile.ro",
+            "divoke-kmene.sk",
+            "guerrastribales.es",
+            "staemme.ch",
+            "klanlar.org"
+          ],
+          "format": ""
+        },
+        {
+          "name": "world",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": [
+            "világ azonosító"
+          ],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/register-world-server": {
+      "description": "Válassz egy alapértelmezett világot az egész Discord szerverhez.",
+      "options": [
+        {
+          "name": "domain",
+          "type": "string",
+          "required": true,
+          "source": "choice",
+          "values": [
+            "tribalwars.ae",
+            "divokekmeny.cz",
+            "tribalwars.nl",
+            "tribalwars.net",
+            "tribalwars.co.uk",
+            "tribalwars.us",
+            "guerretribale.fr",
+            "die-staemme.de",
+            "fyletikesmaxes.gr",
+            "klanhaboru.hu",
+            "tribals.it",
+            "plemiona.pl",
+            "tribalwars.com.br",
+            "tribalwars.com.pt",
+            "tribalwars.works",
+            "triburile.ro",
+            "divoke-kmene.sk",
+            "guerrastribales.es",
+            "staemme.ch",
+            "klanlar.org"
+          ],
+          "format": ""
+        },
+        {
+          "name": "world",
+          "type": "string",
+          "required": true,
+          "source": "autocomplete",
+          "values": [
+            "világ azonosító"
+          ],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/set-bot-role": {
+      "description": "Beállítja, melyik szerepkör használhatja a bot adminparancsait.",
+      "options": [
+        {
+          "name": "role",
+          "type": "role",
+          "required": true,
+          "source": "input",
+          "values": ["szerep"],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/settings": {
+      "description": "Beállítások listázása vagy törlése.",
+      "options": [],
+      "subcommands": {
+        "list": {
+          "description": "Beállítások listázása.",
+          "options": [
+            {
+              "name": "type",
+              "type": "string",
+              "required": true,
+              "source": "choice",
+              "values": [
+                "world_default",
+                "world_channel",
+                "welcome_channel",
+                "world_updates_channel",
+                "logging_channels",
+                "toggle_coords_info",
+                "conquer_notification"
+              ],
+              "format": ""
+            }
+          ],
+          "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+        },
+        "delete-default": {
+          "description": "Szerverhez beállított domain és világ törlése.",
+          "options": [
+            {
+              "name": "confirm",
+              "type": "boolean",
+              "required": true,
+              "source": "input",
+              "values": [
+                "true",
+                "false"
+              ],
+              "format": ""
+            }
+          ],
+          "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+        },
+        "delete-channel": {
+          "description": "Csatorna szintű beállítások törlése.",
+          "options": [
+            {
+              "name": "type",
+              "type": "string",
+              "required": true,
+              "source": "choice",
+              "values": [
+                "world_channel",
+                "welcome_channel",
+                "world_updates_channel",
+                "logging_channels",
+                "toggle_coords_info",
+                "conquer_notification"
+              ],
+              "format": ""
+            },
+            {
+              "name": "confirm",
+              "type": "boolean",
+              "required": true,
+              "source": "input",
+              "values": [
+                "true",
+                "false"
+              ],
+              "format": ""
+            },
+            {
+              "name": "channel",
+              "type": "channel",
+              "required": false,
+              "source": "input",
+              "values": ["csatorna neve"],
+              "format": ""
+            }
+          ],
+          "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+        }
+      },
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/toggle-coords-info": {
+      "description": "Koordinához kapcsolódó információk mutatása.",
+      "options": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "required": true,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    },
+    "/toggle-public-report": {
+      "description": "Képernyőkép készítése a jelentésről az url használatával.",
+      "options": [
+        {
+          "name": "enabled",
+          "type": "boolean",
+          "required": true,
+          "source": "input",
+          "values": [
+            "true",
+            "false"
+          ],
+          "format": ""
+        }
+      ],
+      "subcommands": {},
+      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
+    }
+  }
+}

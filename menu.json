@@ -1,0 +1,263 @@
+{
+  "settings": {
+    "monthlyGoal": 500,
+    "buyMeACoffee": {
+      "pageUrl": "https://buymeacoffee.com/yourpage",
+      "apiUrl": "https://developers.buymeacoffee.com/api/v1/supporters",
+      "token": "SET_YOUR_BMAC_TOKEN"
+    },
+    "discord": {
+      "addBotUrl": "https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&integration_type=0&scope=bot",
+      "supportServerUrl": "https://discord.gg/YOUR_SERVER"
+    }
+  },
+  "languages": [
+    {
+      "code": "hu",
+      "country": "HU",
+      "name": "Magyar"
+    },
+    {
+      "code": "ar",
+      "country": "SA",
+      "name": "العربية"
+    },
+    {
+      "code": "cs",
+      "country": "CZ",
+      "name": "Čeština"
+    },
+    {
+      "code": "nl",
+      "country": "NL",
+      "name": "Nederlands"
+    },
+    {
+      "code": "en",
+      "country": "GB",
+      "name": "English"
+    },
+    {
+      "code": "fr",
+      "country": "FR",
+      "name": "Français"
+    },
+    {
+      "code": "de",
+      "country": "DE",
+      "name": "Deutsch"
+    },
+    {
+      "code": "el",
+      "country": "GR",
+      "name": "Ελληνικά"
+    },
+    {
+      "code": "it",
+      "country": "IT",
+      "name": "Italiano"
+    },
+    {
+      "code": "pl",
+      "country": "PL",
+      "name": "Polski"
+    },
+    {
+      "code": "pt-BR",
+      "country": "BR",
+      "name": "Português (Brasil)"
+    },
+    {
+      "code": "pt",
+      "country": "PT",
+      "name": "Português"
+    },
+    {
+      "code": "ro",
+      "country": "RO",
+      "name": "Română"
+    },
+    {
+      "code": "sk",
+      "country": "SK",
+      "name": "Slovenčina"
+    },
+    {
+      "code": "es",
+      "country": "ES",
+      "name": "Español"
+    },
+    {
+      "code": "de-CH",
+      "country": "CH",
+      "name": "Schweiz"
+    },
+    {
+      "code": "tr",
+      "country": "TR",
+      "name": "Türkçe"
+    }
+  ],
+  "nav": [
+    {
+      "id": "intro",
+      "labelKey": "sidebar.introduction",
+      "icon": "intro",
+      "children": [
+        {
+          "type": "page",
+          "id": "first-steps",
+          "labelKey": "intro.firstSteps",
+          "contentKey": "pages.firstSteps"
+        }
+      ]
+    },
+    {
+      "id": "commands",
+      "labelKey": "sidebar.commands",
+      "icon": "slash",
+      "children": [
+        {
+          "type": "commandGroup",
+          "id": "registration",
+          "labelKey": "commands.registration",
+          "commands": [
+            "/register-world-channel",
+            "/register-world-server"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "maps",
+          "labelKey": "commands.maps",
+          "commands": [
+            "/create-player-map",
+            "/create-tribe-map"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "logging",
+          "labelKey": "commands.logging",
+          "commands": [
+            "/logging"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "stats",
+          "labelKey": "commands.stats",
+          "commands": [
+            "/check-tribe-orientation",
+            "/compare-tribes-orientation",
+            "/create-tribe-daily-stat",
+            "/compare-tribes-daily-stat",
+            "/create-war-stat"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "clan",
+          "labelKey": "commands.clan",
+          "commands": [
+            "/set-bot-role",
+            "/create-defender-pack",
+            "/create-resource-pack",
+            "/create-ticket-panel",
+            "/create-mail-list",
+            "/create-poll",
+            "/create-welcome-channel"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "notifications",
+          "labelKey": "commands.notifications",
+          "commands": [
+            "/create-conquer-notification",
+            "/create-new-world-notification",
+            "/toggle-coords-info",
+            "/toggle-public-report"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "calculators",
+          "labelKey": "commands.calculators",
+          "commands": [
+            "/calculate-backtime",
+            "/calculate-coin-limit",
+            "/calculate-noblemen-limit"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "settings",
+          "labelKey": "commands.settings",
+          "commands": [
+            "/settings list",
+            "/settings delete-default",
+            "/settings delete-channel"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "emojis",
+          "labelKey": "commands.emojis",
+          "commands": [
+            "/add-emojis"
+          ]
+        },
+        {
+          "type": "commandGroup",
+          "id": "filter",
+          "labelKey": "commands.filter",
+          "commands": [
+            "/fake-coordinate-filter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "settings-main",
+      "labelKey": "sidebar.settings",
+      "icon": "gear",
+      "children": [
+        {
+          "type": "appearance",
+          "id": "appearance",
+          "labelKey": "settings.appearance",
+          "options": [
+            "system",
+            "dark",
+            "light"
+          ]
+        },
+        {
+          "type": "language",
+          "id": "language",
+          "labelKey": "settings.language"
+        }
+      ]
+    },
+    {
+      "id": "policies",
+      "labelKey": "sidebar.policies",
+      "icon": "policy",
+      "children": [
+        {
+          "type": "page",
+          "id": "privacy",
+          "labelKey": "policies.privacy",
+          "contentKey": "pages.privacy"
+        },
+        {
+          "type": "page",
+          "id": "terms",
+          "labelKey": "policies.terms",
+          "contentKey": "pages.terms"
+        }
+      ]
+    }
+  ]
+}
