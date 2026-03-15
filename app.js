@@ -504,7 +504,7 @@ function buildChild(child, group) {
         `cmd-option with-icon ${activeClass}`,
         `
           <span class="submenu-icon">${submenuIcons.command}</span>
-          <span>${cmd}</span>
+          <span>${formatSidebarCommandLabel(cmd)}</span>
         `
       );
 
@@ -1309,6 +1309,13 @@ async function loadVisitorStats() {
     state.visitorStats.total = t('common.notAvailable');
     updateVisitorStatsModal();
   }
+}
+
+// ================================================================
+// sidebarban megjelenített parancsnév formázása
+// ================================================================
+function formatSidebarCommandLabel(cmd) {
+  return String(cmd || '').replace(/^\//, '');
 }
 
 init();
