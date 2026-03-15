@@ -258,27 +258,47 @@ function buildTopbar() {
   const menuButton = document.getElementById('sidebarToggle');
   const discordIcon = document.getElementById('discordIcon');
   const supportIcon = document.getElementById('supportIcon');
-  const discordAddBtn = document.getElementById('discordAddBtn');
+  const picker = document.getElementById('languagePicker');
+  const current = document.getElementById('languageCurrent');
+  const menu = document.getElementById('languageMenu');
+  const actionButton = document.getElementById('topbarActionBtn');
+  const actionMenu = document.getElementById('topbarActionMenu');
+  const activeLang = state.menu.languages.find((l) => l.code === state.lang) || state.menu.languages[0];
 
+  // ================================================================
+  // hamburger menü ikon
+  // ================================================================
   if (menuButton) {
     menuButton.innerHTML = menuToggleIcon();
     menuButton.setAttribute('aria-label', 'Menü');
   }
 
+  // ================================================================
+  // discord ikon
+  // ================================================================
   if (discordIcon) {
     discordIcon.innerHTML = icons.discord;
   }
 
+  // ================================================================
+  // support ikon
+  // ================================================================
   if (supportIcon) {
     supportIcon.innerHTML = `<img class="support-avatar-icon" src="images/brian-the-barbarian.png" alt="Brian the Barbarian"/>`;
   }
 
-  if (discordAddBtn) {
-    discordAddBtn.href = state.menu.settings.discord.addBotUrl;
+  if (actionButton) {
+    actionButton.setAttribute('aria-label', `${t('topbar.discordAdd')} / ${t('support.serverName')}`);
   }
 
+  // ================================================================
+  // discord widget inicializálása
+  // ================================================================
   initDiscordSupportWidget();
 
+  // ================================================================
+  // fordítások frissítése
+  // ================================================================
   document.querySelectorAll('[data-i18n]').forEach((n) => {
     n.textContent = t(n.dataset.i18n);
   });
@@ -287,17 +307,15 @@ function buildTopbar() {
     n.setAttribute('aria-label', t(n.dataset.i18nAriaLabel));
   });
 
-  const picker = document.getElementById('languagePicker');
-  const current = document.getElementById('languageCurrent');
-  const menu = document.getElementById('languageMenu');
-  const activeLang = state.menu.languages.find((l) => l.code === state.lang) || state.menu.languages[0];
-
   if (!picker || !current || !menu) {
     syncImageModalTexts();
     syncVisitorStatsModalTexts();
     return;
   }
 
+  // ================================================================
+  // aktuális nyelv gomb tartalma
+  // ================================================================
   current.innerHTML = `
     <span class="btn-icon">${svgFlag(activeLang.country)}</span>
     <span>${activeLang.name}</span>
@@ -306,8 +324,12 @@ function buildTopbar() {
 
   menu.innerHTML = '';
 
+  // ================================================================
+  // nyelv lista felépítése
+  // ================================================================
   state.menu.languages.forEach((l) => {
     const b = el('button', 'language-item', `<span class="btn-icon">${svgFlag(l.country)}</span> ${l.name}`);
+
     b.onclick = () => {
       state.lang = l.code;
       localStorage.setItem('lang', state.lang);
@@ -315,6 +337,7 @@ function buildTopbar() {
       buildTopbar();
       buildSidebar();
     };
+
     menu.appendChild(b);
   });
 
@@ -323,9 +346,17 @@ function buildTopbar() {
     picker.classList.toggle('open');
   };
 
+  // ================================================================
+  // külső kattintásra menük bezárása
+  // ================================================================
   document.onclick = (e) => {
     if (!picker.contains(e.target)) {
       picker.classList.remove('open');
+    }
+
+    if (actionButton && actionMenu && !actionButton.contains(e.target) && !actionMenu.contains(e.target)) {
+      actionMenu.classList.remove('open');
+      actionButton.setAttribute('aria-expanded', 'false');
     }
   };
 
@@ -338,23 +369,64 @@ function buildTopbar() {
 // ================================================================
 async function initDiscordSupportWidget() {
   const guildId = '891626562871525398';
-  const btn = document.getElementById('supportBtn');
+
+  const actionButton = document.getElementById('topbarActionBtn');
+  const actionMenu = document.getElementById('topbarActionMenu');
+  const addBotItem = document.getElementById('topbarAddBotItem');
+  const supportItem = document.getElementById('topbarSupportItem');
+
   const supportName = document.getElementById('supportBtnName');
   const supportStatus = document.getElementById('supportBtnStatus');
+
   const panel = document.getElementById('discordWidgetPanel');
   const name = document.getElementById('discordWidgetName');
   const status = document.getElementById('discordWidgetStatus');
   const frame = document.getElementById('discordWidgetFrame');
   const loading = document.getElementById('discordWidgetLoading');
 
-  if (!btn || !supportName || !supportStatus || !panel || !name || !status || !frame || !loading) return;
+  if (
+    !actionButton ||
+    !actionMenu ||
+    !addBotItem ||
+    !supportItem ||
+    !supportName ||
+    !supportStatus ||
+    !panel ||
+    !name ||
+    !status ||
+    !frame ||
+    !loading
+  ) {
+    return;
+  }
 
-  btn.onclick = async (e) => {
+  // ================================================================
+  // bot hozzáadása menüpont linkje
+  // ================================================================
+  addBotItem.href = state.menu.settings.discord.addBotUrl;
+
+  // ================================================================
+  // gyorsművelet menü nyitása / zárása
+  // ================================================================
+  actionButton.onclick = (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    const open = panel.classList.toggle('open');
-    btn.setAttribute('aria-expanded', String(open));
+    const open = !actionMenu.classList.contains('open');
+    actionMenu.classList.toggle('open', open);
+    actionButton.setAttribute('aria-expanded', String(open));
+  };
+
+  actionMenu.onclick = (e) => {
+    e.stopPropagation();
+  };
+
+  // ================================================================
+  // support panel nyitása / zárása
+  // ================================================================
+  const toggleSupportPanel = () => {
+    const open = !panel.classList.contains('open');
+    panel.classList.toggle('open', open);
 
     if (open) {
       const theme = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
@@ -368,22 +440,39 @@ async function initDiscordSupportWidget() {
       frame.style.display = 'block';
       loading.style.display = 'none';
     }
+
+    return open;
+  };
+
+  supportItem.onclick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    actionMenu.classList.remove('open');
+    actionButton.setAttribute('aria-expanded', 'false');
+
+    toggleSupportPanel();
   };
 
   panel.onclick = (e) => e.stopPropagation();
 
+  // ================================================================
+  // külső kattintásra widget bezárása
+  // ================================================================
   if (!state.discordWidgetOutsideBound) {
     document.addEventListener('click', (e) => {
       if (!panel.classList.contains('open')) return;
-      if (btn.contains(e.target) || panel.contains(e.target)) return;
+      if (actionButton.contains(e.target) || panel.contains(e.target)) return;
 
       panel.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
     });
 
     state.discordWidgetOutsideBound = true;
   }
 
+  // ================================================================
+  // discord szerveradatok betöltése
+  // ================================================================
   try {
     const res = await fetch(`https://discord.com/api/guilds/${guildId}/widget.json`);
     if (!res.ok) throw new Error('widget');
@@ -394,11 +483,13 @@ async function initDiscordSupportWidget() {
 
     supportName.textContent = serverName;
     supportStatus.textContent = tp('support.onlineCount', { count: online });
+
     name.textContent = serverName;
     status.textContent = tp('support.membersOnlineCount', { count: online });
   } catch {
     supportName.textContent = t('support.serverName');
     supportStatus.textContent = t('support.unavailable');
+
     name.textContent = t('support.serverName');
     status.textContent = t('support.unavailable');
   }
