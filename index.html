@@ -45,14 +45,8 @@
         <div class="crumbs" id="topBreadcrumb"></div>
 
         <div class="topbar-actions">
-          <!-- ================================================================
-               rövid függőleges szeparátor a discord ikon előtt
-               ================================================================ -->
           <span class="topbar-separator" aria-hidden="true"></span>
 
-          <!-- ================================================================
-               discord gyorsműveletek
-               ================================================================ -->
           <div class="topbar-action-menu">
             <button
               id="topbarActionBtn"
@@ -65,13 +59,25 @@
 
             <div id="topbarActionMenu" class="topbar-action-dropdown">
               <a id="topbarAddBotItem" class="topbar-action-item" href="#" target="_blank" rel="noreferrer">
-                <span data-i18n="topbar.discordAdd">Bot hozzáadása</span>
+                <span class="topbar-action-item-icon" aria-hidden="true">
+                  <svg viewBox="0 0 512 512">
+                    <path d="M426.537,0H179.641c-22.243,0-40.376,18.175-40.376,40.401v129.603h25.221V69.106h277.206V424.46H164.485v-83.887h-25.221v131.034c0,22.192,18.133,40.392,40.376,40.392h246.896c22.192,0,40.375-18.2,40.375-40.392v-129.03V40.401C466.912,18.175,448.728,0,426.537,0z M303.08,478.495c-9.174,0-16.636-7.47-16.636-16.661c0-9.183,7.462-16.653,16.636-16.653c9.158,0,16.686,7.47,16.686,16.653C319.766,471.025,312.247,478.495,303.08,478.495z"></path>
+                    <polygon points="225.739,335.774 358.778,255.289 225.739,174.804 225.739,221.11 45.088,221.11 45.088,289.468 225.739,289.468"></polygon>
+                  </svg>
+                </span>
+                <span data-i18n="topbar.installBrian">Brian telepítése</span>
               </a>
 
               <button id="topbarSupportItem" class="topbar-action-item topbar-action-item-support" type="button">
-                <span class="btn-icon" id="supportIcon"></span>
+                <span class="topbar-action-item-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M19.75 14V11.75H22V10.25H19.75V8H18.25V10.25H16V11.75H18.25V14H19.75Z"></path>
+                    <path d="M11 4C8.79 4 7 5.79 7 8C7 10.21 8.79 12 11 12C13.21 12 15 10.21 15 8C15 5.79 13.21 4 11 4Z"></path>
+                    <path d="M3 18C3 15.34 8.33 14 11 14C13.67 14 19 15.34 19 18V20H3V18Z"></path>
+                  </svg>
+                </span>
                 <span class="support-meta">
-                  <strong id="supportBtnName" data-i18n="support.loadingName">Betöltés...</strong>
+                  <strong data-i18n="topbar.discordServer">Brian Discord szerver</strong>
                   <small id="supportBtnStatus" data-i18n="support.loadingStatus">Szerveradatok...</small>
                 </span>
               </button>
