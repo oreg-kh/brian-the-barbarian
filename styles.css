@@ -22,6 +22,13 @@
   --sidebar-card-text: #111827;
 
   --overlay: rgba(0, 0, 0, 0.45);
+
+  /* ================================================================
+     fix topbar / downbar méretek
+     ================================================================ */
+  --topbar-height: 73px;
+  --downbar-height: 70px;
+  --downbar-bmc-space: 220px;
 }
 
 :root[data-theme="dark"] {
@@ -62,6 +69,7 @@ body {
   font-family: Inter, Segoe UI, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  overflow: hidden;
 }
 
 body.modal-open {
@@ -75,10 +83,15 @@ body.modal-open {
   min-height: 100vh;
 }
 
+/* ================================================================
+   fő tartalmi oszlop fix topbar + fix downbar mellett
+   ================================================================ */
 .main-shell {
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* ================================================================
@@ -362,10 +375,17 @@ body.modal-open {
 }
 
 /* ================================================================
-   topbar
+   topbar fixen felül
    ================================================================ */
 .topbar {
-  min-height: 73px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+
+  min-height: var(--topbar-height);
+  height: var(--topbar-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -701,13 +721,16 @@ body.modal-open {
 }
 
 /* ================================================================
-   tartalom
+   csak a középső tartalom görgethető
    ================================================================ */
 .content {
   flex: 1;
   min-height: 0;
   overflow: auto;
   padding: 20px;
+  margin-top: var(--topbar-height);
+  margin-bottom: var(--downbar-height);
+  height: calc(100vh - var(--topbar-height) - var(--downbar-height));
 }
 
 .card {
@@ -966,20 +989,28 @@ td {
 }
 
 /* ================================================================
-   alsó sáv
+   alsó sáv fixen alul
    ================================================================ */
 .downbar {
-  min-height: 38px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1200;
+
+  min-height: var(--downbar-height);
+  height: var(--downbar-height);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 18px;
+  padding: 8px var(--downbar-bmc-space) 8px 18px;
   border-top: 1px solid var(--line);
   background: var(--main);
   flex: 0 0 auto;
 }
 
 .downbar-inner {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1015,21 +1046,6 @@ td {
 
 .downbar-link:hover {
   color: var(--text);
-}
-
-@media (max-width: 768px) {
-  .downbar {
-    padding: 8px 10px;
-  }
-
-  .downbar-title {
-    font-size: 12px;
-  }
-
-  .downbar-updated,
-  .downbar-link {
-    font-size: 10px;
-  }
 }
 
 /* ================================================================
@@ -1126,6 +1142,12 @@ td {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --topbar-height: 62px;
+    --downbar-height: 60px;
+    --downbar-bmc-space: 170px;
+  }
+
   .topbar {
     padding: 8px 10px;
     gap: 8px;
@@ -1148,32 +1170,46 @@ td {
   .sidebar-drawer {
     width: min(340px, 92vw);
   }
+
+  .downbar {
+    padding: 8px var(--downbar-bmc-space) 8px 10px;
+  }
+
+  .downbar-title {
+    font-size: 12px;
+  }
+
+  .downbar-updated,
+  .downbar-link {
+    font-size: 10px;
+  }
 }
 
 /* ================================================================
-   buy me a coffee widget csak pozicionálva, eredeti kinézettel
+   buy me a coffee widget igazítása a fix downbar jobb sarkába
+   a widget belső kinézetéhez nem nyúlunk
    ================================================================ */
 #bmc-wbtn {
   position: fixed !important;
   right: 18px !important;
-  bottom: 10px !important;
-  z-index: 1200 !important;
+  bottom: calc((var(--downbar-height) - 40px) / 2) !important;
+  z-index: 1250 !important;
 }
 
 #bmc-wbtn + div {
   right: 18px !important;
-  bottom: 56px !important;
-  z-index: 1200 !important;
+  bottom: calc(var(--downbar-height) + 8px) !important;
+  z-index: 1250 !important;
 }
 
 @media (max-width: 768px) {
   #bmc-wbtn {
     right: 10px !important;
-    bottom: 10px !important;
+    bottom: calc((var(--downbar-height) - 40px) / 2) !important;
   }
 
   #bmc-wbtn + div {
     right: 10px !important;
-    bottom: 56px !important;
+    bottom: calc(var(--downbar-height) + 8px) !important;
   }
 }
