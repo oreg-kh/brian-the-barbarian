@@ -23,7 +23,7 @@
 
   --overlay: rgba(0, 0, 0, 0.45);
 
-  --topbar-height: 60px;
+  --topbar-height: 44px;
   --downbar-height: 70px;
   --downbar-bmc-space: 220px;
 }
@@ -1252,7 +1252,7 @@ td {
 
 @media (max-width: 768px) {
   :root {
-    --topbar-height: 54px;
+    --topbar-height: 38px;
     --downbar-height: 60px;
     --downbar-bmc-space: 170px;
   }
