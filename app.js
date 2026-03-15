@@ -5,6 +5,10 @@ const state = {
   i18n: null,
   commandDocs: null,
   activeGroupId: null,
+  active: {
+    type: 'page',
+    id: 'first-steps'
+  },
   expandedSections: {},
   sidebarOpen: false,
   visitorStats: {
@@ -32,8 +36,8 @@ const icons = {
       <path d="M19.8887 7.86426C19.8887 7.16625 19.323 6.59983 18.625 6.59961H15.8164C14.23 6.5997 12.8639 7.71977 12.5527 9.27539L12.5439 9.31836V14.7441C12.5439 15.186 12.186 15.5439 11.7441 15.5439C11.3024 15.5439 10.9443 15.1859 10.9443 14.7441V9.31836L10.9355 9.27539C10.6244 7.71971 9.25837 6.59961 7.67188 6.59961H4.86426C4.16611 6.59961 3.59961 7.16611 3.59961 7.86426V16.1201C3.59961 16.8183 4.16611 17.3848 4.86426 17.3848H18.625C19.323 17.3845 19.8887 16.8181 19.8887 16.1201V7.86426ZM21.4883 16.1201C21.4883 17.7018 20.2066 18.9842 18.625 18.9844H4.86426C3.28246 18.9844 2 17.7019 2 16.1201V7.86426C2 6.28246 3.28246 5 4.86426 5H7.67188C9.34282 5 10.8482 5.83897 11.7441 7.15234C12.64 5.83896 14.1455 5.00007 15.8164 5H18.625C20.2066 5.00022 21.4883 6.28259 21.4883 7.86426V16.1201Z" fill="currentColor"></path>
     </svg>
   `,
-  policy: `<svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5.2 3.4 8.6 8 10 4.6-1.4 8-4.8 8-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg>`,
-  discord: `<svg viewBox="0 0 18 14" fill="currentColor" stroke="none"><path d="M15.248 1.089A15.431 15.431 0 0011.534 0a9.533 9.533 0 00-.476.921 14.505 14.505 0 00-4.12 0A9.582 9.582 0 006.461 0a15.54 15.54 0 00-3.717 1.091C.395 4.405-.242 7.636.076 10.821A15.269 15.269 0 004.631 13c.369-.473.695-.974.975-1.499a9.896 9.896 0 01-1.536-.699c.13-.089.255-.18.377-.27 1.424.639 2.979.97 4.553.97 1.574 0 3.129-.331 4.553-.97.123.096.25.188.377.27a9.94 9.94 0 01-1.54.7c.28.525.607 1.026.976 1.498a15.2 15.2 0 004.558-2.178c.373-3.693-.639-6.895-2.676-9.733zM6.01 8.862c-.888 0-1.621-.767-1.621-1.712 0-.944.708-1.718 1.618-1.718.91 0 1.638.774 1.623 1.718-.016.945-.715 1.712-1.62 1.712zm5.98 0c-.889 0-1.62-.767-1.62-1.712 0-.944.708-1.718 1.62-1.718.912 0 1.634.774 1.618 1.718-.015.945-.713 1.712-1.618 1.712z"/></svg>`
+  policy: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5.2 3.4 8.6 8 10 4.6-1.4 8-4.8 8-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg>`,
+  discord: `<svg viewBox="0 0 18 14" fill="currentColor" stroke="none" aria-hidden="true"><path d="M15.248 1.089A15.431 15.431 0 0011.534 0a9.533 9.533 0 00-.476.921 14.505 14.505 0 00-4.12 0A9.582 9.582 0 006.461 0a15.54 15.54 0 00-3.717 1.091C.395 4.405-.242 7.636.076 10.821A15.269 15.269 0 004.631 13c.369-.473.695-.974.975-1.499a9.896 9.896 0 01-1.536-.699c.13-.089.255-.18.377-.27 1.424.639 2.979.97 4.553.97 1.574 0 3.129-.331 4.553-.97.123.096.25.188.377.27a9.94 9.94 0 01-1.54.7c.28.525.607 1.026.976 1.498a15.2 15.2 0 004.558-2.178c.373-3.693-.639-6.895-2.676-9.733zM6.01 8.862c-.888 0-1.621-.767-1.621-1.712 0-.944.708-1.718 1.618-1.718.91 0 1.638.774 1.623 1.718-.016.945-.715 1.712-1.62 1.712zm5.98 0c-.889 0-1.62-.767-1.62-1.712 0-.944.708-1.718 1.62-1.718.912 0 1.634.774 1.618 1.718-.015.945-.713 1.712-1.618 1.712z"/></svg>`
 };
 
 const submenuIcons = {
@@ -108,6 +112,26 @@ function syncBodyLock() {
 }
 
 // ================================================================
+// aktív menüpont beállítása
+// ================================================================
+function setActiveItem(type, id, groupId = null) {
+  state.active = { type, id };
+
+  if (groupId) {
+    state.activeGroupId = groupId;
+  }
+
+  buildSidebar();
+}
+
+// ================================================================
+// aktív menüpont ellenőrzése
+// ================================================================
+function isActiveItem(type, id) {
+  return state.active?.type === type && state.active?.id === id;
+}
+
+// ================================================================
 // alkalmazás inicializálása
 // ================================================================
 async function init() {
@@ -137,7 +161,12 @@ async function init() {
 
     renderPage(
       getPageContent('pages.firstSteps'),
-      ['Dashboard', t('sidebar.introduction'), t('intro.firstSteps')]
+      ['Dashboard', t('sidebar.introduction'), t('intro.firstSteps')],
+      {
+        type: 'page',
+        id: 'first-steps',
+        groupId: 'intro'
+      }
     );
 
     await loadLastUpdatedFromGitHub();
@@ -451,9 +480,11 @@ function buildChild(child, group) {
     };
 
     child.commands.forEach((cmd) => {
+      const activeClass = isActiveItem('command', cmd) ? 'active' : '';
+
       const b = el(
         'button',
-        'cmd-option with-icon',
+        `cmd-option with-icon ${activeClass}`,
         `
           <span class="submenu-icon">${submenuIcons.command}</span>
           <span>${cmd}</span>
@@ -461,7 +492,7 @@ function buildChild(child, group) {
       );
 
       b.onclick = () => {
-        renderCommand(cmd, group.labelKey, child.labelKey);
+        renderCommand(cmd, group.labelKey, child.labelKey, group.id);
         closeSidebar();
       };
 
@@ -568,13 +599,19 @@ function buildChild(child, group) {
     return block;
   }
 
-  const b = el('button', 'sub-item', t(child.labelKey));
+  const activeClass = isActiveItem('page', child.id) ? 'active' : '';
+  const b = el('button', `sub-item ${activeClass}`, t(child.labelKey));
 
   b.onclick = () => {
     if (child.type === 'page') {
       renderPage(
         getPageContent(child.contentKey),
-        [t(group.labelKey), t(child.labelKey)]
+        [t(group.labelKey), t(child.labelKey)],
+        {
+          type: 'page',
+          id: child.id,
+          groupId: group.id
+        }
       );
       closeSidebar();
     }
@@ -638,7 +675,11 @@ function formatPageText(text) {
 // ================================================================
 // egyszerű tartalmi oldal renderelése
 // ================================================================
-function renderPage(page, crumb) {
+function renderPage(page, crumb, meta = null) {
+  if (meta?.type && meta?.id) {
+    setActiveItem(meta.type, meta.id, meta.groupId || null);
+  }
+
   setTopBreadcrumb(crumb);
 
   const introHtml = formatPageText(page.text);
@@ -1082,7 +1123,9 @@ function formatCommandValuesCell(option) {
 // ================================================================
 // parancs ismertető renderelése
 // ================================================================
-function renderCommand(cmd, groupKey, subKey) {
+function renderCommand(cmd, groupKey, subKey, groupId = null) {
+  setActiveItem('command', cmd, groupId);
+
   const imageName = cmd.replace(/^\//, '').replace(/\s+/g, '-');
   const imagePath = `images/${imageName}.png`;
   const { docsConfig, doc, parentDoc, rootCommand, subcommand } = getResolvedCommandDoc(cmd);
