@@ -45,19 +45,38 @@
         <div class="crumbs" id="topBreadcrumb"></div>
 
         <div class="topbar-actions">
+          <!-- ================================================================
+               rövid függőleges szeparátor a discord ikon előtt
+               ================================================================ -->
+          <span class="topbar-separator" aria-hidden="true"></span>
 
-          <a id="discordAddBtn" class="btn btn-discord" href="#" target="_blank" rel="noreferrer">
-            <span class="btn-icon" id="discordIcon"></span>
-            <span data-i18n="topbar.discordAdd">Bot hozzáadása</span>
-          </a>
+          <!-- ================================================================
+               discord gyorsműveletek
+               ================================================================ -->
+          <div class="topbar-action-menu">
+            <button
+              id="topbarActionBtn"
+              class="topbar-icon-button"
+              type="button"
+              aria-expanded="false"
+              aria-label="Discord">
+              <span class="btn-icon" id="discordIcon"></span>
+            </button>
 
-          <a id="supportBtn" class="btn btn-support" href="#" aria-expanded="false">
-            <span class="btn-icon" id="supportIcon"></span>
-            <span class="support-meta">
-              <strong id="supportBtnName" data-i18n="support.loadingName">Betöltés...</strong>
-              <small id="supportBtnStatus" data-i18n="support.loadingStatus">Szerveradatok...</small>
-            </span>
-          </a>
+            <div id="topbarActionMenu" class="topbar-action-dropdown">
+              <a id="topbarAddBotItem" class="topbar-action-item" href="#" target="_blank" rel="noreferrer">
+                <span data-i18n="topbar.discordAdd">Bot hozzáadása</span>
+              </a>
+
+              <button id="topbarSupportItem" class="topbar-action-item topbar-action-item-support" type="button">
+                <span class="btn-icon" id="supportIcon"></span>
+                <span class="support-meta">
+                  <strong id="supportBtnName" data-i18n="support.loadingName">Betöltés...</strong>
+                  <small id="supportBtnStatus" data-i18n="support.loadingStatus">Szerveradatok...</small>
+                </span>
+              </button>
+            </div>
+          </div>
 
           <div id="discordWidgetPanel" class="discord-widget-panel">
             <div class="discord-widget-header">
