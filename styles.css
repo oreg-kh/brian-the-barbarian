@@ -1226,3 +1226,167 @@ td {
     bottom: calc(var(--downbar-height) + 8px) !important;
   }
 }
+
+/* ================================================================
+   rövid szeparátor a discord ikon előtt
+   ================================================================ */
+.topbar-separator {
+  width: 1px;
+  height: 28px;
+  background: var(--line);
+  opacity: 0.9;
+  align-self: center;
+}
+
+/* ================================================================
+   topbar gyorsműveletek
+   ================================================================ */
+.topbar-action-menu {
+  position: relative;
+}
+
+.topbar-icon-button,
+.language-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 42px;
+  height: 42px;
+  padding: 0 8px;
+  border: none;
+  background: transparent;
+  color: var(--topbar-soft);
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.topbar-icon-button:hover,
+.language-current:hover {
+  background: rgba(127, 127, 127, 0.1);
+}
+
+.topbar-icon-button .btn-icon,
+.language-current .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar-action-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 1600;
+  min-width: 260px;
+  padding: 6px;
+  background: var(--main);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.topbar-action-dropdown.open {
+  display: grid;
+  gap: 4px;
+}
+
+.topbar-action-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  text-align: left;
+  font: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.topbar-action-item:hover {
+  background: var(--bg);
+}
+
+.topbar-action-item-support {
+  align-items: center;
+}
+
+.topbar-action-item-support .support-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.topbar-action-item-support .support-meta strong {
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar-action-item-support .support-meta small {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.language-menu {
+  background: var(--main);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.language-current {
+  color: var(--topbar-soft);
+}
+
+:root[data-theme="light"] .language-current,
+:root[data-theme="dark"] .language-current {
+  background: transparent;
+  border: none;
+}
+
+:root[data-theme="light"] .language-menu,
+:root[data-theme="dark"] .language-menu {
+  background: var(--main);
+  border-color: var(--line);
+}
+
+/* ================================================================
+   mobil igazítás
+   ================================================================ */
+@media (max-width: 1024px) {
+  .topbar-icon-button,
+  .language-current {
+    width: 42px;
+    min-width: 42px;
+    padding: 0;
+  }
+
+  .language-current .lang-arrow,
+  .language-current span:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-separator {
+    height: 24px;
+  }
+
+  .topbar-action-dropdown {
+    right: 0;
+    min-width: 240px;
+  }
+}
