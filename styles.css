@@ -22,10 +22,6 @@
   --sidebar-card-text: #111827;
 
   --overlay: rgba(0, 0, 0, 0.45);
-
-  --downbar-visual-height: 64px;
-  --bmc-widget-height: 34px;
-  --bmc-widget-width: 170px;
 }
 
 :root[data-theme="dark"] {
@@ -973,19 +969,17 @@ td {
    alsó sáv
    ================================================================ */
 .downbar {
-  position: relative;
-  min-height: var(--downbar-visual-height);
+  min-height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 210px 8px 18px;
+  padding: 8px 18px;
   border-top: 1px solid var(--line);
   background: var(--main);
   flex: 0 0 auto;
 }
 
 .downbar-inner {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1024,14 +1018,8 @@ td {
 }
 
 @media (max-width: 768px) {
-  :root {
-    --downbar-visual-height: 58px;
-    --bmc-widget-height: 30px;
-    --bmc-widget-width: 148px;
-  }
-
   .downbar {
-    padding: 8px 176px 8px 10px;
+    padding: 8px 10px;
   }
 
   .downbar-title {
@@ -1163,73 +1151,29 @@ td {
 }
 
 /* ================================================================
-   buy me a coffee widget igazítása és méretezése
+   buy me a coffee widget csak pozicionálva, eredeti kinézettel
    ================================================================ */
 #bmc-wbtn {
   position: fixed !important;
   right: 18px !important;
-  bottom: calc((var(--downbar-visual-height) - var(--bmc-widget-height)) / 2) !important;
-
-  width: var(--bmc-widget-width) !important;
-  min-width: var(--bmc-widget-width) !important;
-  max-width: var(--bmc-widget-width) !important;
-
-  height: var(--bmc-widget-height) !important;
-  min-height: var(--bmc-widget-height) !important;
-  max-height: var(--bmc-widget-height) !important;
-
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-
-  padding: 0 12px !important;
-  margin: 0 !important;
-  border-radius: 10px !important;
-  box-sizing: border-box !important;
+  bottom: 10px !important;
   z-index: 1200 !important;
-  overflow: hidden !important;
-}
-
-#bmc-wbtn img,
-#bmc-wbtn svg {
-  width: 18px !important;
-  height: 18px !important;
-  min-width: 18px !important;
-  min-height: 18px !important;
-  margin: 0 !important;
-  flex: 0 0 18px !important;
-}
-
-#bmc-wbtn span,
-#bmc-wbtn div,
-#bmc-wbtn a,
-#bmc-wbtn p {
-  font-size: 12px !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  margin: 0 !important;
 }
 
 #bmc-wbtn + div {
   right: 18px !important;
-  bottom: calc(var(--downbar-visual-height) + 8px) !important;
+  bottom: 56px !important;
   z-index: 1200 !important;
 }
 
 @media (max-width: 768px) {
   #bmc-wbtn {
     right: 10px !important;
+    bottom: 10px !important;
   }
 
   #bmc-wbtn + div {
     right: 10px !important;
-  }
-
-  #bmc-wbtn span,
-  #bmc-wbtn div,
-  #bmc-wbtn a,
-  #bmc-wbtn p {
-    font-size: 11px !important;
+    bottom: 56px !important;
   }
 }
