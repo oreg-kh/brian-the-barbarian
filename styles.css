@@ -883,9 +883,29 @@ td {
   align-items: center;
   justify-content: center;
   padding: 8px 18px;
-  border-top: 1px solid var(--line);
+  border-top: none;
   background: var(--main);
   flex: 0 0 auto;
+  overflow: visible;
+}
+
+/* ================================================================
+   downbar felső enyhén íves elválasztóvonala
+   két szélen magasabb, középen alacsonyabb
+   ================================================================ */
+.downbar::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 18px;
+  background: var(--main);
+  border-bottom: 1px solid var(--line);
+  border-bottom-left-radius: 50% 100%;
+  border-bottom-right-radius: 50% 100%;
+  pointer-events: none;
 }
 
 .downbar-inner {
@@ -1021,8 +1041,8 @@ td {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 18px;
-  height: 18px;
+  width: 21px;
+  height: 21px;
 }
 
 .topbar-action-dropdown {
@@ -1208,6 +1228,11 @@ td {
 
   .downbar {
     padding: 8px 10px;
+  }
+
+  .downbar::before {
+    height: 12px;
+    width: 130%;
   }
 
   .downbar-title {
