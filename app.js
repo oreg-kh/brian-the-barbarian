@@ -4,23 +4,58 @@ const state = {
   menu: null,
   i18n: null,
   commandDocs: null,
-  active: null,
   activeGroupId: null,
+  expandedSections: {},
+  sidebarOpen: false,
+  visitorStats: {
+    today: '0',
+    total: '0'
+  },
   discordWidgetLoaded: false,
   discordWidgetTheme: null,
   discordWidgetOutsideBound: false
 };
 
 const icons = {
-  intro: `<svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 5v14M4 10h16"/></svg>`,
-  slash: `<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M7 10.5 10 12 7 13.5"/><path d="M12 14h5"/></svg>`,
-  gear: `<svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.2994 10.4527L19.2267 10.7677C19.3846 10.7935 19.5003 10.9298 19.5 11.0896V12.883C19.5 13.0412 19.3865 13.1768 19.2303 13.2042L17.3004 13.543C17.1885 13.9298 17.0349 14.3022 16.8415 14.6543L17.9823 16.2382C18.0759 16.3679 18.0612 16.5463 17.9483 16.6595L16.6804 17.9283C16.5682 18.0401 16.3921 18.0561 16.2623 17.9645L14.6627 16.8424C14.3099 17.0387 13.9352 17.1952 13.5442 17.3103L13.2034 19.231C13.176 19.3865 13.0406 19.5 12.8825 19.5H11.0888C10.9294 19.5 10.7934 19.3849 10.7676 19.228L10.4493 17.3168C10.059 17.204 9.6823 17.0485 9.32585 16.8525L7.73767 17.9648C7.60821 18.0558 7.43178 18.0401 7.31992 17.9283L6.05198 16.6595C5.93947 16.5463 5.9248 16.3686 6.01741 16.2391L7.13958 14.6697C6.94163 14.3116 6.78444 13.9337 6.67062 13.5414L4.76905 13.2042C4.61349 13.1765 4.5 13.0412 4.5 12.883V11.0896C4.5 10.9304 4.61544 10.7941 4.77263 10.768L6.67421 10.4514C6.78868 10.0582 6.94586 9.68022 7.14316 9.32315L6.0347 7.73739C5.94371 7.60793 5.95937 7.43185 6.07122 7.32L7.33883 6.0525C7.452 5.94 7.62908 5.925 7.7592 6.01793L9.33433 7.14293C9.68817 6.94924 10.0639 6.795 10.4552 6.6825L10.767 4.77359C10.7927 4.61576 10.929 4.5 11.0888 4.5H12.8825C13.041 4.5 13.1763 4.61413 13.2037 4.77L13.5399 6.68935C13.929 6.8025 14.304 6.95837 14.6591 7.15467L16.2385 6.01957C16.3683 5.92598 16.5464 5.94065 16.6595 6.05348L17.9278 7.32098C18.0397 7.43315 18.0553 7.60957 17.9643 7.73902L16.8392 9.34239C17.0323 9.69424 17.1865 10.066 17.2994 10.4527ZM9.71725 12C9.71725 13.2607 10.7393 14.2826 12.0001 14.2826C13.2608 14.2826 14.2829 13.2607 14.2829 12C14.2829 10.7394 13.2608 9.71742 12.0001 9.71742C10.7393 9.71742 9.71725 10.7394 9.71725 12Z"/></svg>`,
+  intro: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M11.4824 3.58858C11.8213 3.49782 12.1787 3.49782 12.5176 3.58858C12.9015 3.69147 13.2503 3.95851 13.9473 4.49287L16.4941 6.446L18.5137 7.98311C19.4024 8.65955 19.8469 8.99776 20.1719 9.42061C20.4895 9.83412 20.7237 10.3061 20.8604 10.8093C21.0001 11.324 21 11.8828 21 12.9997V14.6003C21 16.8403 21.0003 17.9605 20.5645 18.8161C20.181 19.5687 19.5689 20.1807 18.8164 20.5642C17.9608 21.0001 16.8398 20.9997 14.5996 20.9997H9.40039C7.16019 20.9997 6.03924 21.0001 5.18359 20.5642C4.43111 20.1807 3.81898 19.5686 3.43555 18.8161C2.99966 17.9605 3.00001 16.8403 3 14.6003V12.9997C3 11.8828 2.99989 11.324 3.13965 10.8093C3.27632 10.3061 3.51046 9.83413 3.82813 9.42061C4.15305 8.99776 4.59762 8.65955 5.48633 7.98311L7.50586 6.446L10.0527 4.49287C10.7497 3.95852 11.0985 3.69147 11.4824 3.58858ZM12 10.9997C10.3433 10.9997 9.00021 12.343 9 13.9997V17.6218C9.00003 17.8306 9.16918 17.9995 9.37793 17.9997H14.6221C14.8308 17.9995 15 17.8306 15 17.6218V13.9997C14.9998 12.343 13.6567 10.9997 12 10.9997Z" fill="currentColor"></path>
+    </svg>
+  `,
+  slash: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 7.95984C4 7.25381 4 6.90079 4.05548 6.60674C4.29972 5.31226 5.31226 4.29972 6.60674 4.05548C6.90079 4 7.25381 4 7.95984 4C8.26918 4 8.42385 4 8.5725 4.0139C9.21337 4.07383 9.82128 4.32564 10.3168 4.73642C10.4317 4.8317 10.5411 4.94107 10.7598 5.15981L11.2001 5.60002C11.8527 6.25265 12.179 6.57896 12.5698 6.79637C12.7844 6.9158 13.0122 7.01011 13.2484 7.07746C13.6784 7.20003 14.1399 7.20003 15.0628 7.20003H15.3618C17.4677 7.20003 18.5206 7.20003 19.2051 7.81561C19.2681 7.87223 19.328 7.93215 19.3846 7.9951C20.0002 8.67953 20.0002 9.73249 20.0002 11.8384V13.6001C20.0002 16.6171 20.0002 18.1257 19.0629 19.0629C18.1257 20.0002 16.6171 20.0002 13.6001 20.0002H10.4001C7.38304 20.0002 5.87454 20.0002 4.93727 19.0629C4 18.1257 4 16.6171 4 13.6001V7.95984Z" stroke="currentColor" stroke-width="1.33567" fill="none"></path>
+    </svg>
+  `,
+  gear: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19.8887 7.86426C19.8887 7.16625 19.323 6.59983 18.625 6.59961H15.8164C14.23 6.5997 12.8639 7.71977 12.5527 9.27539L12.5439 9.31836V14.7441C12.5439 15.186 12.186 15.5439 11.7441 15.5439C11.3024 15.5439 10.9443 15.1859 10.9443 14.7441V9.31836L10.9355 9.27539C10.6244 7.71971 9.25837 6.59961 7.67188 6.59961H4.86426C4.16611 6.59961 3.59961 7.16611 3.59961 7.86426V16.1201C3.59961 16.8183 4.16611 17.3848 4.86426 17.3848H18.625C19.323 17.3845 19.8887 16.8181 19.8887 16.1201V7.86426ZM21.4883 16.1201C21.4883 17.7018 20.2066 18.9842 18.625 18.9844H4.86426C3.28246 18.9844 2 17.7019 2 16.1201V7.86426C2 6.28246 3.28246 5 4.86426 5H7.67188C9.34282 5 10.8482 5.83897 11.7441 7.15234C12.64 5.83896 14.1455 5.00007 15.8164 5H18.625C20.2066 5.00022 21.4883 6.28259 21.4883 7.86426V16.1201Z" fill="currentColor"></path>
+    </svg>
+  `,
   policy: `<svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5.2 3.4 8.6 8 10 4.6-1.4 8-4.8 8-10V6z"/><path d="m8.5 12 2.2 2.2 4.8-4.8"/></svg>`,
-  discord: `<svg viewBox="0 0 18 14" fill="currentColor" stroke="none"><path d="M15.248 1.089A15.431 15.431 0 0011.534 0a9.533 9.533 0 00-.476.921 14.505 14.505 0 00-4.12 0A9.582 9.582 0 006.461 0a15.54 15.54 0 00-3.717 1.091C.395 4.405-.242 7.636.076 10.821A15.269 15.269 0 004.631 13c.369-.473.695-.974.975-1.499a9.896 9.896 0 01-1.536-.699c.13-.089.255-.18.377-.27 1.424.639 2.979.97 4.553.97 1.574 0 3.129-.331 4.553-.97.123.096.25.188.377.27a9.94 9.94 0 01-1.54.7c.28.525.607 1.026.976 1.498a15.2 15.2 0 004.558-2.178c.373-3.693-.639-6.895-2.676-9.733zM6.01 8.862c-.888 0-1.621-.767-1.621-1.712 0-.944.708-1.718 1.618-1.718.91 0 1.638.774 1.623 1.718-.016.945-.715 1.712-1.62 1.712zm5.98 0c-.889 0-1.62-.767-1.62-1.712 0-.944.708-1.718 1.62-1.718.912 0 1.634.774 1.618 1.718-.015.945-.713 1.712-1.618 1.712z"/></svg>`,
-  support: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="currentColor" stroke="none"><path d="M267.7 576.9C267.7 576.9 267.7 576.9 267.7 576.9L229.9 603.6C222.6 608.8 213 609.4 205 605.3C197 601.2 192 593 192 584L192 512L160 512C107 512 64 469 64 416L64 192C64 139 107 96 160 96L480 96C533 96 576 139 576 192L576 416C576 469 533 512 480 512L359.6 512L267.7 576.9zM332 472.8C340.1 467.1 349.8 464 359.7 464L480 464C506.5 464 528 442.5 528 416L528 192C528 165.5 506.5 144 480 144L160 144C133.5 144 112 165.5 112 192L112 416C112 442.5 133.5 464 160 464L216 464C226.4 464 235.3 470.6 238.6 479.9C239.5 482.4 240 485.1 240 488L240 537.7C272.7 514.6 303.3 493 331.9 472.8z"/></svg>`
+  discord: `<svg viewBox="0 0 18 14" fill="currentColor" stroke="none"><path d="M15.248 1.089A15.431 15.431 0 0011.534 0a9.533 9.533 0 00-.476.921 14.505 14.505 0 00-4.12 0A9.582 9.582 0 006.461 0a15.54 15.54 0 00-3.717 1.091C.395 4.405-.242 7.636.076 10.821A15.269 15.269 0 004.631 13c.369-.473.695-.974.975-1.499a9.896 9.896 0 01-1.536-.699c.13-.089.255-.18.377-.27 1.424.639 2.979.97 4.553.97 1.574 0 3.129-.331 4.553-.97.123.096.25.188.377.27a9.94 9.94 0 01-1.54.7c.28.525.607 1.026.976 1.498a15.2 15.2 0 004.558-2.178c.373-3.693-.639-6.895-2.676-9.733zM6.01 8.862c-.888 0-1.621-.767-1.621-1.712 0-.944.708-1.718 1.618-1.718.91 0 1.638.774 1.623 1.718-.016.945-.715 1.712-1.62 1.712zm5.98 0c-.889 0-1.62-.767-1.62-1.712 0-.944.708-1.718 1.62-1.718.912 0 1.634.774 1.618 1.718-.015.945-.713 1.712-1.618 1.712z"/></svg>`
+};
+
+const submenuIcons = {
+  command: `
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path fill="currentColor" d="M4.32 5.884 1.781 8l2.539 2.116a.5.5 0 11-.64.768l-3-2.5a.5.5 0 010-.768l3-2.5a.5.5 0 01.64.768m11 1.732-3-2.5a.5.5 0 10-.64.768L14.219 8l-2.539 2.116a.5.5 0 10.64.768l3-2.5a.5.5 0 000-.768M10.17 2.03a.5.5 0 00-.64.3l-4 11a.5.5 0 00.3.64A.5.5 0 006 14a.5.5 0 00.47-.33l4-11a.5.5 0 00-.3-.64"></path>
+    </svg>
+  `,
+  light: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M12 0a1 1 0 0 1 1 1v4a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1ZM4.929 3.515a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 0 0 1.414-1.414L4.93 3.515ZM1 11a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2H1ZM18 12a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1ZM17.657 16.243a1 1 0 0 0-1.414 1.414l2.828 2.828a1 1 0 1 0 1.414-1.414l-2.828-2.828ZM7.757 17.657a1 1 0 1 0-1.414-1.414L3.515 19.07a1 1 0 1 0 1.414 1.414l2.828-2.828ZM20.485 4.929a1 1 0 0 0-1.414-1.414l-2.828 2.828a1 1 0 1 0 1.414 1.414l2.828-2.828ZM13 19a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0v-4ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z"></path>
+    </svg>
+  `,
+  dark: `
+    <svg viewBox="0 0 36 36" aria-hidden="true">
+      <path fill="currentColor" d="M18.44,34.68a18.22,18.22,0,0,1-2.94-.24,18.18,18.18,0,0,1-15-20.86A18.06,18.06,0,0,1,9.59.63,2.42,2.42,0,0,1,12.2.79a2.39,2.39,0,0,1,1,2.41L11.9,3.1l1.23.22A15.66,15.66,0,0,0,23.34,21h0a15.82,15.82,0,0,0,8.47.53A2.44,2.44,0,0,1,34.47,25,18.18,18.18,0,0,1,18.44,34.68ZM10.67,2.89a15.67,15.67,0,0,0-5,22.77A15.66,15.66,0,0,0,32.18,24a18.49,18.49,0,0,1-9.65-.64A18.18,18.18,0,0,1,10.67,2.89Z"></path>
+    </svg>
+  `
 };
 
 const t = (k) => state.i18n?.[state.lang]?.[k] || state.i18n?.hu?.[k] || k;
+
 const tp = (k, vars = {}) => {
   let text = t(k);
 
@@ -39,9 +74,12 @@ const el = (tag, cls, html = '') => {
 };
 
 const chevronIcon = () => '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5 6 8l4-3.5"/></svg>';
-const sidebarToggleIcon = (collapsed) => collapsed
-  ? '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M8 2.5 4 6l4 3.5"/></svg>'
-  : '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2.5 8 6l-4 3.5"/></svg>';
+
+const menuToggleIcon = () => `
+  <svg viewBox="0 0 16 16" aria-hidden="true">
+    <path fill="currentColor" d="M2.667 12h10.666c.367 0 .667-.3.667-.667s-.3-.666-.667-.666H2.667c-.367 0-.667.3-.667.666s.3.667.667.667m0-3.333h10.666c.367 0 .667-.3.667-.667s-.3-.667-.667-.667H2.667C2.3 7.333 2 7.633 2 8s.3.667.667.667m-.667-4c0 .366.3.666.667.666h10.666c.367 0 .667-.3.667-.666S13.7 4 13.333 4H2.667C2.3 4 2 4.3 2 4.667"></path>
+  </svg>
+`;
 
 // ================================================================
 // json fájl betöltése fallback nélkül
@@ -56,6 +94,17 @@ async function fetchJson(path) {
   }
 
   return await res.json();
+}
+
+// ================================================================
+// body görgetésének vezérlése overlay vagy modal esetén
+// ================================================================
+function syncBodyLock() {
+  const sidebarOpen = document.getElementById('sidebarOverlay')?.classList.contains('open');
+  const imageOpen = document.getElementById('imageModal')?.classList.contains('open');
+  const visitorOpen = document.getElementById('visitorStatsModal')?.classList.contains('open');
+
+  document.body.classList.toggle('modal-open', !!(sidebarOpen || imageOpen || visitorOpen));
 }
 
 // ================================================================
@@ -76,15 +125,15 @@ async function init() {
 
     const storedTheme = localStorage.getItem('theme');
     state.theme = (storedTheme === 'dark' || storedTheme === 'light') ? storedTheme : 'light';
-
-    applyTheme();
     state.activeGroupId = state.menu.nav?.[0]?.id || null;
 
+    applyTheme();
     createImageModal();
+    createVisitorStatsModal();
     buildTopbar();
-    buildIconRail();
     buildSidebar();
-    initSidebarToggle();
+    initSidebarDrawer();
+    initVisitorStatsTrigger();
 
     renderPage(
       getPageContent('pages.firstSteps'),
@@ -115,83 +164,109 @@ function applyTheme() {
 }
 
 // ================================================================
-// oldalsáv állapot beállítása
+// sidebar nyitása / zárása
 // ================================================================
-function setSidebarHidden(hidden) {
-  const shell = document.querySelector('.sidebar-shell');
-  const appShell = document.querySelector('.app-shell');
-  const btn = document.getElementById('sidebarToggle');
-  const collapsedBtn = document.getElementById('sidebarToggleCollapsed');
+function setSidebarOpen(open) {
+  const overlay = document.getElementById('sidebarOverlay');
+  if (!overlay) return;
 
-  if (!shell || !btn || !collapsedBtn || !appShell) return;
-
-  shell.classList.toggle('submenus-hidden', hidden);
-  appShell.classList.toggle('sidebar-collapsed', hidden);
-  btn.innerHTML = sidebarToggleIcon(true);
-  collapsedBtn.innerHTML = sidebarToggleIcon(false);
-
-  localStorage.setItem('submenusHidden', hidden ? '1' : '0');
+  state.sidebarOpen = !!open;
+  overlay.classList.toggle('open', state.sidebarOpen);
+  overlay.setAttribute('aria-hidden', String(!state.sidebarOpen));
+  syncBodyLock();
 }
 
-// ================================================================
-// mobil nézetben oldalsáv automatikus elrejtése kiválasztás után
-// ================================================================
-function hideSidebarAfterSelectionOnMobile() {
-  if (window.innerWidth <= 1100) {
-    setSidebarHidden(true);
+function closeSidebar() {
+  setSidebarOpen(false);
+}
+
+function initSidebarDrawer() {
+  const toggle = document.getElementById('sidebarToggle');
+  const backdrop = document.getElementById('sidebarBackdrop');
+
+  if (toggle) {
+    toggle.onclick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setSidebarOpen(!state.sidebarOpen);
+    };
   }
-}
 
-// ================================================================
-// oldalsáv nyitás / zárás
-// ================================================================
-function initSidebarToggle() {
-  const btn = document.getElementById('sidebarToggle');
-  const collapsedBtn = document.getElementById('sidebarToggleCollapsed');
+  if (backdrop) {
+    backdrop.onclick = () => closeSidebar();
+  }
 
-  if (!btn || !collapsedBtn) return;
-
-  const hidden = localStorage.getItem('submenusHidden') === '1';
-  setSidebarHidden(hidden);
-
-  btn.onclick = () => setSidebarHidden(true);
-  collapsedBtn.onclick = () => setSidebarHidden(false);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeSidebar();
+      closeImageModal();
+      closeVisitorStatsModal();
+    }
+  });
 }
 
 // ================================================================
 // felső sáv felépítése
 // ================================================================
 function buildTopbar() {
-  document.getElementById('discordIcon').innerHTML = icons.discord;
-  document.getElementById('supportIcon').innerHTML = `<img class="support-avatar-icon" src="images/brian-the-barbarian.png" alt="Brian the Barbarian"/>`;
-  document.getElementById('discordAddBtn').href = state.menu.settings.discord.addBotUrl;
+  const menuButton = document.getElementById('sidebarToggle');
+  const discordIcon = document.getElementById('discordIcon');
+  const supportIcon = document.getElementById('supportIcon');
+  const discordAddBtn = document.getElementById('discordAddBtn');
+
+  if (menuButton) {
+    menuButton.innerHTML = menuToggleIcon();
+    menuButton.setAttribute('aria-label', 'Menü');
+  }
+
+  if (discordIcon) {
+    discordIcon.innerHTML = icons.discord;
+  }
+
+  if (supportIcon) {
+    supportIcon.innerHTML = `<img class="support-avatar-icon" src="images/brian-the-barbarian.png" alt="Brian the Barbarian"/>`;
+  }
+
+  if (discordAddBtn) {
+    discordAddBtn.href = state.menu.settings.discord.addBotUrl;
+  }
 
   initDiscordSupportWidget();
 
-  document.querySelectorAll('[data-i18n]').forEach(n => {
+  document.querySelectorAll('[data-i18n]').forEach((n) => {
     n.textContent = t(n.dataset.i18n);
   });
 
-  document.querySelectorAll('[data-i18n-aria-label]').forEach(n => {
+  document.querySelectorAll('[data-i18n-aria-label]').forEach((n) => {
     n.setAttribute('aria-label', t(n.dataset.i18nAriaLabel));
   });
 
   const picker = document.getElementById('languagePicker');
   const current = document.getElementById('languageCurrent');
   const menu = document.getElementById('languageMenu');
-  const activeLang = state.menu.languages.find(l => l.code === state.lang) || state.menu.languages[0];
+  const activeLang = state.menu.languages.find((l) => l.code === state.lang) || state.menu.languages[0];
 
-  current.innerHTML = `<span class="btn-icon">${svgFlag(activeLang.country)}</span><span>${activeLang.name}</span><span class="lang-arrow">${chevronIcon()}</span>`;
+  if (!picker || !current || !menu) {
+    syncImageModalTexts();
+    syncVisitorStatsModalTexts();
+    return;
+  }
+
+  current.innerHTML = `
+    <span class="btn-icon">${svgFlag(activeLang.country)}</span>
+    <span>${activeLang.name}</span>
+    <span class="lang-arrow">${chevronIcon()}</span>
+  `;
+
   menu.innerHTML = '';
 
-  state.menu.languages.forEach(l => {
+  state.menu.languages.forEach((l) => {
     const b = el('button', 'language-item', `<span class="btn-icon">${svgFlag(l.country)}</span> ${l.name}`);
     b.onclick = () => {
       state.lang = l.code;
       localStorage.setItem('lang', state.lang);
       picker.classList.remove('open');
       buildTopbar();
-      buildIconRail();
       buildSidebar();
     };
     menu.appendChild(b);
@@ -209,6 +284,7 @@ function buildTopbar() {
   };
 
   syncImageModalTexts();
+  syncVisitorStatsModalTexts();
 }
 
 // ================================================================
@@ -291,7 +367,7 @@ function svgFlag(country) {
 }
 
 // ================================================================
-// morzsa navigáció beállítása
+// morzsa navigáció
 // ================================================================
 function setTopBreadcrumb(parts) {
   const n = document.getElementById('topBreadcrumb');
@@ -299,66 +375,96 @@ function setTopBreadcrumb(parts) {
 }
 
 // ================================================================
-// bal oldali ikon sáv felépítése
+// sidebar teljes felépítése
 // ================================================================
-function buildIconRail() {
-  const rail = document.getElementById('iconRail');
-  rail.innerHTML = '';
+function buildSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  if (!sidebar) return;
+
+  sidebar.innerHTML = '';
 
   state.menu.nav.forEach((group) => {
-    const b = el('button', 'rail-item', icons[group.icon] || icons.intro);
+    const open = state.activeGroupId === group.id;
+    const block = el('div', `nav-group ${open ? 'open' : ''}`);
 
-    if (group.id === state.activeGroupId) {
-      b.classList.add('active');
-    }
+    const main = el(
+      'button',
+      `nav-main ${open ? 'open' : ''}`,
+      `
+        <span class="nav-main-left">
+          <span class="nav-icon">${icons[group.icon] || icons.policy}</span>
+          <span>${t(group.labelKey)}</span>
+        </span>
+        <span class="toggle-icon">${chevronIcon()}</span>
+      `
+    );
 
-    b.title = t(group.labelKey);
-    b.onclick = () => {
-      state.activeGroupId = group.id;
-      buildIconRail();
+    main.onclick = () => {
+      state.activeGroupId = state.activeGroupId === group.id ? null : group.id;
       buildSidebar();
     };
 
-    rail.appendChild(b);
+    const submenu = el('div', 'submenu');
+    submenu.style.display = open ? 'block' : 'none';
+
+    group.children.forEach((child) => {
+      submenu.appendChild(buildChild(child, group));
+    });
+
+    block.append(main, submenu);
+    sidebar.appendChild(block);
   });
 }
 
 // ================================================================
-// oldalsáv felépítése
+// szekció-azonosító készítése
 // ================================================================
-function buildSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  sidebar.innerHTML = '';
-
-  const group = state.menu.nav.find(g => g.id === state.activeGroupId) || state.menu.nav[0];
-  if (!group) return;
-
-  group.children.forEach(child => sidebar.appendChild(buildChild(child, group)));
+function getSectionKey(groupId, childId) {
+  return `${groupId}::${childId}`;
 }
 
 // ================================================================
-// oldalsáv elem felépítése
+// sidebar almenü elem felépítése
 // ================================================================
 function buildChild(child, group) {
-  if (child.type === 'commandGroup') {
-    const block = el('div');
-    const main = el('button', 'sub-item sub-toggle', `<span>${t(child.labelKey)}</span><span class="toggle-icon">${chevronIcon()}</span>`);
-    const list = el('div', 'command-list');
+  const sectionKey = getSectionKey(group.id, child.id || child.labelKey || child.type);
 
-    list.style.display = 'none';
+  if (child.type === 'commandGroup') {
+    const block = el('div', 'submenu-block');
+    const opened = !!state.expandedSections[sectionKey];
+
+    const main = el(
+      'button',
+      `sub-item sub-toggle ${opened ? 'open' : ''}`,
+      `
+        <span>${t(child.labelKey)}</span>
+        <span class="toggle-icon">${chevronIcon()}</span>
+      `
+    );
+
+    const list = el('div', 'command-list');
+    list.style.display = opened ? 'block' : 'none';
 
     main.onclick = () => {
-      const opening = list.style.display === 'none';
-      list.style.display = opening ? 'block' : 'none';
-      main.classList.toggle('open', opening);
+      state.expandedSections[sectionKey] = !state.expandedSections[sectionKey];
+      buildSidebar();
     };
 
-    child.commands.forEach(cmd => {
-      const b = el('button', 'cmd-option', cmd);
+    child.commands.forEach((cmd) => {
+      const b = el(
+        'button',
+        'cmd-option with-icon',
+        `
+          <span class="submenu-icon">${submenuIcons.command}</span>
+          <span>${cmd}</span>
+        `
+      );
+
       b.onclick = () => {
         renderCommand(cmd, group.labelKey, child.labelKey);
-        hideSidebarAfterSelectionOnMobile();
+        closeSidebar();
       };
+
       list.appendChild(b);
     });
 
@@ -367,26 +473,48 @@ function buildChild(child, group) {
   }
 
   if (child.type === 'appearance') {
-    const block = el('div');
-    const main = el('button', 'sub-item sub-toggle', `<span>${t(child.labelKey)}</span><span class="toggle-icon">${chevronIcon()}</span>`);
-    const list = el('div', 'command-list');
+    const block = el('div', 'submenu-block');
+    const opened = !!state.expandedSections[sectionKey];
 
-    list.style.display = 'none';
+    const main = el(
+      'button',
+      `sub-item sub-toggle ${opened ? 'open' : ''}`,
+      `
+        <span>${t(child.labelKey)}</span>
+        <span class="toggle-icon">${chevronIcon()}</span>
+      `
+    );
+
+    const list = el('div', 'command-list');
+    list.style.display = opened ? 'block' : 'none';
 
     main.onclick = () => {
-      const opening = list.style.display === 'none';
-      list.style.display = opening ? 'block' : 'none';
-      main.classList.toggle('open', opening);
+      state.expandedSections[sectionKey] = !state.expandedSections[sectionKey];
+      buildSidebar();
     };
 
-    ['dark', 'light'].forEach(mode => {
-      const b = el('button', 'cmd-option', t(`settings.${mode}`));
+    [
+      { mode: 'light', icon: submenuIcons.light },
+      { mode: 'dark', icon: submenuIcons.dark }
+    ].forEach((item) => {
+      const b = el(
+        'button',
+        `cmd-option with-icon ${state.theme === item.mode ? 'active' : ''}`,
+        `
+          <span class="submenu-icon">${item.icon}</span>
+          <span>${t(`settings.${item.mode}`)}</span>
+        `
+      );
+
       b.onclick = () => {
-        state.theme = mode;
+        state.theme = item.mode;
         localStorage.setItem('theme', state.theme);
         applyTheme();
-        hideSidebarAfterSelectionOnMobile();
+        buildTopbar();
+        buildSidebar();
+        closeSidebar();
       };
+
       list.appendChild(b);
     });
 
@@ -395,28 +523,44 @@ function buildChild(child, group) {
   }
 
   if (child.type === 'language') {
-    const block = el('div');
-    const main = el('button', 'sub-item sub-toggle', `<span>${t(child.labelKey)}</span><span class="toggle-icon">${chevronIcon()}</span>`);
-    const list = el('div', 'command-list');
+    const block = el('div', 'submenu-block');
+    const opened = !!state.expandedSections[sectionKey];
 
-    list.style.display = 'none';
+    const main = el(
+      'button',
+      `sub-item sub-toggle ${opened ? 'open' : ''}`,
+      `
+        <span>${t(child.labelKey)}</span>
+        <span class="toggle-icon">${chevronIcon()}</span>
+      `
+    );
+
+    const list = el('div', 'command-list');
+    list.style.display = opened ? 'block' : 'none';
 
     main.onclick = () => {
-      const opening = list.style.display === 'none';
-      list.style.display = opening ? 'block' : 'none';
-      main.classList.toggle('open', opening);
+      state.expandedSections[sectionKey] = !state.expandedSections[sectionKey];
+      buildSidebar();
     };
 
-    state.menu.languages.forEach(l => {
-      const b = el('button', 'cmd-option', `<span class="btn-icon">${svgFlag(l.country)}</span> ${l.name}`);
+    state.menu.languages.forEach((l) => {
+      const b = el(
+        'button',
+        `cmd-option with-icon ${state.lang === l.code ? 'active' : ''}`,
+        `
+          <span class="submenu-flag">${svgFlag(l.country)}</span>
+          <span>${l.name}</span>
+        `
+      );
+
       b.onclick = () => {
         state.lang = l.code;
         localStorage.setItem('lang', state.lang);
         buildTopbar();
-        buildIconRail();
         buildSidebar();
-        hideSidebarAfterSelectionOnMobile();
+        closeSidebar();
       };
+
       list.appendChild(b);
     });
 
@@ -425,13 +569,14 @@ function buildChild(child, group) {
   }
 
   const b = el('button', 'sub-item', t(child.labelKey));
+
   b.onclick = () => {
     if (child.type === 'page') {
       renderPage(
         getPageContent(child.contentKey),
         [t(group.labelKey), t(child.labelKey)]
       );
-      hideSidebarAfterSelectionOnMobile();
+      closeSidebar();
     }
   };
 
@@ -477,16 +622,16 @@ function getPageContent(contentKey) {
 }
 
 // ================================================================
-// oldal szövegének formázása bekezdésekre bontva
+// oldal szövegének formázása
 // ================================================================
 function formatPageText(text) {
   if (!text) return '';
 
   return String(text)
     .split(/\n\s*\n/)
-    .map(paragraph => paragraph.trim())
+    .map((paragraph) => paragraph.trim())
     .filter(Boolean)
-    .map(paragraph => `<p class="page-intro">${paragraph}</p>`)
+    .map((paragraph) => `<p class="page-intro">${paragraph}</p>`)
     .join('');
 }
 
@@ -500,7 +645,7 @@ function renderPage(page, crumb) {
   const stepsHtml = Array.isArray(page.steps) && page.steps.length
     ? `
       <ol class="setup-steps">
-        ${page.steps.map(step => `
+        ${page.steps.map((step) => `
           <li class="setup-step">
             <h2>${step.title}</h2>
             <p>${step.text}</p>
@@ -527,14 +672,14 @@ function createImageModal() {
 
   const modal = document.createElement('div');
   modal.id = 'imageModal';
-  modal.className = 'image-modal';
+  modal.className = 'dialog-modal';
   modal.innerHTML = `
-    <div class="image-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="imageModalTitle">
-      <div class="image-modal-header">
+    <div class="dialog-modal-dialog image-dialog" role="dialog" aria-modal="true" aria-labelledby="imageModalTitle">
+      <div class="dialog-modal-header">
         <strong id="imageModalTitle"></strong>
-        <button id="imageModalClose" class="image-modal-close" type="button" aria-label="Bezárás">×</button>
+        <button id="imageModalClose" class="dialog-modal-close" type="button" aria-label="Bezárás"></button>
       </div>
-      <div class="image-modal-body">
+      <div class="dialog-modal-body image-modal-body">
         <img id="imageModalImage" alt="" />
         <p id="imageModalMessage" class="image-modal-message"></p>
       </div>
@@ -550,13 +695,6 @@ function createImageModal() {
   });
 
   document.getElementById('imageModalClose')?.addEventListener('click', closeImageModal);
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeImageModal();
-    }
-  });
-
   syncImageModalTexts();
 }
 
@@ -587,12 +725,11 @@ function openImageModal(src, altText = '') {
   if (!modal || !image || !message) return;
 
   modal.classList.add('open');
-  document.body.classList.add('modal-open');
-
   image.style.display = 'none';
   image.removeAttribute('src');
   image.alt = altText;
   message.textContent = '';
+  syncBodyLock();
 
   const preview = new Image();
 
@@ -616,7 +753,119 @@ function closeImageModal() {
   if (!modal) return;
 
   modal.classList.remove('open');
-  document.body.classList.remove('modal-open');
+  syncBodyLock();
+}
+
+// ================================================================
+// látogatói stat modal létrehozása
+// ================================================================
+function createVisitorStatsModal() {
+  if (document.getElementById('visitorStatsModal')) return;
+
+  const modal = document.createElement('div');
+  modal.id = 'visitorStatsModal';
+  modal.className = 'dialog-modal';
+  modal.innerHTML = `
+    <div class="dialog-modal-dialog stats-dialog" role="dialog" aria-modal="true" aria-labelledby="visitorStatsModalTitle">
+      <div class="dialog-modal-header">
+        <strong id="visitorStatsModalTitle"></strong>
+        <button id="visitorStatsModalClose" class="dialog-modal-close" type="button" aria-label="Bezárás"></button>
+      </div>
+      <div class="dialog-modal-body">
+        <div class="stats-list">
+          <div class="stats-row">
+            <span id="visitorStatsLabelToday"></span>
+            <strong id="visitorStatsToday">0</strong>
+          </div>
+          <div class="stats-row">
+            <span id="visitorStatsLabelTotal"></span>
+            <strong id="visitorStatsTotal">0</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeVisitorStatsModal();
+    }
+  });
+
+  document.getElementById('visitorStatsModalClose')?.addEventListener('click', closeVisitorStatsModal);
+  syncVisitorStatsModalTexts();
+  updateVisitorStatsModal();
+}
+
+// ================================================================
+// látogatói stat modal szövegeinek frissítése
+// ================================================================
+function syncVisitorStatsModalTexts() {
+  const title = document.getElementById('visitorStatsModalTitle');
+  const closeButton = document.getElementById('visitorStatsModalClose');
+  const todayLabel = document.getElementById('visitorStatsLabelToday');
+  const totalLabel = document.getElementById('visitorStatsLabelTotal');
+
+  if (title) {
+    title.textContent = String(t('sidebar.visitors')).replace(/[:：]\s*$/, '');
+  }
+
+  if (closeButton) {
+    closeButton.setAttribute('aria-label', t('content.close'));
+  }
+
+  if (todayLabel) {
+    todayLabel.textContent = t('sidebar.visitorsToday');
+  }
+
+  if (totalLabel) {
+    totalLabel.textContent = t('sidebar.visitorsTotal');
+  }
+}
+
+// ================================================================
+// látogatói stat modal adatainak frissítése
+// ================================================================
+function updateVisitorStatsModal() {
+  const today = document.getElementById('visitorStatsToday');
+  const total = document.getElementById('visitorStatsTotal');
+
+  if (today) {
+    today.textContent = state.visitorStats.today;
+  }
+
+  if (total) {
+    total.textContent = state.visitorStats.total;
+  }
+}
+
+// ================================================================
+// látogatói stat modal vezérlése
+// ================================================================
+function openVisitorStatsModal() {
+  const modal = document.getElementById('visitorStatsModal');
+  if (!modal) return;
+
+  updateVisitorStatsModal();
+  modal.classList.add('open');
+  syncBodyLock();
+}
+
+function closeVisitorStatsModal() {
+  const modal = document.getElementById('visitorStatsModal');
+  if (!modal) return;
+
+  modal.classList.remove('open');
+  syncBodyLock();
+}
+
+function initVisitorStatsTrigger() {
+  const trigger = document.getElementById('visitorStatsTrigger');
+  if (!trigger) return;
+
+  trigger.onclick = () => openVisitorStatsModal();
 }
 
 // ================================================================
@@ -717,9 +966,6 @@ function getCommandAccess(doc, parentDoc, docsConfig) {
 
 // ================================================================
 // parancs opciók feloldása
-// ha az options mező létezik, akkor azt használjuk akkor is,
-// ha üres tömb; alapértelmezett opció csak akkor kell,
-// ha az options mező nincs megadva
 // ================================================================
 function getCommandOptions(doc, parentDoc, docsConfig) {
   if (hasOwnField(doc, 'options') && Array.isArray(doc.options)) {
@@ -772,7 +1018,6 @@ function translateCommandType(type) {
 
 // ================================================================
 // egyszeres érték fordítása
-// csak azokhoz az elemekhez használjuk, amelyek nem legördülőként jelennek meg
 // ================================================================
 function translateSingleCommandValue(value) {
   const normalized = String(value || '').trim();
@@ -817,8 +1062,6 @@ function translateCommandFormat(format) {
 
 // ================================================================
 // lehetséges értékek cella formázása
-// több elem esetén legördülő marad eredeti szöveggel
-// egy elem esetén fordítjuk, ha van hozzá kulcs
 // ================================================================
 function formatCommandValuesCell(option) {
   const values = Array.isArray(option?.values)
@@ -826,7 +1069,7 @@ function formatCommandValuesCell(option) {
     : (option?.value !== undefined && option?.value !== null && option?.value !== '' ? [option.value] : []);
 
   if (values.length > 1) {
-    return `<select>${values.map(v => `<option>${v}</option>`).join('')}</select>`;
+    return `<select>${values.map((v) => `<option>${v}</option>`).join('')}</select>`;
   }
 
   if (values.length === 1) {
@@ -837,7 +1080,7 @@ function formatCommandValuesCell(option) {
 }
 
 // ================================================================
-// parancs ismertető renderelése fordításokkal
+// parancs ismertető renderelése
 // ================================================================
 function renderCommand(cmd, groupKey, subKey) {
   const imageName = cmd.replace(/^\//, '').replace(/\s+/g, '-');
@@ -848,7 +1091,7 @@ function renderCommand(cmd, groupKey, subKey) {
   const description = getTranslatedCommandDescription(cmd, rootCommand, subcommand, doc, parentDoc, docsConfig);
   const access = getTranslatedCommandAccess(rootCommand, subcommand, doc, parentDoc, docsConfig);
 
-  const options = commandOptions.map(option => `
+  const options = commandOptions.map((option) => `
     <tr>
       <td>${formatDisplayValue(option.name)}</td>
       <td>${translateCommandType(option.type)}</td>
@@ -863,90 +1106,40 @@ function renderCommand(cmd, groupKey, subKey) {
 
   setTopBreadcrumb(['Dashboard', t('sidebar.commands'), t(subKey), cmd]);
 
-  document.getElementById('content').innerHTML = `<div class="card">
-    <h1>${cmd}</h1>
-    <p>${description}</p>
-    <p><strong>${t('content.access')}:</strong> ${formatDisplayValue(access)}</p>
+  document.getElementById('content').innerHTML = `
+    <div class="card">
+      <h1>${cmd}</h1>
+      <p>${description}</p>
+      <p><strong>${t('content.access')}:</strong> ${formatDisplayValue(access)}</p>
 
-    <div class="command-actions">
-      <button id="commandImageButton" class="command-image-button" type="button">
-        ${t('content.viewImage')}
-      </button>
-    </div>
+      <div class="command-actions">
+        <button id="commandImageButton" class="command-image-button" type="button">
+          ${t('content.viewImage')}
+        </button>
+      </div>
 
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>${t('content.optionName')}</th>
-            <th>${t('content.optionType')}</th>
-            <th>${t('content.optionRequired')}</th>
-            <th>${t('content.optionSource')}</th>
-            <th>${t('content.optionFormat')}</th>
-            <th>${t('content.optionValue')}</th>
-          </tr>
-        </thead>
-        <tbody>${tableBody}</tbody>
-      </table>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>${t('content.optionName')}</th>
+              <th>${t('content.optionType')}</th>
+              <th>${t('content.optionRequired')}</th>
+              <th>${t('content.optionSource')}</th>
+              <th>${t('content.optionFormat')}</th>
+              <th>${t('content.optionValue')}</th>
+            </tr>
+          </thead>
+          <tbody>${tableBody}</tbody>
+        </table>
+      </div>
     </div>
-  </div>`;
+  `;
 
   const imageButton = document.getElementById('commandImageButton');
   if (imageButton) {
     imageButton.onclick = () => openImageModal(imagePath, `${cmd} demo`);
   }
-}
-
-// ================================================================
-// megjelenés oldal renderelése
-// ================================================================
-function renderAppearance() {
-  setTopBreadcrumb(['Dashboard', t('sidebar.settings'), t('settings.appearance')]);
-  document.getElementById('content').innerHTML = `<div class="card"><h1>${t('settings.appearance')}</h1><div class="list-grid">${['dark', 'light'].map(k => `<button class="sub-item" data-theme="${k}">${t('settings.' + k)}</button>`).join('')}</div></div>`;
-  document.querySelectorAll('[data-theme]').forEach(b => {
-    b.onclick = () => {
-      state.theme = b.dataset.theme;
-      localStorage.setItem('theme', state.theme);
-      applyTheme();
-    };
-  });
-}
-
-// ================================================================
-// nyelv oldal renderelése
-// ================================================================
-function renderLanguageSettings() {
-  setTopBreadcrumb(['Dashboard', t('sidebar.settings'), t('settings.language')]);
-  document.getElementById('content').innerHTML = `<div class="card"><h1>${t('settings.language')}</h1><div class="list-grid">${state.menu.languages.map(l => `<button class="sub-item" data-lang="${l.code}"><span class="btn-icon">${svgFlag(l.country)}</span> ${l.name}</button>`).join('')}</div></div>`;
-  document.querySelectorAll('[data-lang]').forEach(b => {
-    b.onclick = () => {
-      state.lang = b.dataset.lang;
-      localStorage.setItem('lang', state.lang);
-      buildTopbar();
-      buildIconRail();
-      buildSidebar();
-      renderLanguageSettings();
-    };
-  });
-}
-
-// ================================================================
-// budapesti dátum lekérése YYYY-MM-DD formátumban
-// ================================================================
-function getBudapestDateString() {
-  const formatter = new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'Europe/Budapest',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  });
-
-  const parts = formatter.formatToParts(new Date());
-  const year = parts.find(p => p.type === 'year')?.value;
-  const month = parts.find(p => p.type === 'month')?.value;
-  const day = parts.find(p => p.type === 'day')?.value;
-
-  return `${year}-${month}-${day}`;
 }
 
 // ================================================================
@@ -971,12 +1164,12 @@ function formatFooterDate(dateString) {
   });
 
   const parts = formatter.formatToParts(date);
-  const year = parts.find(p => p.type === 'year')?.value;
-  const month = parts.find(p => p.type === 'month')?.value;
-  const day = parts.find(p => p.type === 'day')?.value;
-  const hour = parts.find(p => p.type === 'hour')?.value;
-  const minute = parts.find(p => p.type === 'minute')?.value;
-  const second = parts.find(p => p.type === 'second')?.value;
+  const year = parts.find((p) => p.type === 'year')?.value;
+  const month = parts.find((p) => p.type === 'month')?.value;
+  const day = parts.find((p) => p.type === 'day')?.value;
+  const hour = parts.find((p) => p.type === 'hour')?.value;
+  const minute = parts.find((p) => p.type === 'minute')?.value;
+  const second = parts.find((p) => p.type === 'second')?.value;
 
   return `${year}.${month}.${day} ${hour}:${minute}:${second}`;
 }
@@ -992,9 +1185,6 @@ async function loadLastUpdatedFromGitHub() {
     return;
   }
 
-  // ================================================================
-  // állítsd be a saját GitHub repo adataidra
-  // ================================================================
   const owner = 'oreg-kh';
   const repo = 'website';
   const branch = 'main';
@@ -1050,18 +1240,14 @@ async function loadVisitorStats() {
       throw new Error(data.error || 'Ismeretlen statisztikai hiba');
     }
 
-    const todayEl = document.getElementById('visitorToday');
-    const totalEl = document.getElementById('visitorTotal');
-
-    if (todayEl) {
-      todayEl.textContent = data.today || '0';
-    }
-
-    if (totalEl) {
-      totalEl.textContent = data.total || '0';
-    }
+    state.visitorStats.today = String(data.today || '0');
+    state.visitorStats.total = String(data.total || '0');
+    updateVisitorStatsModal();
   } catch (error) {
     console.error('Látogatói statisztika hiba:', error);
+    state.visitorStats.today = t('common.notAvailable');
+    state.visitorStats.total = t('common.notAvailable');
+    updateVisitorStatsModal();
   }
 }
 
