@@ -9,45 +9,39 @@
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar-shell">
-      <div class="icon-rail" id="iconRail"></div>
+    <aside id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true">
+      <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
 
-      <div class="rail-visitors">
-        <div class="rail-visitors-title" data-i18n="sidebar.visitors">Látogatók:</div>
-        <div class="rail-visitors-list">
-          <div class="rail-visitors-item">
-            <span class="rail-visitors-label" data-i18n="sidebar.visitorsToday">Ma</span>
-            <strong id="visitorToday">
-              <span class="loading-dots" data-i18n-aria-label="common.loading" aria-label="Betöltés">
-                <span>.</span><span>.</span><span>.</span>
-              </span>
-            </strong>
-          </div>
-          <div class="rail-visitors-item">
-            <span class="rail-visitors-label" data-i18n="sidebar.visitorsTotal">Összesen</span>
-            <strong id="visitorTotal">
-              <span class="loading-dots" data-i18n-aria-label="common.loading" aria-label="Betöltés">
-                <span>.</span><span>.</span><span>.</span>
-              </span>
-            </strong>
-          </div>
+      <div class="sidebar-drawer" role="dialog" aria-modal="true" aria-label="Navigációs menü">
+        <div class="sidebar-drawer-header">
+          <img
+            class="sidebar-brand-avatar"
+            alt="Brian the Barbarian"
+            src="images/brian-the-barbarian.png"
+            onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Brian+the+Barbarian&background=111827&color=ffffff&rounded=true&size=128&format=png'"
+          />
+          <div class="sidebar-brand-title">Brian the Barbarian</div>
         </div>
-      </div>
 
-      <div class="sidebar-panel">
-        <div class="sidebar-header">
-          <img class="brand-avatar" alt="Brian the Barbarian" src="images/brian-the-barbarian.png" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Brian+the+Barbarian&background=111827&color=ffffff&rounded=true&size=128&format=png'" />
-          <div class="sidebar-title">Brian the Barbarian</div>
-          <button id="sidebarToggle" class="sidebar-collapse-toggle" type="button" aria-label="Almenü mutat/elrejt"></button>
-        </div>
         <div class="sidebar-nav" id="sidebar"></div>
       </div>
-
-      <button id="sidebarToggleCollapsed" class="sidebar-collapse-toggle sidebar-collapse-toggle-collapsed" type="button" aria-label="Almenü mutat/elrejt"></button>
     </aside>
 
     <div class="main-shell">
       <header class="topbar">
+        <div class="topbar-left">
+          <button id="sidebarToggle" class="topbar-menu-toggle" type="button" aria-label="Menü"></button>
+
+          <img
+            class="topbar-brand-avatar"
+            alt="Brian the Barbarian"
+            src="images/brian-the-barbarian.png"
+            onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Brian+the+Barbarian&background=111827&color=ffffff&rounded=true&size=128&format=png'"
+          />
+
+          <div class="topbar-brand-title">Brian the Barbarian</div>
+        </div>
+
         <div class="crumbs" id="topBreadcrumb"></div>
 
         <div class="topbar-actions">
@@ -93,6 +87,7 @@
       <footer class="downbar">
         <div class="downbar-inner">
           <div class="downbar-title">Brian the Barbarian Discord bot</div>
+
           <div class="downbar-updated">
             <span data-i18n="footer.lastUpdated">Utolsó frissítés:</span>
             <span id="lastUpdatedText">
@@ -101,6 +96,10 @@
               </span>
             </span>
           </div>
+
+          <button id="visitorStatsTrigger" class="downbar-link" type="button" data-i18n="sidebar.visitors">
+            Látogatók:
+          </button>
         </div>
       </footer>
     </div>
