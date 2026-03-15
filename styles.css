@@ -25,11 +25,11 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #111317;
-  --main: #111317;
+  --bg: #1a1f27;
+  --main: #1d232c;
   --text: #e7eaf0;
   --muted: #a3adbc;
-  --line: #2a2f38;
+  --line: #2f3642;
 
   --topbar-strong: #ffffff;
   --topbar-soft: #ffffff;
@@ -439,35 +439,6 @@ body.modal-open {
 /* ================================================================
    topbar gombok
    ================================================================ */
-.bmc-inline-mount {
-  display: flex;
-  align-items: center;
-  min-height: 42px;
-}
-
-.bmc-inline-mount img {
-  display: block;
-  height: 40px;
-  width: auto;
-  border-radius: 8px;
-}
-
-.bmc-icon {
-  display: none;
-  width: 42px;
-  height: 42px;
-  border: 1px solid #e2b800;
-  border-radius: 10px;
-  background: #ffdd00;
-  align-items: center;
-  justify-content: center;
-}
-
-.bmc-icon svg {
-  width: 20px;
-  height: 20px;
-  display: block;
-}
 
 .btn {
   display: inline-flex;
@@ -1141,14 +1112,6 @@ td {
   .language-current .lang-arrow,
   .language-current span:nth-child(2) {
     display: none;
-  }
-
-  .bmc-inline-mount img {
-    display: none;
-  }
-
-  .bmc-icon {
-    display: inline-flex;
   }
 
   #discordAddBtn > span:not(.btn-icon) {
