@@ -1150,3 +1150,18 @@ td {
     width: min(340px, 92vw);
   }
 }
+
+/* ================================================================
+   buy me a coffee widget igazítása a downbar jobb sarkához
+   ================================================================ */
+#bmc-wbtn {
+  right: 18px !important;
+  bottom: 8px !important;
+  z-index: 1200 !important;
+}
+
+#bmc-wbtn + div {
+  right: 18px !important;
+  bottom: 8px !important;
+  z-index: 1200 !important;
+}
