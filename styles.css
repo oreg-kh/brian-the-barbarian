@@ -9,7 +9,9 @@
   --text: #111827;
   --muted: #6b7280;
   --line: #e5e7eb;
-  --section-divider: #000000;
+
+  --topbar-divider: #2b2b2b;
+  --downbar-divider: #2b2b2b;
 
   --topbar-strong: #111827;
   --topbar-soft: #111827;
@@ -35,7 +37,9 @@
   --text: #e7eaf0;
   --muted: #a3adbc;
   --line: #2f3642;
-  --section-divider: #ffffff;
+
+  --topbar-divider: #dcdcdc;
+  --downbar-divider: #dcdcdc;
 
   --topbar-strong: #ffffff;
   --topbar-soft: #ffffff;
@@ -393,7 +397,7 @@ body.modal-open {
   justify-content: space-between;
   gap: 12px;
   padding: 6px 14px;
-  border-bottom: 1px solid var(--section-divider);
+  border-bottom: 1px solid var(--topbar-divider);
   background: var(--main);
 }
 
@@ -941,40 +945,41 @@ td {
 }
 
 /* ================================================================
-   világos téma - vonal
+   downbar íves vonal változóból
    ================================================================ */
-:root[data-theme="light"] .downbar::after {
-  background-image: url("data:image/svg+xml;utf8,\
+.downbar::after {
+  background-color: var(--downbar-divider);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center bottom;
+  mask-position: center bottom;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
   <defs>\
-    <linearGradient id='curveFadeLight' x1='0%' y1='0%' x2='100%' y2='0%'>\
-      <stop offset='0%' stop-color='%23000000' stop-opacity='0'/>\
-      <stop offset='20%' stop-color='%23000000' stop-opacity='0.22'/>\
-      <stop offset='50%' stop-color='%23000000' stop-opacity='1'/>\
-      <stop offset='80%' stop-color='%23000000' stop-opacity='0.22'/>\
-      <stop offset='100%' stop-color='%23000000' stop-opacity='0'/>\
+    <linearGradient id='curveMask' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='black' stop-opacity='0'/>\
+      <stop offset='20%' stop-color='black' stop-opacity='0.22'/>\
+      <stop offset='50%' stop-color='black' stop-opacity='1'/>\
+      <stop offset='80%' stop-color='black' stop-opacity='0.22'/>\
+      <stop offset='100%' stop-color='black' stop-opacity='0'/>\
     </linearGradient>\
   </defs>\
-  <path d='M24,16 Q500,42 976,16' fill='none' stroke='url(%23curveFadeLight)' stroke-width='6' stroke-linecap='round'/>\
+  <path d='M24,16 Q500,42 976,16' fill='none' stroke='url(%23curveMask)' stroke-width='6' stroke-linecap='round'/>\
 </svg>");
-}
-
-/* ================================================================
-   sötét téma - vonal
-   ================================================================ */
-:root[data-theme="dark"] .downbar::after {
-  background-image: url("data:image/svg+xml;utf8,\
+  mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
   <defs>\
-    <linearGradient id='curveFadeDark' x1='0%' y1='0%' x2='100%' y2='0%'>\
-      <stop offset='0%' stop-color='%23ffffff' stop-opacity='0'/>\
-      <stop offset='20%' stop-color='%23ffffff' stop-opacity='0.22'/>\
-      <stop offset='50%' stop-color='%23ffffff' stop-opacity='1'/>\
-      <stop offset='80%' stop-color='%23ffffff' stop-opacity='0.22'/>\
-      <stop offset='100%' stop-color='%23ffffff' stop-opacity='0'/>\
+    <linearGradient id='curveMask' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='black' stop-opacity='0'/>\
+      <stop offset='20%' stop-color='black' stop-opacity='0.22'/>\
+      <stop offset='50%' stop-color='black' stop-opacity='1'/>\
+      <stop offset='80%' stop-color='black' stop-opacity='0.22'/>\
+      <stop offset='100%' stop-color='black' stop-opacity='0'/>\
     </linearGradient>\
   </defs>\
-  <path d='M24,16 Q500,42 976,16' fill='none' stroke='url(%23curveFadeDark)' stroke-width='6' stroke-linecap='round'/>\
+  <path d='M24,16 Q500,42 976,16' fill='none' stroke='url(%23curveMask)' stroke-width='6' stroke-linecap='round'/>\
 </svg>");
 }
 
@@ -1321,35 +1326,32 @@ td {
 </svg>");
   }
 
-  :root[data-theme="light"] .downbar::after {
-    background-image: url("data:image/svg+xml;utf8,\
+  .downbar::after {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 56' preserveAspectRatio='none'>\
   <defs>\
-    <linearGradient id='curveFadeLightMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
-      <stop offset='0%' stop-color='%23000000' stop-opacity='0'/>\
-      <stop offset='22%' stop-color='%23000000' stop-opacity='0.18'/>\
-      <stop offset='50%' stop-color='%23000000' stop-opacity='1'/>\
-      <stop offset='78%' stop-color='%23000000' stop-opacity='0.18'/>\
-      <stop offset='100%' stop-color='%23000000' stop-opacity='0'/>\
+    <linearGradient id='curveMaskMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='black' stop-opacity='0'/>\
+      <stop offset='22%' stop-color='black' stop-opacity='0.18'/>\
+      <stop offset='50%' stop-color='black' stop-opacity='1'/>\
+      <stop offset='78%' stop-color='black' stop-opacity='0.18'/>\
+      <stop offset='100%' stop-color='black' stop-opacity='0'/>\
     </linearGradient>\
   </defs>\
-  <path d='M28,14 Q500,34 972,14' fill='none' stroke='url(%23curveFadeLightMobile)' stroke-width='5' stroke-linecap='round'/>\
+  <path d='M28,14 Q500,34 972,14' fill='none' stroke='url(%23curveMaskMobile)' stroke-width='5' stroke-linecap='round'/>\
 </svg>");
-  }
-
-  :root[data-theme="dark"] .downbar::after {
-    background-image: url("data:image/svg+xml;utf8,\
+    mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 56' preserveAspectRatio='none'>\
   <defs>\
-    <linearGradient id='curveFadeDarkMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
-      <stop offset='0%' stop-color='%23ffffff' stop-opacity='0'/>\
-      <stop offset='22%' stop-color='%23ffffff' stop-opacity='0.18'/>\
-      <stop offset='50%' stop-color='%23ffffff' stop-opacity='1'/>\
-      <stop offset='78%' stop-color='%23ffffff' stop-opacity='0.18'/>\
-      <stop offset='100%' stop-color='%23ffffff' stop-opacity='0'/>\
+    <linearGradient id='curveMaskMobile' x1='0%' y1='0%' x2='100%' y2='0%'>\
+      <stop offset='0%' stop-color='black' stop-opacity='0'/>\
+      <stop offset='22%' stop-color='black' stop-opacity='0.18'/>\
+      <stop offset='50%' stop-color='black' stop-opacity='1'/>\
+      <stop offset='78%' stop-color='black' stop-opacity='0.18'/>\
+      <stop offset='100%' stop-color='black' stop-opacity='0'/>\
     </linearGradient>\
   </defs>\
-  <path d='M28,14 Q500,34 972,14' fill='none' stroke='url(%23curveFadeDarkMobile)' stroke-width='5' stroke-linecap='round'/>\
+  <path d='M28,14 Q500,34 972,14' fill='none' stroke='url(%23curveMaskMobile)' stroke-width='5' stroke-linecap='round'/>\
 </svg>");
   }
 
