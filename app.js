@@ -12,8 +12,8 @@ const state = {
   expandedSections: {},
   sidebarOpen: false,
   visitorStats: {
-    today: '0',
-    total: '0'
+    today: null,
+    total: null
   },
   discordWidgetLoaded: false,
   discordWidgetTheme: null,
@@ -911,11 +911,11 @@ function createVisitorStatsModal() {
         <div class="stats-list">
           <div class="stats-row">
             <span id="visitorStatsLabelToday"></span>
-            <strong id="visitorStatsToday">0</strong>
+            <strong id="visitorStatsToday"></strong>
           </div>
           <div class="stats-row">
             <span id="visitorStatsLabelTotal"></span>
-            <strong id="visitorStatsTotal">0</strong>
+            <strong id="visitorStatsTotal"></strong>
           </div>
         </div>
       </div>
@@ -962,6 +962,17 @@ function syncVisitorStatsModalTexts() {
 }
 
 // ================================================================
+// loading dots html generálása
+// ================================================================
+function getLoadingDotsMarkup() {
+  return `
+    <span class="loading-dots" aria-label="${t('common.loading')}">
+      <span>.</span><span>.</span><span>.</span>
+    </span>
+  `;
+}
+
+// ================================================================
 // látogatói stat modal adatainak frissítése
 // ================================================================
 function updateVisitorStatsModal() {
@@ -969,11 +980,19 @@ function updateVisitorStatsModal() {
   const total = document.getElementById('visitorStatsTotal');
 
   if (today) {
-    today.textContent = state.visitorStats.today;
+    if (state.visitorStats.today === null || state.visitorStats.today === undefined) {
+      today.innerHTML = getLoadingDotsMarkup();
+    } else {
+      today.textContent = state.visitorStats.today;
+    }
   }
 
   if (total) {
-    total.textContent = state.visitorStats.total;
+    if (state.visitorStats.total === null || state.visitorStats.total === undefined) {
+      total.innerHTML = getLoadingDotsMarkup();
+    } else {
+      total.textContent = state.visitorStats.total;
+    }
   }
 }
 
@@ -1362,6 +1381,13 @@ async function loadLastUpdatedFromGitHub() {
 async function loadVisitorStats() {
   const endpoint = 'https://script.google.com/macros/s/AKfycbz0CpGtSId3S33ZAL6HmHYFntOB_Xl8faC8HWRwzhp1Hysq5EtIbUBn0BcvuLFD9qEk/exec?action=stats';
 
+  // ================================================================
+  // betöltés közben loading állapot megjelenítése
+  // ================================================================
+  state.visitorStats.today = null;
+  state.visitorStats.total = null;
+  updateVisitorStatsModal();
+  
   try {
     const response = await fetch(endpoint, {
       method: 'GET',
