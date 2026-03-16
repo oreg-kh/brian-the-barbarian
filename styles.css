@@ -460,10 +460,13 @@ body.modal-open {
   display: none;
 }
 
+/* ================================================================
+   topbar jobb oldali elemek egyenletes távolsággal
+   ================================================================ */
 .topbar-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
   flex-wrap: nowrap;
   justify-content: flex-end;
   width: auto;
@@ -1086,6 +1089,8 @@ td {
   background: var(--line);
   opacity: 0.9;
   align-self: center;
+  margin: 0;
+  flex: 0 0 auto;
 }
 
 /* ================================================================
@@ -1115,6 +1120,24 @@ td {
 .topbar-icon-button:hover,
 .language-current:hover {
   background: rgba(127, 127, 127, 0.1);
+}
+
+/* ================================================================
+   discord ikon méret
+   ================================================================ */
+#discordIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+}
+
+#discordIcon svg {
+  width: 25px;
+  height: 25px;
+  display: block;
 }
 
 .topbar-icon-button .btn-icon,
@@ -1159,10 +1182,20 @@ td {
   font: inherit;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.18s ease;
 }
 
-.topbar-action-item:hover {
-  background: var(--content-bg);
+/* ================================================================
+   discord lenyíló menü hover állapot
+   ================================================================ */
+:root[data-theme="light"] .topbar-action-item:hover,
+:root[data-theme="light"] .topbar-action-item:focus-visible {
+  background: rgba(17, 24, 39, 0.08);
+}
+
+:root[data-theme="dark"] .topbar-action-item:hover,
+:root[data-theme="dark"] .topbar-action-item:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .topbar-action-item-icon {
@@ -1241,7 +1274,7 @@ td {
    ================================================================ */
 @media (max-width: 1024px) {
   .topbar-actions {
-    gap: 6px;
+    gap: 14px;
     flex-wrap: nowrap;
     padding-bottom: 0;
     justify-content: flex-end;
@@ -1272,6 +1305,10 @@ td {
   .topbar {
     padding: 5px 10px;
     gap: 8px;
+  }
+
+  .topbar-actions {
+    gap: 10px;
   }
 
   .topbar-brand-avatar {
