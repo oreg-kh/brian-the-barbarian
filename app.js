@@ -4,6 +4,8 @@ const state = {
   menu: null,
   i18n: null,
   commandDocs: null,
+  flags: null,
+  flagDataUris: {},
   activeGroupId: null,
   active: {
     type: 'page',
@@ -125,6 +127,72 @@ async function fetchJson(path) {
 }
 
 // ================================================================
+// html escape attribútumokhoz és biztonságos szöveghez
+// ================================================================
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+// ================================================================
+// nyelvhez tartozó zászlókulcs feloldása
+// először a flags.json kulcsait próbálja használni
+// ================================================================
+function getLanguageFlagKey(language) {
+  if (!language) return '';
+  return String(language.flag || language.code || language.country || '').trim();
+}
+
+// ================================================================
+// svg kód feloldása a flags.json objektumból
+// ================================================================
+function getFlagSvgCode(flagKey) {
+  const normalizedKey = String(flagKey || '').trim();
+
+  if (!normalizedKey || !state.flags || typeof state.flags !== 'object') {
+    return '';
+  }
+
+  if (typeof state.flags[normalizedKey] === 'string') {
+    return state.flags[normalizedKey];
+  }
+
+  const lowerKey = normalizedKey.toLowerCase();
+  const matchedKey = Object.keys(state.flags).find((key) => String(key).toLowerCase() === lowerKey);
+
+  return matchedKey ? state.flags[matchedKey] : '';
+}
+
+// ================================================================
+// svg kód data uri-vá alakítása cache-selve
+// ================================================================
+function getFlagDataUri(flagKey) {
+  const normalizedKey = String(flagKey || '').trim();
+
+  if (!normalizedKey) {
+    return '';
+  }
+
+  if (state.flagDataUris[normalizedKey]) {
+    return state.flagDataUris[normalizedKey];
+  }
+
+  const svgCode = getFlagSvgCode(normalizedKey);
+  if (!svgCode) {
+    return '';
+  }
+
+  const dataUri = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svgCode)}`;
+  state.flagDataUris[normalizedKey] = dataUri;
+
+  return dataUri;
+}
+
+// ================================================================
 // body görgetésének vezérlése overlay vagy modal esetén
 // ================================================================
 function syncBodyLock() {
@@ -160,15 +228,18 @@ function isActiveItem(type, id) {
 // ================================================================
 async function init() {
   try {
-    const [menu, i18n, commandDocs] = await Promise.all([
+    const [menu, i18n, commandDocs, flags] = await Promise.all([
       fetchJson('menu.json'),
       fetchJson('translations.json'),
-      fetchJson('command-docs.json')
+      fetchJson('command-docs.json'),
+      fetchJson('flags.json')
     ]);
 
     state.menu = menu;
     state.i18n = i18n;
     state.commandDocs = commandDocs;
+    state.flags = flags;
+    state.flagDataUris = {};
     state.lang = localStorage.getItem('lang') || 'hu';
 
     const storedTheme = localStorage.getItem('theme');
@@ -316,7 +387,7 @@ function buildTopbar() {
   // aktuális nyelv gomb tartalma
   // ================================================================
   current.innerHTML = `
-    <span class="btn-icon">${svgFlag(activeLang.country)}</span>
+    <span class="btn-icon">${svgFlag(getLanguageFlagKey(activeLang))}</span>
     <span>${activeLang.name}</span>
     <span class="lang-arrow">${chevronIcon()}</span>
   `;
@@ -327,7 +398,7 @@ function buildTopbar() {
   // nyelv lista felépítése
   // ================================================================
   state.menu.languages.forEach((l) => {
-    const b = el('button', 'language-item', `<span class="btn-icon">${svgFlag(l.country)}</span> ${l.name}`);
+    const b = el('button', 'language-item', `<span class="btn-icon">${svgFlag(getLanguageFlagKey(l))}</span> ${l.name}`);
 
     b.onclick = () => {
       state.lang = l.code;
@@ -490,11 +561,18 @@ async function initDiscordSupportWidget() {
 }
 
 // ================================================================
-// zászló ikon html generálása
+// zászló ikon html generálása lokális flags.json alapján
 // ================================================================
-function svgFlag(country) {
-  const code = String(country || '').toLowerCase();
-  return `<img class="flag-img" src="https://flagcdn.com/${code}.svg" alt="${country} flag" loading="lazy"/>`;
+function svgFlag(flagKey) {
+  const normalizedKey = String(flagKey || '').trim();
+  const flagSrc = getFlagDataUri(normalizedKey);
+  const safeFlagLabel = escapeHtml(normalizedKey || 'flag');
+
+  if (!flagSrc) {
+    return `<span class="flag-img flag-fallback" aria-label="${safeFlagLabel} flag">${safeFlagLabel.toUpperCase()}</span>`;
+  }
+
+  return `<img class="flag-img" src="${flagSrc}" alt="${safeFlagLabel} flag" loading="lazy"/>`;
 }
 
 // ================================================================
@@ -681,7 +759,7 @@ function buildChild(child, group) {
         'button',
         `cmd-option with-icon ${state.lang === l.code ? 'active' : ''}`,
         `
-          <span class="submenu-flag">${svgFlag(l.country)}</span>
+          <span class="submenu-flag">${svgFlag(getLanguageFlagKey(l))}</span>
           <span>${l.name}</span>
         `
       );
