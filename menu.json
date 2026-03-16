@@ -7,8 +7,8 @@
       "token": "SET_YOUR_BMAC_TOKEN"
     },
     "discord": {
-      "addBotUrl": "https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&integration_type=0&scope=bot",
-      "supportServerUrl": "https://discord.gg/1386681452510445618"
+      "addBotUrl": "https://discord.com/oauth2/authorize?client_id=1375039440728363058&permissions=8&integration_type=0&scope=bot",
+      "supportServerUrl": "https://discord.gg/XaED86FGvT"
     }
   },
   "languages": [
