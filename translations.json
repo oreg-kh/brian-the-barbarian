@@ -34,7 +34,7 @@
     "pages.firstSteps.title": "Első lépések",
     "pages.firstSteps.text": "Az alábbi lépéseket elvégezve a bot alapfunkciói használhatók lesznek a szervereden.",
     "pages.firstSteps.steps.1.title": "Bot hozzáadása a szerverhez",
-    "pages.firstSteps.steps.1.text": "Használd az Add to Discord gombot, válaszd ki a szervert, majd engedélyezd a szükséges jogosultságokat. Ezután ellenőrizd, hogy a bot megjelent a szerveren.",
+    "pages.firstSteps.steps.1.text": "Add hozzá a botot a Discord szerveredhez, majd engedélyezd a szükséges jogosultságokat. Ezután ellenőrizd, hogy a bot megjelent-e a szerveren.",
     "pages.firstSteps.steps.2.title": "Szerepkör beállítása",
     "pages.firstSteps.steps.2.text": "Állíts be egy szerepkört a /set-bot-role parancs használatával, amely használhatja a bot adminisztratív parancsait. Érdemes külön szerepet létrehozni azoknak, akik kezelhetik a bot beállításait.",
     "pages.firstSteps.steps.3.title": "Világ regisztrálása",
