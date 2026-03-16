@@ -224,6 +224,92 @@ function isActiveItem(type, id) {
 }
 
 // ================================================================
+// aktuális tartalom újrarenderelése nyelvváltás után
+// ================================================================
+function rerenderActiveContent() {
+  if (!state.active || !state.menu?.nav) return;
+
+  // ================================================================
+  // egyszerű oldal újrarenderelése
+  // ================================================================
+  if (state.active.type === 'page') {
+    let activeGroup = null;
+    let activeChild = null;
+
+    state.menu.nav.forEach((group) => {
+      const foundChild = group.children?.find(
+        (child) => child.type === 'page' && child.id === state.active.id
+      );
+
+      if (foundChild) {
+        activeGroup = group;
+        activeChild = foundChild;
+      }
+    });
+
+    if (activeGroup && activeChild) {
+      renderPage(
+        getPageContent(activeChild.contentKey),
+        [t(activeGroup.labelKey), t(activeChild.labelKey)],
+        {
+          type: 'page',
+          id: activeChild.id,
+          groupId: activeGroup.id
+        }
+      );
+    }
+
+    return;
+  }
+
+  // ================================================================
+  // parancs oldal újrarenderelése
+  // ================================================================
+  if (state.active.type === 'command') {
+    let activeGroup = null;
+    let activeChild = null;
+
+    state.menu.nav.forEach((group) => {
+      const foundChild = group.children?.find((child) => {
+        return (
+          child.type === 'commandGroup' &&
+          Array.isArray(child.commands) &&
+          child.commands.includes(state.active.id)
+        );
+      });
+
+      if (foundChild) {
+        activeGroup = group;
+        activeChild = foundChild;
+      }
+    });
+
+    if (activeGroup && activeChild) {
+      renderCommand(
+        state.active.id,
+        activeGroup.labelKey,
+        activeChild.labelKey,
+        activeGroup.id
+      );
+    }
+  }
+}
+
+// ================================================================
+// nyelv beállítása és teljes felület frissítése
+// ================================================================
+function setLanguage(langCode) {
+  if (!langCode || state.lang === langCode) return;
+
+  state.lang = langCode;
+  localStorage.setItem('lang', state.lang);
+
+  buildTopbar();
+  buildSidebar();
+  rerenderActiveContent();
+}
+
+// ================================================================
 // alkalmazás inicializálása
 // ================================================================
 async function init() {
@@ -401,11 +487,8 @@ function buildTopbar() {
     const b = el('button', 'language-item', `<span class="btn-icon">${svgFlag(getLanguageFlagKey(l))}</span> ${l.name}`);
 
     b.onclick = () => {
-      state.lang = l.code;
-      localStorage.setItem('lang', state.lang);
       picker.classList.remove('open');
-      buildTopbar();
-      buildSidebar();
+      setLanguage(l.code);
     };
 
     menu.appendChild(b);
@@ -765,10 +848,7 @@ function buildChild(child, group) {
       );
 
       b.onclick = () => {
-        state.lang = l.code;
-        localStorage.setItem('lang', state.lang);
-        buildTopbar();
-        buildSidebar();
+        setLanguage(l.code);
         closeSidebar();
       };
 
@@ -1472,7 +1552,7 @@ async function loadVisitorStats() {
   state.visitorStats.today = null;
   state.visitorStats.total = null;
   updateVisitorStatsModal();
-  
+
   try {
     const response = await fetch(endpoint, {
       method: 'GET',
