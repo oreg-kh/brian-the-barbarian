@@ -500,6 +500,9 @@ body.modal-open {
   cursor: pointer;
 }
 
+/* ================================================================
+   topbar nyelvválasztó menü
+   ================================================================ */
 .language-menu {
   display: none;
   position: absolute;
@@ -508,6 +511,12 @@ body.modal-open {
   z-index: 1600;
   width: max-content;
   max-width: min(92vw, 360px);
+  max-height: min(70vh, 420px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding: 6px;
   background: var(--main);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -516,6 +525,30 @@ body.modal-open {
 
 .language-picker.open .language-menu {
   display: block;
+}
+
+/* ================================================================
+   nyelvválasztó görgetősáv
+   ================================================================ */
+.language-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.language-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.language-menu::-webkit-scrollbar-thumb {
+  background: rgba(127, 127, 127, 0.35);
+  border-radius: 999px;
+}
+
+:root[data-theme="light"] .language-menu::-webkit-scrollbar-thumb {
+  background: rgba(17, 24, 39, 0.22);
+}
+
+:root[data-theme="dark"] .language-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .language-item {
@@ -1247,12 +1280,6 @@ td {
   text-overflow: ellipsis;
 }
 
-.language-menu {
-  background: var(--main);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-}
-
 .language-current {
   color: var(--topbar-soft);
 }
@@ -1401,6 +1428,14 @@ td {
   .downbar-updated,
   .downbar-link {
     font-size: 10px;
+  }
+
+  /* ================================================================
+     mobilon kisebb és magasabban korlátozott nyelvlista
+     ================================================================ */
+  .language-menu {
+    max-width: min(92vw, 300px);
+    max-height: min(60vh, 320px);
   }
 }
 
