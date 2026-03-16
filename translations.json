@@ -157,21 +157,66 @@
     "docs.commands.toggle-public-report.description": "Képernyőkép készítése a jelentésről az url használatával.",
     "docs.commands.toggle-public-report.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult szerep(rang)"
   },
-  "en": {},
-  "en-US": {},
-  "ar": {},
-  "cs": {},
-  "nl": {},
-  "fr": {},
-  "de": {},
-  "el": {},
-  "it": {},
-  "pl": {},
-  "pt-BR": {},
-  "pt": {},
-  "ro": {},
-  "sk": {},
-  "es": {},
-  "de-CH": {},
-  "tr": {}
+  "da": {
+  },
+  "de": {
+  },
+  "en-GB": {
+  },
+  "en-US": {
+  },
+  "es-ES": {
+  },
+  "es-419": {
+  },
+  "fr": {
+  },
+  "hr": {
+  },
+  "it": {
+  },
+  "lt": {
+  },
+  "hu": {
+  },
+  "nl": {
+  },
+  "no": {
+  },
+  "pl": {
+  },
+  "pt-BR": {
+  },
+  "ro": {
+  },
+  "fi": {
+  },
+  "sv-SE": {
+  },
+  "vi": {
+  },
+  "tr": {
+  },
+  "cs": {
+  },
+  "el": {
+  },
+  "bg": {
+  },
+  "ru": {
+  },
+  "uk": {
+  },
+  "hi": {
+  },
+  "th": {
+  },
+  "zh-CN": {
+  },
+  "ja": {
+  },
+  "zh-TW": {
+  },
+  "ko": {
+  }
 }
