@@ -8,7 +8,7 @@
     },
     "discord": {
       "addBotUrl": "https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&integration_type=0&scope=bot",
-      "supportServerUrl": "https://discord.gg/YOUR_SERVER"
+      "supportServerUrl": "https://discord.gg/1386681452510445618"
     }
   },
   "languages": [
