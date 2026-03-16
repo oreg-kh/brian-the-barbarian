@@ -38,7 +38,7 @@
     "pages.firstSteps.steps.2.title": "Rang beállítása",
     "pages.firstSteps.steps.2.text": "Állíts be egy rangot a /set-bot-role parancs használatával, amely használhatja a bot adminisztratív parancsait. Érdemes külön rangot létrehozni azoknak, akik kezelhetik a bot beállításait.",
     "pages.firstSteps.steps.3.title": "Világ regisztrálása",
-    "pages.firstSteps.steps.3.text": "Ha az egész szerver ugyanazt a világot használja, futtasd a /register-world-server parancsot. Ha csatornánként külön világot szeretnétek használni, akkor az adott csatornában a /register-world-channel parancsot használd.",
+    "pages.firstSteps.steps.3.text": "Ha az egész szerver ugyanazt a világot használja, futtasd a /register-world-server parancsot. Ha csatornánként külön világot szeretnél használni, akkor az adott csatornában a /register-world-channel parancsot használd.",
     "pages.firstSteps.steps.4.title": "Beállítás ellenőrzése és a funkciók használata",
     "pages.firstSteps.steps.4.text": "A /settings list paranccsal ellenőrizheted a mentett beállításokat. Ezután már használhatod a térképes, statisztikai, kalkulátoros és értesítési parancsokat.",
     "pages.privacy.title": "Adatvédelmi szabályzat",
