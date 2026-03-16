@@ -4,8 +4,12 @@
 :root {
   color-scheme: light dark;
 
-  --bg: #f3f4f6;
+  --page-bg: #f3f4f6;
+  --header-bg: #ffffff;
+  --content-bg: #eef2f7;
+  --footer-bg: #ffffff;
   --main: #ffffff;
+
   --text: #111827;
   --muted: #6b7280;
   --line: #e5e7eb;
@@ -32,8 +36,12 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #1a1f27;
+  --page-bg: #141922;
+  --header-bg: #1d232c;
+  --content-bg: #161c25;
+  --footer-bg: #1b212b;
   --main: #1d232c;
+
   --text: #e7eaf0;
   --muted: #a3adbc;
   --line: #2f3642;
@@ -70,7 +78,7 @@ body {
 body {
   margin: 0;
   font-family: Inter, Segoe UI, Arial, sans-serif;
-  background: var(--bg);
+  background: var(--page-bg);
   color: var(--text);
   overflow: hidden;
 }
@@ -398,7 +406,7 @@ body.modal-open {
   gap: 12px;
   padding: 6px 14px;
   border-bottom: 1px solid var(--topbar-divider);
-  background: var(--main);
+  background: var(--header-bg);
 }
 
 .topbar-left {
@@ -522,7 +530,7 @@ body.modal-open {
 }
 
 .language-item:hover {
-  background: var(--bg);
+  background: var(--content-bg);
 }
 
 /* ================================================================
@@ -615,17 +623,24 @@ body.modal-open {
   flex: 1;
   min-height: 0;
   overflow: auto;
-  padding: 20px;
+  padding: 28px 20px 24px;
   margin-top: var(--topbar-height);
   margin-bottom: var(--downbar-height);
   height: calc(100vh - var(--topbar-height) - var(--downbar-height));
+  background: var(--content-bg);
 }
 
+/* ================================================================
+   fő tartalom keskenyebb és keret nélküli
+   ================================================================ */
 .card {
-  background: var(--main);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 18px;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
 h1 {
@@ -634,6 +649,7 @@ h1 {
 
 .table-wrap {
   overflow: auto;
+  margin-top: 16px;
 }
 
 table {
@@ -670,7 +686,7 @@ td {
   padding: 0 16px;
   border-radius: 10px;
   border: 1px solid var(--line);
-  background: var(--bg);
+  background: var(--main);
   color: var(--text);
   font: inherit;
   font-weight: 600;
@@ -682,7 +698,7 @@ td {
 }
 
 .command-image-button:hover {
-  background: var(--main);
+  background: var(--header-bg);
   transform: translateY(-1px);
 }
 
@@ -751,7 +767,7 @@ td {
   padding: 0;
   border-radius: 10px;
   border: 1px solid var(--line);
-  background: var(--bg);
+  background: var(--content-bg);
   color: var(--text);
   cursor: pointer;
   display: inline-flex;
@@ -789,7 +805,7 @@ td {
 
 .dialog-modal-body {
   padding: 18px;
-  background: var(--bg);
+  background: var(--content-bg);
 }
 
 .image-modal-body {
@@ -805,8 +821,8 @@ td {
   max-width: 100%;
   max-height: calc(100vh - 170px);
   object-fit: contain;
-  border-radius: 12px;
-  background: var(--main);
+  border-radius: 0;
+  background: transparent;
 }
 
 .image-modal-message {
@@ -893,7 +909,7 @@ td {
   justify-content: center;
   padding: 8px 18px;
   border-top: none;
-  background: var(--main);
+  background: var(--footer-bg);
   flex: 0 0 auto;
   overflow: visible;
 }
@@ -918,36 +934,25 @@ td {
 
 .downbar::before {
   z-index: 0;
+  background-color: var(--footer-bg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center bottom;
+  mask-position: center bottom;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
+  <path fill='black' d='M0,64 L0,16 Q500,42 1000,16 L1000,64 Z'/>\
+</svg>");
+  mask-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
+  <path fill='black' d='M0,64 L0,16 Q500,42 1000,16 L1000,64 Z'/>\
+</svg>");
 }
 
 .downbar::after {
   z-index: 1;
-}
-
-/* ================================================================
-   világos téma - kitöltés
-   ================================================================ */
-:root[data-theme="light"] .downbar::before {
-  background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
-  <path fill='%23ffffff' d='M0,64 L0,16 Q500,42 1000,16 L1000,64 Z'/>\
-</svg>");
-}
-
-/* ================================================================
-   sötét téma - kitöltés
-   ================================================================ */
-:root[data-theme="dark"] .downbar::before {
-  background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 64' preserveAspectRatio='none'>\
-  <path fill='%231d232c' d='M0,64 L0,16 Q500,42 1000,16 L1000,64 Z'/>\
-</svg>");
-}
-
-/* ================================================================
-   downbar íves vonal változóból
-   ================================================================ */
-.downbar::after {
   background-color: var(--downbar-divider);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -1157,7 +1162,7 @@ td {
 }
 
 .topbar-action-item:hover {
-  background: var(--bg);
+  background: var(--content-bg);
 }
 
 .topbar-action-item-icon {
@@ -1295,7 +1300,7 @@ td {
   }
 
   .content {
-    padding: 14px;
+    padding: 18px 14px 18px;
   }
 
   .sidebar-drawer {
@@ -1312,17 +1317,14 @@ td {
     height: 14px;
   }
 
-  :root[data-theme="light"] .downbar::before {
-    background-image: url("data:image/svg+xml;utf8,\
+  .downbar::before {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 56' preserveAspectRatio='none'>\
-  <path fill='%23ffffff' d='M0,56 L0,14 Q500,34 1000,14 L1000,56 Z'/>\
+  <path fill='black' d='M0,56 L0,14 Q500,34 1000,14 L1000,56 Z'/>\
 </svg>");
-  }
-
-  :root[data-theme="dark"] .downbar::before {
-    background-image: url("data:image/svg+xml;utf8,\
+    mask-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 56' preserveAspectRatio='none'>\
-  <path fill='%231d232c' d='M0,56 L0,14 Q500,34 1000,14 L1000,56 Z'/>\
+  <path fill='black' d='M0,56 L0,14 Q500,34 1000,14 L1000,56 Z'/>\
 </svg>");
   }
 
