@@ -1,15 +1,45 @@
 <!doctype html>
 <html lang="hu">
 <head>
+  <!--
+  // ================================================================
+  // Alap meta adatok és oldal cím
+  // ================================================================
+  -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brian the Barbarian</title>
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-  <link rel="shortcut icon" href="images/favicon.png" />
+
+  <!--
+  // ================================================================
+  // Favicon
+  // ================================================================
+  -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M64%2014L28.71%2063.02L64.98%20114H88.51L65.96%2074.78L97.33%2073.8L99.29%2057.14L96.35%2054.2H64L62.04%2052.24L86.55%2014Z%22%2F%3E%3C%2Fsvg%3E"
+  />
+
+  <!--
+  // ================================================================
+  // Stíluslap
+  // ================================================================
+  -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!--
+  // ================================================================
+  // Teljes alkalmazás váz
+  // ================================================================
+  -->
   <div class="app-shell">
+    <!--
+    // ================================================================
+    // Oldalsáv overlay és navigációs drawer
+    // ================================================================
+    -->
     <aside id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true">
       <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
 
@@ -28,7 +58,17 @@
       </div>
     </aside>
 
+    <!--
+    // ================================================================
+    // Fő tartalmi rész
+    // ================================================================
+    -->
     <div class="main-shell">
+      <!--
+      // ================================================================
+      // Felső sáv
+      // ================================================================
+      -->
       <header class="topbar">
         <div class="topbar-left">
           <button id="sidebarToggle" class="topbar-menu-toggle" type="button" aria-label="Menü"></button>
@@ -48,6 +88,11 @@
         <div class="topbar-actions">
           <span class="topbar-separator" aria-hidden="true"></span>
 
+          <!--
+          // ================================================================
+          // Felső műveleti menü
+          // ================================================================
+          -->
           <div class="topbar-action-menu">
             <button
               id="topbarActionBtn"
@@ -85,6 +130,11 @@
             </div>
           </div>
 
+          <!--
+          // ================================================================
+          // Discord widget panel
+          // ================================================================
+          -->
           <div id="discordWidgetPanel" class="discord-widget-panel">
             <div class="discord-widget-header">
               <img class="discord-widget-avatar" src="images/brian-the-barbarian.png" alt="Brian the Barbarian" />
@@ -97,6 +147,11 @@
             <iframe id="discordWidgetFrame" class="discord-widget-frame" title="Discord widget" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
           </div>
 
+          <!--
+          // ================================================================
+          // Nyelvválasztó
+          // ================================================================
+          -->
           <div class="language-picker" id="languagePicker">
             <button id="languageCurrent" class="language-current" type="button"></button>
             <div id="languageMenu" class="language-menu"></div>
@@ -104,8 +159,18 @@
         </div>
       </header>
 
+      <!--
+      // ================================================================
+      // Fő tartalom
+      // ================================================================
+      -->
       <main class="content" id="content"></main>
 
+      <!--
+      // ================================================================
+      // Lábléc
+      // ================================================================
+      -->
       <footer class="downbar">
         <div class="downbar-inner">
           <div class="downbar-title">Brian the Barbarian Discord bot</div>
@@ -127,6 +192,11 @@
     </div>
   </div>
 
+  <!--
+  // ================================================================
+  // Külső scriptek
+  // ================================================================
+  -->
   <script data-goatcounter="https://brianthebarbarian.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script
     data-name="BMC-Widget"
@@ -140,6 +210,12 @@
     data-x_margin="18"
     data-y_margin="18">
   </script>
+
+  <!--
+  // ================================================================
+  // Saját alkalmazás script
+  // ================================================================
+  -->
   <script src="app.js"></script>
 </body>
 </html>
