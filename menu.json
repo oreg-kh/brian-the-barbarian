@@ -209,8 +209,7 @@
           "id": "documentation",
           "labelKey": "intro.documentation",
           "contentKey": "pages.documentation",
-          "render": "documentation",
-          "icon": "documentation"
+          "render": "documentation"
         }
       ]
     },
