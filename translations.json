@@ -155,7 +155,16 @@
     "docs.commands.toggle-coords-info.description": "Koordinához kapcsolódó információk mutatása.",
     "docs.commands.toggle-coords-info.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult rang",
     "docs.commands.toggle-public-report.description": "Képernyőkép készítése a jelentésről az url használatával.",
-    "docs.commands.toggle-public-report.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult rang"
+    "docs.commands.toggle-public-report.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult rang",
+    "intro.documentation": "Dokumentáció",
+    "pages.documentation.title": "Dokumentáció",
+    "pages.documentation.text": "Brian the Barbarian egy discord bot a Tribal Wars nevű böngészős játékhoz. Támogatja a játék összes piacát és világát.",
+    "pages.documentation.sections.bot": "A discord bot által preferált nyelvek",
+    "pages.documentation.sections.website": "A weboldal által preferált nyelvek",
+    "pages.documentation.sections.server": "A Brian the Barbarian Discord szerver által preferált nyelvek",
+    "content.documentation.languageCode": "Nyelvi kód",
+    "content.documentation.languageName": "Nyelv neve",
+    "content.documentation.nativeName": "Natív név"
   },
   "da": {
     "topbar.discordAdd": "Tilføj bot",
