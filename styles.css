@@ -1519,3 +1519,39 @@ td {
     bottom: calc(var(--downbar-height) + 8px) !important;
   }
 }
+
+
+/* ================================================================
+   dokumentációs oldal
+   ================================================================ */
+.documentation-card {
+  width: min(100%, 1100px);
+}
+
+.doc-section {
+  margin-top: 28px;
+}
+
+.doc-section h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.documentation-table-wrap {
+  margin-top: 0;
+}
+
+.documentation-table {
+  min-width: 720px;
+}
+
+.documentation-table th,
+.documentation-table td {
+  vertical-align: top;
+}
+
+.documentation-table code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+}
