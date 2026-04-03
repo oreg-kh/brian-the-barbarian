@@ -203,6 +203,14 @@
           "id": "first-steps",
           "labelKey": "intro.firstSteps",
           "contentKey": "pages.firstSteps"
+        },
+        {
+          "type": "page",
+          "id": "documentation",
+          "labelKey": "intro.documentation",
+          "contentKey": "pages.documentation",
+          "render": "documentation",
+          "icon": "documentation"
         }
       ]
     },
