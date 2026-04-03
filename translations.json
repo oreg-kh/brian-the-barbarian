@@ -158,8 +158,8 @@
     "docs.commands.toggle-public-report.access": "Bot tulajdonos, Szerver tulajdonos, Adminisztrátor, Jogosult rang",
     "intro.documentation": "Dokumentáció",
     "pages.documentation.title": "Dokumentáció",
-    "pages.documentation.text": "Brian the Barbarian egy discord bot a Tribal Wars nevű böngészős játékhoz. Támogatja a játék összes piacát és világát.",
-    "pages.documentation.sections.bot": "A discord bot által preferált nyelvek",
+    "pages.documentation.text": "Brian the Barbarian egy Discord bot a Klánháború nevű böngészős játékhoz. Támogatja a játék összes piacát és világát.",
+    "pages.documentation.sections.bot": "A Discord bot által preferált nyelvek",
     "pages.documentation.sections.website": "A weboldal által preferált nyelvek",
     "pages.documentation.sections.server": "A Brian the Barbarian Discord szerver által preferált nyelvek",
     "content.documentation.languageCode": "Nyelvi kód",
@@ -322,7 +322,16 @@
     "docs.commands.toggle-coords-info.description": "Vis oplysninger om en koordinat.",
     "docs.commands.toggle-coords-info.access": "Botejer, Serverejer, Administrator, Autoriseret rolle",
     "docs.commands.toggle-public-report.description": "Tag et skærmbillede af rapporten ved hjælp af URL'en.",
-    "docs.commands.toggle-public-report.access": "Botejer, Serverejer, Administrator, Autoriseret rolle"
+    "docs.commands.toggle-public-report.access": "Botejer, Serverejer, Administrator, Autoriseret rolle",
+    "intro.documentation": "Dokumentation",
+    "pages.documentation.title": "Dokumentation",
+    "pages.documentation.text": "Brian the Barbarian er en Discord-bot til browserspillet Tribal Wars. Den understøtter alle spillets markeder og verdener.",
+    "pages.documentation.sections.bot": "Discord-bottens foretrukne sprog",
+    "pages.documentation.sections.website": "Hjemmesidens foretrukne sprog",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord-serverens foretrukne sprog",
+    "content.documentation.languageCode": "Sprogkode",
+    "content.documentation.languageName": "Sprognavn",
+    "content.documentation.nativeName": "Modersmålsnavn"
   },
   "de": {
     "topbar.discordAdd": "Bot hinzufügen",
@@ -480,7 +489,16 @@
     "docs.commands.toggle-coords-info.description": "Informationen zu einer Koordinate anzeigen.",
     "docs.commands.toggle-coords-info.access": "Bot-Besitzer, Serverbesitzer, Administrator, Berechtigte Rolle",
     "docs.commands.toggle-public-report.description": "Erstelle mit der URL einen Screenshot des Berichts.",
-    "docs.commands.toggle-public-report.access": "Bot-Besitzer, Serverbesitzer, Administrator, Berechtigte Rolle"
+    "docs.commands.toggle-public-report.access": "Bot-Besitzer, Serverbesitzer, Administrator, Berechtigte Rolle",
+    "intro.documentation": "Dokumentation",
+    "pages.documentation.title": "Dokumentation",
+    "pages.documentation.text": "Brian the Barbarian ist ein Discord-Bot für das Browserspiel Die Stämme. Er unterstützt alle Märkte und Welten des Spiels.",
+    "pages.documentation.sections.bot": "Bevorzugte Sprachen des Discord-Bots",
+    "pages.documentation.sections.website": "Bevorzugte Sprachen der Website",
+    "pages.documentation.sections.server": "Bevorzugte Sprachen des Brian the Barbarian Discord-Servers",
+    "content.documentation.languageCode": "Sprachcode",
+    "content.documentation.languageName": "Sprachname",
+    "content.documentation.nativeName": "Eigenname"
   },
   "en-GB": {
     "topbar.discordAdd": "Add bot",
@@ -638,7 +656,16 @@
     "docs.commands.toggle-coords-info.description": "Show information related to a coordinate.",
     "docs.commands.toggle-coords-info.access": "Bot owner, Server owner, Administrator, Authorized role",
     "docs.commands.toggle-public-report.description": "Take a screenshot of the report using the URL.",
-    "docs.commands.toggle-public-report.access": "Bot owner, Server owner, Administrator, Authorized role"
+    "docs.commands.toggle-public-report.access": "Bot owner, Server owner, Administrator, Authorized role",
+    "intro.documentation": "Documentation",
+    "pages.documentation.title": "Documentation",
+    "pages.documentation.text": "Brian the Barbarian is a Discord bot for the browser game Tribal Wars. It supports all markets and worlds of the game.",
+    "pages.documentation.sections.bot": "Preferred languages of the Discord bot",
+    "pages.documentation.sections.website": "Preferred languages of the website",
+    "pages.documentation.sections.server": "Preferred languages of the Brian the Barbarian Discord server",
+    "content.documentation.languageCode": "Language code",
+    "content.documentation.languageName": "Language name",
+    "content.documentation.nativeName": "Native name"
   },
   "en-US": {
     "topbar.discordAdd": "Add bot",
@@ -796,7 +823,16 @@
     "docs.commands.toggle-coords-info.description": "Show information related to a coordinate.",
     "docs.commands.toggle-coords-info.access": "Bot owner, Server owner, Administrator, Authorized role",
     "docs.commands.toggle-public-report.description": "Take a screenshot of the report using the URL.",
-    "docs.commands.toggle-public-report.access": "Bot owner, Server owner, Administrator, Authorized role"
+    "docs.commands.toggle-public-report.access": "Bot owner, Server owner, Administrator, Authorized role",
+    "intro.documentation": "Documentation",
+    "pages.documentation.title": "Documentation",
+    "pages.documentation.text": "Brian the Barbarian is a Discord bot for the browser game Tribal Wars. It supports all markets and worlds of the game.",
+    "pages.documentation.sections.bot": "Preferred languages of the Discord bot",
+    "pages.documentation.sections.website": "Preferred languages of the website",
+    "pages.documentation.sections.server": "Preferred languages of the Brian the Barbarian Discord server",
+    "content.documentation.languageCode": "Language code",
+    "content.documentation.languageName": "Language name",
+    "content.documentation.nativeName": "Native name"
   },
   "es-ES": {
     "topbar.discordAdd": "Añadir bot",
@@ -954,7 +990,16 @@
     "docs.commands.toggle-coords-info.description": "Mostrar información relacionada con una coordenada.",
     "docs.commands.toggle-coords-info.access": "Propietario del bot, Propietario del servidor, Administrador, Rol autorizado",
     "docs.commands.toggle-public-report.description": "Tomar una captura de pantalla del informe usando la URL.",
-    "docs.commands.toggle-public-report.access": "Propietario del bot, Propietario del servidor, Administrador, Rol autorizado"
+    "docs.commands.toggle-public-report.access": "Propietario del bot, Propietario del servidor, Administrador, Rol autorizado",
+    "intro.documentation": "Documentación",
+    "pages.documentation.title": "Documentación",
+    "pages.documentation.text": "Brian the Barbarian es un bot de Discord para el juego de navegador Guerras Tribales. Es compatible con todos los mercados y mundos del juego.",
+    "pages.documentation.sections.bot": "Idiomas preferidos del bot de Discord",
+    "pages.documentation.sections.website": "Idiomas preferidos del sitio web",
+    "pages.documentation.sections.server": "Idiomas preferidos del servidor de Discord de Brian the Barbarian",
+    "content.documentation.languageCode": "Código de idioma",
+    "content.documentation.languageName": "Nombre del idioma",
+    "content.documentation.nativeName": "Nombre nativo"
   },
   "fr": {
     "topbar.discordAdd": "Ajouter le bot",
@@ -1112,7 +1157,16 @@
     "docs.commands.toggle-coords-info.description": "Afficher les informations liées à une coordonnée.",
     "docs.commands.toggle-coords-info.access": "Propriétaire du bot, Propriétaire du serveur, Administrateur, Rôle autorisé",
     "docs.commands.toggle-public-report.description": "Prendre une capture d'écran du rapport à l'aide de l'URL.",
-    "docs.commands.toggle-public-report.access": "Propriétaire du bot, Propriétaire du serveur, Administrateur, Rôle autorisé"
+    "docs.commands.toggle-public-report.access": "Propriétaire du bot, Propriétaire du serveur, Administrateur, Rôle autorisé",
+    "intro.documentation": "Documentation",
+    "pages.documentation.title": "Documentation",
+    "pages.documentation.text": "Brian the Barbarian est un bot Discord pour le jeu par navigateur Guerre Tribale. Il prend en charge tous les marchés et tous les mondes du jeu.",
+    "pages.documentation.sections.bot": "Langues préférées du bot Discord",
+    "pages.documentation.sections.website": "Langues préférées du site web",
+    "pages.documentation.sections.server": "Langues préférées du serveur Discord Brian the Barbarian",
+    "content.documentation.languageCode": "Code langue",
+    "content.documentation.languageName": "Nom de la langue",
+    "content.documentation.nativeName": "Nom natif"
   },
   "hr": {
     "topbar.discordAdd": "Dodaj bota",
@@ -1270,7 +1324,16 @@
     "docs.commands.toggle-coords-info.description": "Prikaži informacije povezane s koordinatom.",
     "docs.commands.toggle-coords-info.access": "Vlasnik bota, Vlasnik poslužitelja, Administrator, Ovlaštena uloga",
     "docs.commands.toggle-public-report.description": "Snimi zaslon izvješća pomoću URL-a.",
-    "docs.commands.toggle-public-report.access": "Vlasnik bota, Vlasnik poslužitelja, Administrator, Ovlaštena uloga"
+    "docs.commands.toggle-public-report.access": "Vlasnik bota, Vlasnik poslužitelja, Administrator, Ovlaštena uloga",
+    "intro.documentation": "Dokumentacija",
+    "pages.documentation.title": "Dokumentacija",
+    "pages.documentation.text": "Brian the Barbarian je Discord bot za browser igru Plemena. Podržava sva tržišta i sve svjetove igre.",
+    "pages.documentation.sections.bot": "Preferirani jezici Discord bota",
+    "pages.documentation.sections.website": "Preferirani jezici web stranice",
+    "pages.documentation.sections.server": "Preferirani jezici Brian the Barbarian Discord servera",
+    "content.documentation.languageCode": "Jezični kod",
+    "content.documentation.languageName": "Naziv jezika",
+    "content.documentation.nativeName": "Izvorni naziv"
   },
   "it": {
     "topbar.discordAdd": "Aggiungi bot",
@@ -1428,7 +1491,16 @@
     "docs.commands.toggle-coords-info.description": "Mostra informazioni relative a una coordinata.",
     "docs.commands.toggle-coords-info.access": "Proprietario del bot, Proprietario del server, Amministratore, Ruolo autorizzato",
     "docs.commands.toggle-public-report.description": "Acquisisci uno screenshot del rapporto usando l'URL.",
-    "docs.commands.toggle-public-report.access": "Proprietario del bot, Proprietario del server, Amministratore, Ruolo autorizzato"
+    "docs.commands.toggle-public-report.access": "Proprietario del bot, Proprietario del server, Amministratore, Ruolo autorizzato",
+    "intro.documentation": "Documentazione",
+    "pages.documentation.title": "Documentazione",
+    "pages.documentation.text": "Brian the Barbarian è un bot Discord per il gioco browser Tribals. Supporta tutti i mercati e tutti i mondi del gioco.",
+    "pages.documentation.sections.bot": "Lingue preferite del bot Discord",
+    "pages.documentation.sections.website": "Lingue preferite del sito web",
+    "pages.documentation.sections.server": "Lingue preferite del server Discord di Brian the Barbarian",
+    "content.documentation.languageCode": "Codice lingua",
+    "content.documentation.languageName": "Nome della lingua",
+    "content.documentation.nativeName": "Nome nativo"
   },
   "lt": {
     "topbar.discordAdd": "Pridėti botą",
@@ -1586,7 +1658,16 @@
     "docs.commands.toggle-coords-info.description": "Rodyti informaciją apie koordinatę.",
     "docs.commands.toggle-coords-info.access": "Boto savininkas, Serverio savininkas, Administratorius, Įgaliota rolė",
     "docs.commands.toggle-public-report.description": "Padaryti ataskaitos ekrano nuotrauką naudojant URL.",
-    "docs.commands.toggle-public-report.access": "Boto savininkas, Serverio savininkas, Administratorius, Įgaliota rolė"
+    "docs.commands.toggle-public-report.access": "Boto savininkas, Serverio savininkas, Administratorius, Įgaliota rolė",
+    "intro.documentation": "Dokumentacija",
+    "pages.documentation.title": "Dokumentacija",
+    "pages.documentation.text": "Brian the Barbarian yra „Discord“ botas, skirtas naršykliniam žaidimui Tribal Wars. Jis palaiko visas žaidimo rinkas ir pasaulius.",
+    "pages.documentation.sections.bot": "Pageidaujamos „Discord“ boto kalbos",
+    "pages.documentation.sections.website": "Pageidaujamos svetainės kalbos",
+    "pages.documentation.sections.server": "Pageidaujamos „Brian the Barbarian“ Discord serverio kalbos",
+    "content.documentation.languageCode": "Kalbos kodas",
+    "content.documentation.languageName": "Kalbos pavadinimas",
+    "content.documentation.nativeName": "Vietinis pavadinimas"
   },
   "nl": {
     "topbar.discordAdd": "Bot toevoegen",
@@ -1744,7 +1825,16 @@
     "docs.commands.toggle-coords-info.description": "Toon informatie over een coördinaat.",
     "docs.commands.toggle-coords-info.access": "Boteigenaar, Servereigenaar, Beheerder, Gemachtigde rol",
     "docs.commands.toggle-public-report.description": "Maak een screenshot van het rapport met behulp van de URL.",
-    "docs.commands.toggle-public-report.access": "Boteigenaar, Servereigenaar, Beheerder, Gemachtigde rol"
+    "docs.commands.toggle-public-report.access": "Boteigenaar, Servereigenaar, Beheerder, Gemachtigde rol",
+    "intro.documentation": "Documentatie",
+    "pages.documentation.title": "Documentatie",
+    "pages.documentation.text": "Brian the Barbarian is een Discord-bot voor het browserspel Tribal Wars. Hij ondersteunt alle markten en werelden van het spel.",
+    "pages.documentation.sections.bot": "Voorkeurstalen van de Discord-bot",
+    "pages.documentation.sections.website": "Voorkeurstalen van de website",
+    "pages.documentation.sections.server": "Voorkeurstalen van de Brian the Barbarian Discord-server",
+    "content.documentation.languageCode": "Taalcode",
+    "content.documentation.languageName": "Taalnaam",
+    "content.documentation.nativeName": "Eigen naam"
   },
   "no": {
     "topbar.discordAdd": "Legg til bot",
@@ -1902,7 +1992,16 @@
     "docs.commands.toggle-coords-info.description": "Vis informasjon knyttet til en koordinat.",
     "docs.commands.toggle-coords-info.access": "Boteier, Servereier, Administrator, Autorisert rolle",
     "docs.commands.toggle-public-report.description": "Ta et skjermbilde av rapporten ved hjelp av URL-en.",
-    "docs.commands.toggle-public-report.access": "Boteier, Servereier, Administrator, Autorisert rolle"
+    "docs.commands.toggle-public-report.access": "Boteier, Servereier, Administrator, Autorisert rolle",
+    "intro.documentation": "Dokumentasjon",
+    "pages.documentation.title": "Dokumentasjon",
+    "pages.documentation.text": "Brian the Barbarian er en Discord-bot for nettleserspillet Tribal Wars. Den støtter alle markeder og verdener i spillet.",
+    "pages.documentation.sections.bot": "Discord-botens foretrukne språk",
+    "pages.documentation.sections.website": "Nettstedets foretrukne språk",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord-serverens foretrukne språk",
+    "content.documentation.languageCode": "Språkkode",
+    "content.documentation.languageName": "Språknavn",
+    "content.documentation.nativeName": "Opprinnelig navn"
   },
   "pl": {
     "topbar.discordAdd": "Dodaj bota",
@@ -2060,7 +2159,16 @@
     "docs.commands.toggle-coords-info.description": "Pokaż informacje związane z koordynatą.",
     "docs.commands.toggle-coords-info.access": "Właściciel bota, Właściciel serwera, Administrator, Uprawniona rola",
     "docs.commands.toggle-public-report.description": "Zrób zrzut ekranu raportu za pomocą adresu URL.",
-    "docs.commands.toggle-public-report.access": "Właściciel bota, Właściciel serwera, Administrator, Uprawniona rola"
+    "docs.commands.toggle-public-report.access": "Właściciel bota, Właściciel serwera, Administrator, Uprawniona rola",
+    "intro.documentation": "Dokumentacja",
+    "pages.documentation.title": "Dokumentacja",
+    "pages.documentation.text": "Brian the Barbarian to bot Discord do gry przeglądarkowej Plemiona. Obsługuje wszystkie rynki i światy gry.",
+    "pages.documentation.sections.bot": "Preferowane języki bota Discord",
+    "pages.documentation.sections.website": "Preferowane języki strony internetowej",
+    "pages.documentation.sections.server": "Preferowane języki serwera Discord Brian the Barbarian",
+    "content.documentation.languageCode": "Kod języka",
+    "content.documentation.languageName": "Nazwa języka",
+    "content.documentation.nativeName": "Nazwa rodzima"
   },
   "pt-BR": {
     "topbar.discordAdd": "Adicionar bot",
@@ -2218,7 +2326,16 @@
     "docs.commands.toggle-coords-info.description": "Mostrar informações relacionadas a uma coordenada.",
     "docs.commands.toggle-coords-info.access": "Dono do bot, Dono do servidor, Administrador, Cargo autorizado",
     "docs.commands.toggle-public-report.description": "Tirar uma captura de tela do relatório usando a URL.",
-    "docs.commands.toggle-public-report.access": "Dono do bot, Dono do servidor, Administrador, Cargo autorizado"
+    "docs.commands.toggle-public-report.access": "Dono do bot, Dono do servidor, Administrador, Cargo autorizado",
+    "intro.documentation": "Documentação",
+    "pages.documentation.title": "Documentação",
+    "pages.documentation.text": "Brian the Barbarian é um bot do Discord para o jogo de navegador Tribal Wars. Ele oferece suporte a todos os mercados e mundos do jogo.",
+    "pages.documentation.sections.bot": "Idiomas preferidos do bot do Discord",
+    "pages.documentation.sections.website": "Idiomas preferidos do site",
+    "pages.documentation.sections.server": "Idiomas preferidos do servidor do Discord do Brian the Barbarian",
+    "content.documentation.languageCode": "Código do idioma",
+    "content.documentation.languageName": "Nome do idioma",
+    "content.documentation.nativeName": "Nome nativo"
   },
   "ro": {
     "topbar.discordAdd": "Adaugă botul",
@@ -2376,7 +2493,16 @@
     "docs.commands.toggle-coords-info.description": "Afișează informații legate de o coordonată.",
     "docs.commands.toggle-coords-info.access": "Proprietarul botului, Proprietarul serverului, Administrator, Rol autorizat",
     "docs.commands.toggle-public-report.description": "Fă o captură de ecran a raportului folosind URL-ul.",
-    "docs.commands.toggle-public-report.access": "Proprietarul botului, Proprietarul serverului, Administrator, Rol autorizat"
+    "docs.commands.toggle-public-report.access": "Proprietarul botului, Proprietarul serverului, Administrator, Rol autorizat",
+    "intro.documentation": "Documentație",
+    "pages.documentation.title": "Documentație",
+    "pages.documentation.text": "Brian the Barbarian este un bot Discord pentru jocul browser Triburile. Suportă toate piețele și toate lumile jocului.",
+    "pages.documentation.sections.bot": "Limbile preferate ale botului Discord",
+    "pages.documentation.sections.website": "Limbile preferate ale site-ului web",
+    "pages.documentation.sections.server": "Limbile preferate ale serverului Discord Brian the Barbarian",
+    "content.documentation.languageCode": "Cod limbă",
+    "content.documentation.languageName": "Numele limbii",
+    "content.documentation.nativeName": "Nume nativ"
   },
   "fi": {
     "topbar.discordAdd": "Lisää botti",
@@ -2534,7 +2660,16 @@
     "docs.commands.toggle-coords-info.description": "Näytä koordinaattiin liittyvät tiedot.",
     "docs.commands.toggle-coords-info.access": "Botin omistaja, Palvelimen omistaja, Ylläpitäjä, Valtuutettu rooli",
     "docs.commands.toggle-public-report.description": "Ota raportista kuvakaappaus URL-osoitteen avulla.",
-    "docs.commands.toggle-public-report.access": "Botin omistaja, Palvelimen omistaja, Ylläpitäjä, Valtuutettu rooli"
+    "docs.commands.toggle-public-report.access": "Botin omistaja, Palvelimen omistaja, Ylläpitäjä, Valtuutettu rooli",
+    "intro.documentation": "Dokumentaatio",
+    "pages.documentation.title": "Dokumentaatio",
+    "pages.documentation.text": "Brian the Barbarian on Tribal Wars -selainpelille tehty Discord-botti. Se tukee kaikkia pelin markkinoita ja maailmoja.",
+    "pages.documentation.sections.bot": "Discord-botin ensisijaiset kielet",
+    "pages.documentation.sections.website": "Verkkosivuston ensisijaiset kielet",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord-palvelimen ensisijaiset kielet",
+    "content.documentation.languageCode": "Kielikoodi",
+    "content.documentation.languageName": "Kielen nimi",
+    "content.documentation.nativeName": "Natiivinimi"
   },
   "sv-SE": {
     "topbar.discordAdd": "Lägg till bot",
@@ -2692,7 +2827,16 @@
     "docs.commands.toggle-coords-info.description": "Visa information relaterad till en koordinat.",
     "docs.commands.toggle-coords-info.access": "Botägare, Serverägare, Administratör, Behörig roll",
     "docs.commands.toggle-public-report.description": "Ta en skärmbild av rapporten med hjälp av URL:en.",
-    "docs.commands.toggle-public-report.access": "Botägare, Serverägare, Administratör, Behörig roll"
+    "docs.commands.toggle-public-report.access": "Botägare, Serverägare, Administratör, Behörig roll",
+    "intro.documentation": "Dokumentation",
+    "pages.documentation.title": "Dokumentation",
+    "pages.documentation.text": "Brian the Barbarian är en Discord-bot för webbläsarspelet Tribal Wars. Den stöder alla spelets marknader och världar.",
+    "pages.documentation.sections.bot": "Discord-bottens föredragna språk",
+    "pages.documentation.sections.website": "Webbplatsens föredragna språk",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord-serverns föredragna språk",
+    "content.documentation.languageCode": "Språkkod",
+    "content.documentation.languageName": "Språknamn",
+    "content.documentation.nativeName": "Inhemskt namn"
   },
   "vi": {
     "topbar.discordAdd": "Thêm bot",
@@ -2850,7 +2994,16 @@
     "docs.commands.toggle-coords-info.description": "Hiển thị thông tin liên quan đến một tọa độ.",
     "docs.commands.toggle-coords-info.access": "Chủ bot, Chủ máy chủ, Quản trị viên, Vai trò được ủy quyền",
     "docs.commands.toggle-public-report.description": "Chụp ảnh màn hình báo cáo bằng URL.",
-    "docs.commands.toggle-public-report.access": "Chủ bot, Chủ máy chủ, Quản trị viên, Vai trò được ủy quyền"
+    "docs.commands.toggle-public-report.access": "Chủ bot, Chủ máy chủ, Quản trị viên, Vai trò được ủy quyền",
+    "intro.documentation": "Tài liệu",
+    "pages.documentation.title": "Tài liệu",
+    "pages.documentation.text": "Brian the Barbarian là bot Discord dành cho trò chơi trình duyệt Tribal Wars. Bot hỗ trợ tất cả thị trường và thế giới của trò chơi.",
+    "pages.documentation.sections.bot": "Ngôn ngữ ưu tiên của bot Discord",
+    "pages.documentation.sections.website": "Ngôn ngữ ưu tiên của trang web",
+    "pages.documentation.sections.server": "Ngôn ngữ ưu tiên của máy chủ Discord Brian the Barbarian",
+    "content.documentation.languageCode": "Mã ngôn ngữ",
+    "content.documentation.languageName": "Tên ngôn ngữ",
+    "content.documentation.nativeName": "Tên bản địa"
   },
   "tr": {
     "topbar.discordAdd": "Bot ekle",
@@ -3008,7 +3161,16 @@
     "docs.commands.toggle-coords-info.description": "Bir koordinatla ilgili bilgileri göster.",
     "docs.commands.toggle-coords-info.access": "Bot sahibi, Sunucu sahibi, Yönetici, Yetkili rol",
     "docs.commands.toggle-public-report.description": "URL kullanarak raporun ekran görüntüsünü al.",
-    "docs.commands.toggle-public-report.access": "Bot sahibi, Sunucu sahibi, Yönetici, Yetkili rol"
+    "docs.commands.toggle-public-report.access": "Bot sahibi, Sunucu sahibi, Yönetici, Yetkili rol",
+    "intro.documentation": "Dokümantasyon",
+    "pages.documentation.title": "Dokümantasyon",
+    "pages.documentation.text": "Brian the Barbarian, tarayıcı oyunu Klanlar için bir Discord botudur. Oyunun tüm pazarlarını ve dünyalarını destekler.",
+    "pages.documentation.sections.bot": "Discord botunun tercih edilen dilleri",
+    "pages.documentation.sections.website": "Web sitesinin tercih edilen dilleri",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord sunucusunun tercih edilen dilleri",
+    "content.documentation.languageCode": "Dil kodu",
+    "content.documentation.languageName": "Dil adı",
+    "content.documentation.nativeName": "Yerel ad"
   },
   "cs": {
     "topbar.discordAdd": "Přidat bota",
@@ -3166,7 +3328,16 @@
     "docs.commands.toggle-coords-info.description": "Zobrazit informace související se souřadnicí.",
     "docs.commands.toggle-coords-info.access": "Vlastník bota, Vlastník serveru, Administrátor, Oprávněná role",
     "docs.commands.toggle-public-report.description": "Pořídit snímek obrazovky reportu pomocí URL.",
-    "docs.commands.toggle-public-report.access": "Vlastník bota, Vlastník serveru, Administrátor, Oprávněná role"
+    "docs.commands.toggle-public-report.access": "Vlastník bota, Vlastník serveru, Administrátor, Oprávněná role",
+    "intro.documentation": "Dokumentace",
+    "pages.documentation.title": "Dokumentace",
+    "pages.documentation.text": "Brian the Barbarian je Discord bot pro prohlížečovou hru Divoké kmeny. Podporuje všechny trhy a světy této hry.",
+    "pages.documentation.sections.bot": "Preferované jazyky Discord bota",
+    "pages.documentation.sections.website": "Preferované jazyky webu",
+    "pages.documentation.sections.server": "Preferované jazyky Discord serveru Brian the Barbarian",
+    "content.documentation.languageCode": "Jazykový kód",
+    "content.documentation.languageName": "Název jazyka",
+    "content.documentation.nativeName": "Rodný název"
   },
   "el": {
     "topbar.discordAdd": "Προσθήκη bot",
@@ -3324,7 +3495,16 @@
     "docs.commands.toggle-coords-info.description": "Εμφάνιση πληροφοριών που σχετίζονται με μια συντεταγμένη.",
     "docs.commands.toggle-coords-info.access": "Ιδιοκτήτης bot, Ιδιοκτήτης διακομιστή, Διαχειριστής, Εξουσιοδοτημένος ρόλος",
     "docs.commands.toggle-public-report.description": "Λήψη στιγμιότυπου της αναφοράς χρησιμοποιώντας το URL.",
-    "docs.commands.toggle-public-report.access": "Ιδιοκτήτης bot, Ιδιοκτήτης διακομιστή, Διαχειριστής, Εξουσιοδοτημένος ρόλος"
+    "docs.commands.toggle-public-report.access": "Ιδιοκτήτης bot, Ιδιοκτήτης διακομιστή, Διαχειριστής, Εξουσιοδοτημένος ρόλος",
+    "intro.documentation": "Τεκμηρίωση",
+    "pages.documentation.title": "Τεκμηρίωση",
+    "pages.documentation.text": "Το Brian the Barbarian είναι ένα Discord bot για το παιχνίδι φυλλομετρητή Φυλετικές Μάχες. Υποστηρίζει όλες τις αγορές και όλους τους κόσμους του παιχνιδιού.",
+    "pages.documentation.sections.bot": "Προτιμώμενες γλώσσες του bot Discord",
+    "pages.documentation.sections.website": "Προτιμώμενες γλώσσες του ιστότοπου",
+    "pages.documentation.sections.server": "Προτιμώμενες γλώσσες του Discord server του Brian the Barbarian",
+    "content.documentation.languageCode": "Κωδικός γλώσσας",
+    "content.documentation.languageName": "Όνομα γλώσσας",
+    "content.documentation.nativeName": "Τοπικό όνομα"
   },
   "bg": {
     "topbar.discordAdd": "Добавяне на бот",
@@ -3482,7 +3662,16 @@
     "docs.commands.toggle-coords-info.description": "Покажи информация, свързана с координата.",
     "docs.commands.toggle-coords-info.access": "Собственик на бота, Собственик на сървъра, Администратор, Упълномощена роля",
     "docs.commands.toggle-public-report.description": "Направи екранна снимка на доклада чрез URL.",
-    "docs.commands.toggle-public-report.access": "Собственик на бота, Собственик на сървъра, Администратор, Упълномощена роля"
+    "docs.commands.toggle-public-report.access": "Собственик на бота, Собственик на сървъра, Администратор, Упълномощена роля",
+    "intro.documentation": "Документация",
+    "pages.documentation.title": "Документация",
+    "pages.documentation.text": "Brian the Barbarian е Discord бот за браузърната игра Tribal Wars. Той поддържа всички пазари и светове на играта.",
+    "pages.documentation.sections.bot": "Предпочитани езици на Discord бота",
+    "pages.documentation.sections.website": "Предпочитани езици на уебсайта",
+    "pages.documentation.sections.server": "Предпочитани езици на Discord сървъра на Brian the Barbarian",
+    "content.documentation.languageCode": "Код на езика",
+    "content.documentation.languageName": "Име на езика",
+    "content.documentation.nativeName": "Местно име"
   },
   "ru": {
     "topbar.discordAdd": "Добавить бота",
@@ -3640,7 +3829,16 @@
     "docs.commands.toggle-coords-info.description": "Показать информацию, связанную с координатой.",
     "docs.commands.toggle-coords-info.access": "Владелец бота, Владелец сервера, Администратор, Разрешённая роль",
     "docs.commands.toggle-public-report.description": "Сделать снимок экрана отчёта по URL.",
-    "docs.commands.toggle-public-report.access": "Владелец бота, Владелец сервера, Администратор, Разрешённая роль"
+    "docs.commands.toggle-public-report.access": "Владелец бота, Владелец сервера, Администратор, Разрешённая роль",
+    "intro.documentation": "Документация",
+    "pages.documentation.title": "Документация",
+    "pages.documentation.text": "Brian the Barbarian — это Discord-бот для браузерной игры Война Племён. Он поддерживает все рынки и все миры игры.",
+    "pages.documentation.sections.bot": "Предпочитаемые языки Discord-бота",
+    "pages.documentation.sections.website": "Предпочитаемые языки веб-сайта",
+    "pages.documentation.sections.server": "Предпочитаемые языки Discord-сервера Brian the Barbarian",
+    "content.documentation.languageCode": "Код языка",
+    "content.documentation.languageName": "Название языка",
+    "content.documentation.nativeName": "Родное название"
   },
   "uk": {
     "topbar.discordAdd": "Додати бота",
@@ -3798,7 +3996,16 @@
     "docs.commands.toggle-coords-info.description": "Показати інформацію, пов’язану з координатою.",
     "docs.commands.toggle-coords-info.access": "Власник бота, Власник сервера, Адміністратор, Дозволена роль",
     "docs.commands.toggle-public-report.description": "Зробити знімок екрана звіту за URL.",
-    "docs.commands.toggle-public-report.access": "Власник бота, Власник сервера, Адміністратор, Дозволена роль"
+    "docs.commands.toggle-public-report.access": "Власник бота, Власник сервера, Адміністратор, Дозволена роль",
+    "intro.documentation": "Документація",
+    "pages.documentation.title": "Документація",
+    "pages.documentation.text": "Brian the Barbarian — це Discord-бот для браузерної гри Війна Племен. Він підтримує всі ринки та всі світи гри.",
+    "pages.documentation.sections.bot": "Бажані мови Discord-бота",
+    "pages.documentation.sections.website": "Бажані мови вебсайту",
+    "pages.documentation.sections.server": "Бажані мови Discord-сервера Brian the Barbarian",
+    "content.documentation.languageCode": "Код мови",
+    "content.documentation.languageName": "Назва мови",
+    "content.documentation.nativeName": "Рідна назва"
   },
   "hi": {
     "topbar.discordAdd": "बॉट जोड़ें",
@@ -3956,7 +4163,16 @@
     "docs.commands.toggle-coords-info.description": "निर्देशांक से संबंधित जानकारी दिखाएँ।",
     "docs.commands.toggle-coords-info.access": "बॉट स्वामी, सर्वर स्वामी, व्यवस्थापक, अधिकृत रोल",
     "docs.commands.toggle-public-report.description": "URL का उपयोग करके रिपोर्ट का स्क्रीनशॉट लें।",
-    "docs.commands.toggle-public-report.access": "बॉट स्वामी, सर्वर स्वामी, व्यवस्थापक, अधिकृत रोल"
+    "docs.commands.toggle-public-report.access": "बॉट स्वामी, सर्वर स्वामी, व्यवस्थापक, अधिकृत रोल",
+    "intro.documentation": "दस्तावेज़",
+    "pages.documentation.title": "दस्तावेज़",
+    "pages.documentation.text": "Brian the Barbarian, Tribal Wars ब्राउज़र गेम के लिए एक Discord बॉट है। यह गेम के सभी बाज़ारों और दुनियाओं का समर्थन करता है।",
+    "pages.documentation.sections.bot": "Discord बॉट की पसंदीदा भाषाएँ",
+    "pages.documentation.sections.website": "वेबसाइट की पसंदीदा भाषाएँ",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord सर्वर की पसंदीदा भाषाएँ",
+    "content.documentation.languageCode": "भाषा कोड",
+    "content.documentation.languageName": "भाषा का नाम",
+    "content.documentation.nativeName": "मूल नाम"
   },
   "th": {
     "topbar.discordAdd": "เพิ่มบอท",
@@ -4114,7 +4330,16 @@
     "docs.commands.toggle-coords-info.description": "แสดงข้อมูลที่เกี่ยวข้องกับพิกัด",
     "docs.commands.toggle-coords-info.access": "เจ้าของบอท, เจ้าของเซิร์ฟเวอร์, ผู้ดูแลระบบ, บทบาทที่ได้รับอนุญาต",
     "docs.commands.toggle-public-report.description": "ถ่ายภาพหน้าจอรายงานโดยใช้ URL",
-    "docs.commands.toggle-public-report.access": "เจ้าของบอท, เจ้าของเซิร์ฟเวอร์, ผู้ดูแลระบบ, บทบาทที่ได้รับอนุญาต"
+    "docs.commands.toggle-public-report.access": "เจ้าของบอท, เจ้าของเซิร์ฟเวอร์, ผู้ดูแลระบบ, บทบาทที่ได้รับอนุญาต",
+    "intro.documentation": "เอกสาร",
+    "pages.documentation.title": "เอกสาร",
+    "pages.documentation.text": "Brian the Barbarian เป็นบอต Discord สำหรับเกมบนเว็บเบราว์เซอร์ ไทรบัลวอรส์ รองรับทุกตลาดและทุกโลกของเกม",
+    "pages.documentation.sections.bot": "ภาษาที่บอท Discord รองรับเป็นหลัก",
+    "pages.documentation.sections.website": "ภาษาที่เว็บไซต์รองรับเป็นหลัก",
+    "pages.documentation.sections.server": "ภาษาที่เซิร์ฟเวอร์ Discord ของ Brian the Barbarian รองรับเป็นหลัก",
+    "content.documentation.languageCode": "รหัสภาษา",
+    "content.documentation.languageName": "ชื่อภาษา",
+    "content.documentation.nativeName": "ชื่อท้องถิ่น"
   },
   "zh-CN": {
     "topbar.discordAdd": "添加机器人",
@@ -4272,7 +4497,16 @@
     "docs.commands.toggle-coords-info.description": "显示与坐标相关的信息。",
     "docs.commands.toggle-coords-info.access": "机器人所有者、服务器所有者、管理员、已授权身份组",
     "docs.commands.toggle-public-report.description": "使用 URL 截取战报截图。",
-    "docs.commands.toggle-public-report.access": "机器人所有者、服务器所有者、管理员、已授权身份组"
+    "docs.commands.toggle-public-report.access": "机器人所有者、服务器所有者、管理员、已授权身份组",
+    "intro.documentation": "文档",
+    "pages.documentation.title": "文档",
+    "pages.documentation.text": "Brian the Barbarian 是一款面向浏览器游戏 Tribal Wars 的 Discord 机器人。它支持该游戏的所有市场与世界。",
+    "pages.documentation.sections.bot": "Discord 机器人的首选语言",
+    "pages.documentation.sections.website": "网站的首选语言",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord 服务器的首选语言",
+    "content.documentation.languageCode": "语言代码",
+    "content.documentation.languageName": "语言名称",
+    "content.documentation.nativeName": "本地名称"
   },
   "ja": {
     "topbar.discordAdd": "ボットを追加",
@@ -4430,7 +4664,16 @@
     "docs.commands.toggle-coords-info.description": "座標に関連する情報を表示します。",
     "docs.commands.toggle-coords-info.access": "ボット所有者、サーバー所有者、管理者、許可されたロール",
     "docs.commands.toggle-public-report.description": "URL を使ってレポートのスクリーンショットを撮ります。",
-    "docs.commands.toggle-public-report.access": "ボット所有者、サーバー所有者、管理者、許可されたロール"
+    "docs.commands.toggle-public-report.access": "ボット所有者、サーバー所有者、管理者、許可されたロール",
+    "intro.documentation": "ドキュメント",
+    "pages.documentation.title": "ドキュメント",
+    "pages.documentation.text": "Brian the Barbarian は、ブラウザゲーム Tribal Wars 向けの Discord ボットです。ゲームのすべての市場と言語ワールドに対応しています。",
+    "pages.documentation.sections.bot": "Discord ボットの対応言語",
+    "pages.documentation.sections.website": "ウェブサイトの対応言語",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord サーバーの対応言語",
+    "content.documentation.languageCode": "言語コード",
+    "content.documentation.languageName": "言語名",
+    "content.documentation.nativeName": "ネイティブ名"
   },
   "zh-TW": {
     "topbar.discordAdd": "新增機器人",
@@ -4588,7 +4831,16 @@
     "docs.commands.toggle-coords-info.description": "顯示與座標相關的資訊。",
     "docs.commands.toggle-coords-info.access": "機器人擁有者、伺服器擁有者、管理員、已授權身分組",
     "docs.commands.toggle-public-report.description": "使用 URL 擷取戰報截圖。",
-    "docs.commands.toggle-public-report.access": "機器人擁有者、伺服器擁有者、管理員、已授權身分組"
+    "docs.commands.toggle-public-report.access": "機器人擁有者、伺服器擁有者、管理員、已授權身分組",
+    "intro.documentation": "文件",
+    "pages.documentation.title": "文件",
+    "pages.documentation.text": "Brian the Barbarian 是一款適用於瀏覽器遊戲 Tribal Wars 的 Discord 機器人。它支援該遊戲的所有市場與世界。",
+    "pages.documentation.sections.bot": "Discord 機器人的偏好語言",
+    "pages.documentation.sections.website": "網站的偏好語言",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord 伺服器的偏好語言",
+    "content.documentation.languageCode": "語言代碼",
+    "content.documentation.languageName": "語言名稱",
+    "content.documentation.nativeName": "原生名稱"
   },
   "ko": {
     "topbar.discordAdd": "봇 추가",
@@ -4746,6 +4998,15 @@
     "docs.commands.toggle-coords-info.description": "좌표와 관련된 정보를 표시합니다.",
     "docs.commands.toggle-coords-info.access": "봇 소유자, 서버 소유자, 관리자, 권한이 있는 역할",
     "docs.commands.toggle-public-report.description": "URL을 사용해 보고서의 스크린샷을 찍습니다。",
-    "docs.commands.toggle-public-report.access": "봇 소유자, 서버 소유자, 관리자, 권한이 있는 역할"
+    "docs.commands.toggle-public-report.access": "봇 소유자, 서버 소유자, 관리자, 권한이 있는 역할",
+    "intro.documentation": "문서",
+    "pages.documentation.title": "문서",
+    "pages.documentation.text": "Brian the Barbarian은 브라우저 게임 Tribal Wars용 Discord 봇입니다. 이 게임의 모든 시장과 월드를 지원합니다.",
+    "pages.documentation.sections.bot": "Discord 봇의 선호 언어",
+    "pages.documentation.sections.website": "웹사이트의 선호 언어",
+    "pages.documentation.sections.server": "Brian the Barbarian Discord 서버의 선호 언어",
+    "content.documentation.languageCode": "언어 코드",
+    "content.documentation.languageName": "언어 이름",
+    "content.documentation.nativeName": "모국어 이름"
   }
 }
