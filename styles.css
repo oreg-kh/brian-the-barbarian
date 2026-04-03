@@ -73,7 +73,6 @@
 html,
 body {
   height: 100%;
-  min-height: 100dvh;
 }
 
 body {
@@ -93,7 +92,6 @@ body.modal-open {
    ================================================================ */
 .app-shell {
   min-height: 100vh;
-  min-height: 100dvh;
 }
 
 /* ================================================================
@@ -101,9 +99,7 @@ body.modal-open {
    ================================================================ */
 .main-shell {
   min-height: 100vh;
-  min-height: 100dvh;
   height: 100vh;
-  height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -141,7 +137,6 @@ body.modal-open {
   left: 0;
   width: min(380px, 92vw);
   height: 100vh;
-  height: 100dvh;
   display: flex;
   flex-direction: column;
   background: var(--sidebar-bg);
@@ -664,12 +659,10 @@ body.modal-open {
   flex: 1;
   min-height: 0;
   overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 28px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  padding: 28px 20px 24px;
   margin-top: var(--topbar-height);
   margin-bottom: var(--downbar-height);
   height: calc(100vh - var(--topbar-height) - var(--downbar-height));
-  height: calc(100dvh - var(--topbar-height) - var(--downbar-height));
   background: var(--content-bg);
 }
 
@@ -1371,7 +1364,7 @@ td {
   }
 
   .content {
-    padding: 18px 14px calc(18px + env(safe-area-inset-bottom, 0px));
+    padding: 18px 14px 18px;
   }
 
   .sidebar-drawer {
@@ -1467,6 +1460,46 @@ td {
   right: 18px !important;
   bottom: calc(var(--downbar-height) + 8px) !important;
   z-index: 1250 !important;
+}
+
+
+/* ================================================================
+   mobil és tablet nézetben a body görget, hogy működjön a natív
+   pull to refresh frissítés
+   ================================================================ */
+@media (max-width: 1024px) {
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: auto;
+  }
+
+  .app-shell {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .main-shell {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    overflow: visible;
+  }
+
+  .content {
+    overflow: visible;
+    height: auto;
+    min-height: calc(100vh - var(--topbar-height) - var(--downbar-height));
+    min-height: calc(100dvh - var(--topbar-height) - var(--downbar-height));
+    margin-bottom: 0;
+    padding-bottom: calc(var(--downbar-height) + 24px + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 @media (max-width: 768px) {
