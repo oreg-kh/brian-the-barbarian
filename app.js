@@ -81,6 +81,11 @@ const submenuIcons = {
     <svg viewBox="0 0 36 36" aria-hidden="true">
       <path fill="currentColor" d="M18.44,34.68a18.22,18.22,0,0,1-2.94-.24,18.18,18.18,0,0,1-15-20.86A18.06,18.06,0,0,1,9.59.63,2.42,2.42,0,0,1,12.2.79a2.39,2.39,0,0,1,1,2.41L11.9,3.1l1.23.22A15.66,15.66,0,0,0,23.34,21h0a15.82,15.82,0,0,0,8.47.53A2.44,2.44,0,0,1,34.47,25,18.18,18.18,0,0,1,18.44,34.68ZM10.67,2.89a15.67,15.67,0,0,0-5,22.77A15.66,15.66,0,0,0,32.18,24a18.49,18.49,0,0,1-9.65-.64A18.18,18.18,0,0,1,10.67,2.89Z"></path>
     </svg>
+  `,
+  documentation: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M6 1C4.34314 1 3 2.34315 3 4V20C3 21.6569 4.34315 23 6 23H19C20.6569 23 22 21.6569 22 20V10C22 9.73478 21.8946 9.48043 21.7071 9.29289L13.7071 1.29292C13.6114 1.19722 13.4983 1.1229 13.3753 1.07308C13.2572 1.02527 13.1299 1 13 1H6ZM12 3H6C5.44771 3 5 3.44771 5 4V20C5 20.5523 5.44772 21 6 21H19C19.5523 21 20 20.5523 20 20V11H13C12.4477 11 12 10.5523 12 10V3ZM18.5858 9.00003L14 4.41424V9.00003H18.5858Z"></path>
+    </svg>
   `
 };
 
@@ -110,6 +115,205 @@ const menuToggleIcon = () => `
     <path fill="currentColor" d="M2.667 12h10.666c.367 0 .667-.3.667-.667s-.3-.666-.667-.666H2.667c-.367 0-.667.3-.667.666s.3.667.667.667m0-3.333h10.666c.367 0 .667-.3.667-.667s-.3-.667-.667-.667H2.667C2.3 7.333 2 7.633 2 8s.3.667.667.667m-.667-4c0 .366.3.666.667.666h10.666c.367 0 .667-.3.667-.666S13.7 4 13.333 4H2.667C2.3 4 2 4.3 2 4.667"></path>
   </svg>
 `;
+
+
+// ================================================================
+// dokumentációs oldal nyelvi táblái
+// ================================================================
+const documentationTables = {
+  bot: [
+    ['da-DK', 'Danish, Denmark', 'Dansk'],
+    ['de-DE', 'German, Germany', 'Deutsch'],
+    ['en-GB', 'English, United Kingdom', 'English, UK'],
+    ['en-US', 'English, United States', 'English, US'],
+    ['es-ES', 'Spanish, Spain', 'Español'],
+    ['es-419', 'Spanish, Latin America', 'Español, LATAM'],
+    ['fr-FR', 'French, France', 'Français'],
+    ['hr-HR', 'Croatian, Croatia', 'Hrvatski'],
+    ['it-IT', 'Italian, Italy', 'Italiano'],
+    ['lt-LT', 'Lithuanian, Lithuania', 'Lietuviškai'],
+    ['hu-HU', 'Hungarian, Hungary', 'Magyar'],
+    ['nl-NL', 'Dutch, Netherlands', 'Nederlands'],
+    ['no-NO', 'Norwegian, Norway', 'Norsk'],
+    ['pl-PL', 'Polish, Poland', 'Polski'],
+    ['pt-BR', 'Portuguese, Brazil', 'Português do Brasil'],
+    ['ro-RO', 'Romanian, Romania', 'Română'],
+    ['fi-FI', 'Finnish, Finland', 'Suomi'],
+    ['sv-SE', 'Swedish, Sweden', 'Svenska'],
+    ['vi-VN', 'Vietnamese, Vietnam', 'Tiếng Việt'],
+    ['tr-TR', 'Turkish, Turkey', 'Türkçe'],
+    ['cs-CZ', 'Czech, Czech Republic', 'Čeština'],
+    ['el-GR', 'Greek, Greece', 'Ελληνικά'],
+    ['bg-BG', 'Bulgarian, Bulgaria', 'български'],
+    ['ru-RU', 'Russian, Russia', 'Русский'],
+    ['uk-UA', 'Ukrainian, Ukraine', 'Українська'],
+    ['hi-IN', 'Hindi, India', 'हिन्दी'],
+    ['th-TH', 'Thai, Thailand', 'ไทย'],
+    ['zh-CN', 'Chinese, China', '中文'],
+    ['ja-JP', 'Japanese, Japan', '日本語'],
+    ['zh-TW', 'Chinese, Taiwan', '繁體中文'],
+    ['ko-KR', 'Korean, South Korea', '한국어']
+  ],
+  website: [
+    ['da-DK', 'Danish, Denmark', 'Dansk'],
+    ['de-DE', 'German, Germany', 'Deutsch'],
+    ['en-GB', 'English, United Kingdom', 'English, UK'],
+    ['en-US', 'English, United States', 'English, US'],
+    ['es-ES', 'Spanish, Spain', 'Español'],
+    ['fr-FR', 'French, France', 'Français'],
+    ['hr-HR', 'Croatian, Croatia', 'Hrvatski'],
+    ['it-IT', 'Italian, Italy', 'Italiano'],
+    ['lt-LT', 'Lithuanian, Lithuania', 'Lietuviškai'],
+    ['hu-HU', 'Hungarian, Hungary', 'Magyar'],
+    ['nl-NL', 'Dutch, Netherlands', 'Nederlands'],
+    ['no-NO', 'Norwegian, Norway', 'Norsk'],
+    ['pl-PL', 'Polish, Poland', 'Polski'],
+    ['pt-BR', 'Portuguese, Brazil', 'Português do Brasil'],
+    ['ro-RO', 'Romanian, Romania', 'Română'],
+    ['fi-FI', 'Finnish, Finland', 'Suomi'],
+    ['sv-SE', 'Swedish, Sweden', 'Svenska'],
+    ['vi-VN', 'Vietnamese, Vietnam', 'Tiếng Việt'],
+    ['tr-TR', 'Turkish, Turkey', 'Türkçe'],
+    ['cs-CZ', 'Czech, Czech Republic', 'Čeština'],
+    ['el-GR', 'Greek, Greece', 'Ελληνικά'],
+    ['bg-BG', 'Bulgarian, Bulgaria', 'български'],
+    ['ru-RU', 'Russian, Russia', 'Русский'],
+    ['uk-UA', 'Ukrainian, Ukraine', 'Українська'],
+    ['hi-IN', 'Hindi, India', 'हिन्दी'],
+    ['th-TH', 'Thai, Thailand', 'ไทย'],
+    ['zh-CN', 'Chinese, China', '中文'],
+    ['ja-JP', 'Japanese, Japan', '日本語'],
+    ['zh-TW', 'Chinese, Taiwan', '繁體中文'],
+    ['ko-KR', 'Korean, South Korea', '한국어']
+  ],
+  server: [
+    ['de-DE', 'German, Germany', 'Deutsch'],
+    ['en-GB', 'English, United Kingdom', 'English, UK'],
+    ['en-US', 'English, United States', 'English, US'],
+    ['es-ES', 'Spanish, Spain', 'Español'],
+    ['fr-FR', 'French, France', 'Français'],
+    ['it-IT', 'Italian, Italy', 'Italiano'],
+    ['hu-HU', 'Hungarian, Hungary', 'Magyar'],
+    ['nl-NL', 'Dutch, Netherlands', 'Nederlands'],
+    ['pl-PL', 'Polish, Poland', 'Polski'],
+    ['pt-BR', 'Portuguese, Brazil', 'Português do Brasil'],
+    ['pt-PT', 'Portuguese, Portugal', 'Português'],
+    ['ro-RO', 'Romanian, Romania', 'Română'],
+    ['tr-TR', 'Turkish, Turkey', 'Türkçe'],
+    ['cs-CZ', 'Czech, Czech Republic', 'Čeština'],
+    ['el-GR', 'Greek, Greece', 'Ελληνικά'],
+    ['sk-SK', 'Slovak, Slovakia', 'Slovenčina'],
+    ['de-CH', 'German, Switzerland', 'Deutsch (Schweiz)'],
+    ['ar-AE', 'Arabic, UAE', 'العربية']
+  ]
+};
+
+// ================================================================
+// almenü címke feloldása kulcsból vagy fix szövegből
+// ================================================================
+function getMenuChildLabel(child) {
+  if (child?.label) {
+    return child.label;
+  }
+
+  if (child?.labelKey) {
+    return t(child.labelKey);
+  }
+
+  return '';
+}
+
+// ================================================================
+// dokumentációs táblázat html generálása
+// ================================================================
+function buildDocumentationTable(rows) {
+  const headCode = escapeHtml(t('content.documentation.languageCode'));
+  const headName = escapeHtml(t('content.documentation.languageName'));
+  const headNative = escapeHtml(t('content.documentation.nativeName'));
+
+  const body = rows.map(([code, name, nativeName]) => `
+    <tr>
+      <td><code>${escapeHtml(code)}</code></td>
+      <td>${escapeHtml(name)}</td>
+      <td>${escapeHtml(nativeName)}</td>
+    </tr>
+  `).join('');
+
+  return `
+    <div class="table-wrap documentation-table-wrap">
+      <table class="documentation-table">
+        <thead>
+          <tr>
+            <th>${headCode}</th>
+            <th>${headName}</th>
+            <th>${headNative}</th>
+          </tr>
+        </thead>
+        <tbody>${body}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+// ================================================================
+// dokumentációs oldal renderelése
+// ================================================================
+function renderDocumentationPage(crumb, meta = null) {
+  if (meta?.type && meta?.id) {
+    setActiveItem(meta.type, meta.id, meta.groupId || null);
+  }
+
+  setTopBreadcrumb(crumb);
+
+  const sections = [
+    {
+      title: t('pages.documentation.sections.bot'),
+      rows: documentationTables.bot
+    },
+    {
+      title: t('pages.documentation.sections.website'),
+      rows: documentationTables.website
+    },
+    {
+      title: t('pages.documentation.sections.server'),
+      rows: documentationTables.server
+    }
+  ];
+
+  const sectionsHtml = sections.map((section) => `
+    <section class="doc-section">
+      <h2>${escapeHtml(section.title)}</h2>
+      ${buildDocumentationTable(section.rows)}
+    </section>
+  `).join('');
+
+  document.getElementById('content').innerHTML = `
+    <div class="card documentation-card">
+      <h1>${escapeHtml(t('pages.documentation.title'))}</h1>
+      <p class="page-intro">${escapeHtml(t('pages.documentation.text'))}</p>
+      ${sectionsHtml}
+    </div>
+  `;
+}
+
+// ================================================================
+// oldal renderelése menüelem alapján
+// ================================================================
+function renderMenuPage(group, child) {
+  const crumb = [t(group.labelKey), getMenuChildLabel(child)];
+  const meta = {
+    type: 'page',
+    id: child.id,
+    groupId: group.id
+  };
+
+  if (child.render === 'documentation') {
+    renderDocumentationPage(crumb, meta);
+    return;
+  }
+
+  renderPage(getPageContent(child.contentKey), crumb, meta);
+}
 
 // ================================================================
 // json fájl betöltése fallback nélkül
@@ -248,15 +452,7 @@ function rerenderActiveContent() {
     });
 
     if (activeGroup && activeChild) {
-      renderPage(
-        getPageContent(activeChild.contentKey),
-        [t(activeGroup.labelKey), t(activeChild.labelKey)],
-        {
-          type: 'page',
-          id: activeChild.id,
-          groupId: activeGroup.id
-        }
-      );
+      renderMenuPage(activeGroup, activeChild);
     }
 
     return;
@@ -340,15 +536,12 @@ async function init() {
     initSidebarDrawer();
     initVisitorStatsTrigger();
 
-    renderPage(
-      getPageContent('pages.firstSteps'),
-      ['Dashboard', t('sidebar.introduction'), t('intro.firstSteps')],
-      {
-        type: 'page',
-        id: 'first-steps',
-        groupId: 'intro'
-      }
-    );
+    const introGroup = state.menu.nav?.find((group) => group.id === 'intro');
+    const firstStepsPage = introGroup?.children?.find((child) => child.id === 'first-steps');
+
+    if (introGroup && firstStepsPage) {
+      renderMenuPage(introGroup, firstStepsPage);
+    }
 
     await loadLastUpdatedFromGitHub();
     await loadVisitorStats();
@@ -860,19 +1053,19 @@ function buildChild(child, group) {
   }
 
   const activeClass = isActiveItem('page', child.id) ? 'active' : '';
-  const b = el('button', `sub-item ${activeClass}`, t(child.labelKey));
+  const label = escapeHtml(getMenuChildLabel(child));
+  const iconHtml = child.icon && submenuIcons[child.icon]
+    ? `<span class="submenu-icon">${submenuIcons[child.icon]}</span>`
+    : '';
+  const buttonClass = child.icon ? `sub-item with-icon ${activeClass}` : `sub-item ${activeClass}`;
+  const contentHtml = child.icon
+    ? `${iconHtml}<span>${label}</span>`
+    : label;
+  const b = el('button', buttonClass, contentHtml);
 
   b.onclick = () => {
     if (child.type === 'page') {
-      renderPage(
-        getPageContent(child.contentKey),
-        [t(group.labelKey), t(child.labelKey)],
-        {
-          type: 'page',
-          id: child.id,
-          groupId: group.id
-        }
-      );
+      renderMenuPage(group, child);
       closeSidebar();
     }
   };
