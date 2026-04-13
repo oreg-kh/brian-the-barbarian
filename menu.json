@@ -303,14 +303,6 @@
         },
         {
           "type": "commandGroup",
-          "id": "emojis",
-          "labelKey": "commands.emojis",
-          "commands": [
-            "/add-emojis"
-          ]
-        },
-        {
-          "type": "commandGroup",
           "id": "filter",
           "labelKey": "commands.filter",
           "commands": [
