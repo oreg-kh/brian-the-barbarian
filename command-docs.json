@@ -26,26 +26,6 @@
     }
   ],
   "commands": {
-    "/add-emojis": {
-      "description": "Használj emojikat a szervereden.",
-      "options": [
-        {
-          "name": "categories",
-          "type": "string",
-          "required": true,
-          "source": "choice",
-          "values": [
-            "troops",
-            "buildings",
-            "flags",
-            "other"
-          ],
-          "format": ""
-        }
-      ],
-      "subcommands": {},
-      "access": "Bot tulajdonos, Szerver tulajdonos, Administrator, Jogosult szerep"
-    },
     "/calculate-backtime": {
       "description": "Add meg a koordinátákat, pontos dátumot és a támadó sereg sebességét.",
       "options": [
